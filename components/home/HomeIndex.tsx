@@ -23,6 +23,9 @@ export default async function HomeIndex({ lang }: { lang: string }) {
       {/* Showcase */}
       {/* <Showcase id="Showcase" locale={dict.Showcase} /> */}
 
+      {/* Showcase */}
+      {/* <Showcase id="Showcase" locale={dict.Showcase} /> */}
+
       {/* USP (Unique Selling Proposition) */}
       <Feature id="Services" locale={dict.Feature} langName={langName} />
 
