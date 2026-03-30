@@ -1,0 +1,48 @@
+{
+  "Hero": {
+    "title1": "Build.",
+    "title2": "Convert.",
+    "title3": "Grow.",
+    "description": "We help brands grow in the digital world — globally. From idea to execution, we build digital experiences that convert."
+  },
+  "SocialProof": {
+    "count": "50+",
+    "maker": "brands trust OPTIO worldwide"
+  },
+  "Showcase": {
+    "title": "Showcase",
+    "description": "See how we help teams ship digital products that perform."
+  },
+  "Feature": {
+    "title": "What We Do"
+  },
+  "Pricing": {
+    "title": "Packages",
+    "title2": "Clear scopes. Real outcomes.",
+    "description": "We work with startups and businesses worldwide — focused on clean design, smart strategy, and real results.",
+    "doYouLike": "Want to talk through your project?",
+    "follow": "Message us on Instagram."
+  },
+  "Testimonials": {
+    "title": "What clients say",
+    "description1": "We partner with founders and teams who need execution, not fluff.",
+    "description2": "Here's what it's like",
+    "description3": " to work with OPTIO."
+  },
+  "FAQ": {
+    "title": "FAQs",
+    "description": "Answers to common questions about working with OPTIO."
+  },
+  "CTA": {
+    "title": "Ready to grow your brand?",
+    "description1": "From",
+    "description2": "strategy",
+    "description3": "to",
+    "description4": "launch, we ship experiences built to",
+    "description5": "convert",
+    "description6": "."
+  },
+  "CTAButton": {
+    "title": "Start your project"
+  }
+}

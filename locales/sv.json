@@ -1,0 +1,48 @@
+{
+  "Hero": {
+    "title1": "Bygg.",
+    "title2": "Konvertera.",
+    "title3": "Väx.",
+    "description": "Vi hjälper varumärken att växa i den digitala världen — globalt. Från idé till leverans bygger vi digitala upplevelser som konverterar."
+  },
+  "SocialProof": {
+    "count": "50+",
+    "maker": "varumärken världen över litar på OPTIO"
+  },
+  "Showcase": {
+    "title": "Showcase",
+    "description": "Så hjälper vi team att leverera digitala produkter som presterar."
+  },
+  "Feature": {
+    "title": "Vad vi gör"
+  },
+  "Pricing": {
+    "title": "Paket",
+    "title2": "Tydliga ramar. Verkliga resultat.",
+    "description": "Vi jobbar med startups och företag världen över — fokus på ren design, smart strategi och mätbara resultat.",
+    "doYouLike": "Vill du prata om ert projekt?",
+    "follow": "Hör av dig på Instagram."
+  },
+  "Testimonials": {
+    "title": "Vad kunderna säger",
+    "description1": "Vi samarbetar med grundare och team som vill ha genomförande, inte tomma löften.",
+    "description2": "Så här är det",
+    "description3": " att jobba med OPTIO."
+  },
+  "FAQ": {
+    "title": "Vanliga frågor",
+    "description": "Svar på vanliga frågor om att arbeta med OPTIO."
+  },
+  "CTA": {
+    "title": "Redo att växa med ert varumärke?",
+    "description1": "Från",
+    "description2": "strategi",
+    "description3": "till",
+    "description4": "lansering levererar vi upplevelser byggda för att",
+    "description5": "konvertera",
+    "description6": "."
+  },
+  "CTAButton": {
+    "title": "Starta ert projekt"
+  }
+}

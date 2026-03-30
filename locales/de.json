@@ -1,0 +1,48 @@
+{
+  "Hero": {
+    "title1": "Bauen.",
+    "title2": "Konvertieren.",
+    "title3": "Wachsen.",
+    "description": "Wir helfen Marken, in der digitalen Welt zu wachsen — weltweit. Von der Idee bis zur Umsetzung entwickeln wir digitale Erlebnisse, die konvertieren."
+  },
+  "SocialProof": {
+    "count": "50+",
+    "maker": "Marken weltweit vertrauen OPTIO"
+  },
+  "Showcase": {
+    "title": "Referenzen",
+    "description": "So helfen wir Teams, digitale Produkte zu liefern, die performen."
+  },
+  "Feature": {
+    "title": "Was wir tun"
+  },
+  "Pricing": {
+    "title": "Pakete",
+    "title2": "Klare Leistungsumfänge. Echte Ergebnisse.",
+    "description": "Wir arbeiten mit Startups und Unternehmen weltweit — mit Fokus auf klares Design, kluge Strategie und messbare Resultate.",
+    "doYouLike": "Möchten Sie Ihr Projekt besprechen?",
+    "follow": "Schreiben Sie uns auf Instagram."
+  },
+  "Testimonials": {
+    "title": "Was Kunden sagen",
+    "description1": "Wir arbeiten mit Gründern und Teams, die Umsetzung statt leerer Versprechen brauchen.",
+    "description2": "So ist die Zusammenarbeit",
+    "description3": " mit OPTIO."
+  },
+  "FAQ": {
+    "title": "FAQs",
+    "description": "Antworten auf häufige Fragen zur Zusammenarbeit mit OPTIO."
+  },
+  "CTA": {
+    "title": "Bereit, Ihre Marke auszubauen?",
+    "description1": "Von der",
+    "description2": "Strategie",
+    "description3": "bis zum",
+    "description4": "Launch liefern wir Erlebnisse, die",
+    "description5": "konvertieren",
+    "description6": "."
+  },
+  "CTAButton": {
+    "title": "Projekt starten"
+  }
+}
