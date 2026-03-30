@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import "@/styles/loading.css";
 import "@/styles/loading.css";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 import type { Viewport } from "next";
 import { Inter as FontSans } from "next/font/google";
 
