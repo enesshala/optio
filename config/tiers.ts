@@ -1,7 +1,7 @@
 import { Tier, TiersEnum } from "@/types/pricing";
 
 const INSTAGRAM_URL = "https://www.instagram.com/optio.digital/";
-const EMAIL_PROJECT = "mailto:hello@optio.digital?subject=Project%20inquiry%20%E2%80%94%20OPTIO";
+const EMAIL_PROJECT = "mailto:info@optio-digital.com?subject=Project%20inquiry%20%E2%80%94%20OPTIO";
 
 const optioTiersEn: Array<Tier> = [
   {

@@ -4,13 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "postbuild": "next-sitemap",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
     "create-docker-image": "docker build -t optio-website .",
     "save-docker-image": "docker save -o optio-website.tar optio-website",
-    "docker": "npm run build && npm run postbuild && npm run create-docker-image && npm run save-docker-image"
+    "docker": "npm run build && npm run create-docker-image && npm run save-docker-image"
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.4",

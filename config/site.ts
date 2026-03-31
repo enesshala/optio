@@ -47,7 +47,7 @@ const baseSiteConfig = {
   footerLinks: [
     {
       name: "email",
-      href: "mailto:hello@optio.digital",
+      href: "mailto:info@optio-digital.com",
       icon: MdEmail,
     },
     { name: "instagram", href: INSTAGRAM_URL, icon: SiInstagram },
@@ -73,7 +73,7 @@ export const siteConfig: SiteConfig = {
   },
   twitter: {
     card: "summary_large_image",
-    site: baseSiteConfig.url,
+    site: baseSiteConfig.creator,
     title: baseSiteConfig.name,
     description: baseSiteConfig.description,
     images: [`${baseSiteConfig.url}/og.png`],

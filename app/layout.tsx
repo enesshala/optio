@@ -9,7 +9,6 @@ import { defaultLocale } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import "@/styles/loading.css";
-import "@/styles/loading.css";
 import { Analytics } from "@vercel/analytics/next";
 import type { Viewport } from "next";
 import { Inter as FontSans } from "next/font/google";
@@ -29,6 +28,17 @@ export const metadata = {
   metadataBase: siteConfig.metadataBase,
   openGraph: siteConfig.openGraph,
   twitter: siteConfig.twitter,
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large" as const,
+      "max-snippet": -1,
+    },
+  },
 };
 export const viewport: Viewport = {
   themeColor: siteConfig.themeColors,

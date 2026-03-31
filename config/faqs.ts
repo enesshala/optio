@@ -37,7 +37,7 @@ const optioFaqs = [
   {
     title: "How do I get in touch?",
     content:
-      "Message us on Instagram @optio.digital or email hello@optio.digital — tell us what you're building and we'll follow up quickly.",
+      "Message us on Instagram @optio.digital or email info@optio-digital.com — tell us what you're building and we'll follow up quickly.",
   },
 ];
 
