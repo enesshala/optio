@@ -5,4 +5,7 @@ module.exports = {
     process.env.NEXT_PUBLIC_SITE_URL || "https://optio.digital",
   generateRobotsTxt: true,
   sitemapSize: 7000,
+  robotsTxtOptions: {
+    additionalSitemaps: [],
+  },
 };

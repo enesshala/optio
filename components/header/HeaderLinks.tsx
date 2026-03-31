@@ -13,7 +13,7 @@ const HeaderLinks = () => {
           aria-label={link.name}
           href={link.href}
           target="_blank"
-          rel="noopener norefferer nofollow"
+          rel="noopener noreferrer nofollow"
           className={` flex max-w-[24px] flex-col items-center justify-center`}
         >
           {link.icon &&

@@ -25,6 +25,7 @@ const Footer = () => {
               "https://www.instagram.com/optio.digital/"
             }
             target="_blank"
+            rel="noopener noreferrer"
           >
             {authors[0].name}
           </Link>{" "}

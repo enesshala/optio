@@ -25,6 +25,7 @@ const Testimonials = ({ id, locale }: { id: string; locale: any }) => {
             target="_blank"
             rel="noopener noreferrer nofollow"
             className="text-primary underline"
+            aria-label="OPTIO on Instagram"
           >
             {locale.description2}
           </Link>
