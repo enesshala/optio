@@ -1,7 +1,6 @@
 "use client";
 import HeaderLinks from "@/components/header/HeaderLinks";
 import { LangSwitcher } from "@/components/header/LangSwitcher";
-import { siteConfig } from "@/config/site";
 import { MenuIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -34,15 +33,19 @@ const Header = () => {
             className="flex items-center space-x-1 font-bold"
           >
             <Image
-              alt="Logo"
-              src="/logo.svg"
-              className="w-8 h-8"
-              width={32}
-              height={32}
+              alt="OPTIO logo for light mode"
+              src="/lightoptio.svg"
+              className="hidden dark:block"
+              width={100}
+              height={100}
             />
-            <span className="text-gray-950 dark:text-gray-300 hidden md:block">
-              {siteConfig.name}
-            </span>
+            <Image
+              alt="OPTIO logo for dark mode"
+              src="/darkoptio.svg"
+              className="block dark:hidden"
+              width={100}
+              height={100}
+            />
           </Link>
         </div>
 
@@ -91,15 +94,19 @@ const Header = () => {
                       className="inline-flex items-center"
                     >
                       <Image
-                        alt={siteConfig.name}
-                        src="/logo.svg"
-                        className="w-8 h-8"
-                        width={32}
-                        height={32}
+                        alt="OPTIO logo for light mode"
+                        src="/lightoptio.svg"
+                        className="hidden dark:block"
+                        width={100}
+                        height={100}
                       />
-                      <span className="ml-2 text-xl font-bold tracking-wide text-gray-950 dark:text-gray-300">
-                        {siteConfig.name}
-                      </span>
+                      <Image
+                        alt="OPTIO logo for dark mode"
+                        src="/darkoptio.svg"
+                        className="block dark:hidden"
+                        width={100}
+                        height={100}
+                      />
                     </Link>
                   </div>
                   <div>

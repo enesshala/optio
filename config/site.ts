@@ -37,9 +37,9 @@ const baseSiteConfig = {
   ],
   nextThemeColor: "dark",
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/logo.png",
+    icon: "/lightoptio.svg",
+    shortcut: "/lightoptio.svg",
+    apple: "/lightoptio.svg",
   },
   headerLinks: [
     { name: "instagram", href: INSTAGRAM_URL, icon: SiInstagram },
