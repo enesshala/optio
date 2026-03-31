@@ -4,20 +4,20 @@ import Link from "next/link";
 
 const CTAButton = ({ locale }: { locale: any }) => {
   return (
-    <Link
-      href="https://www.instagram.com/optio.digital/"
-      target="_blank"
-      rel="noopener noreferrer"
+    <Button
+      asChild
+      variant="default"
+      className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white"
     >
-      <Button
-        variant="default"
-        className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white"
-        aria-label="Get in touch with OPTIO"
+      <Link
+        href="https://www.instagram.com/optio.digital/"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <RocketIcon />
         {locale.title}
-      </Button>
-    </Link>
+      </Link>
+    </Button>
   );
 };
 

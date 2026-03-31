@@ -54,7 +54,7 @@ const Header = () => {
           {links.map((link) => (
             <li key={link.label}>
               <Link
-                href={`/${lang === "en" ? "" : lang}${link.href}`}
+                href={`/${lang && lang !== "en" ? `${lang}/` : ""}${link.href}`}
                 aria-label={link.label}
                 title={link.label}
                 className="tracking-wide transition-colors duration-200 font-normal"
@@ -125,7 +125,7 @@ const Header = () => {
                     {links.map((link) => (
                       <li key={link.label}>
                         <Link
-                          href={`/${lang === "en" ? "" : lang}${link.href}`}
+                          href={`/${lang && lang !== "en" ? `${lang}/` : ""}${link.href}`}
                           aria-label={link.label}
                           title={link.label}
                           className="font-medium tracking-wide transition-colors duration-200 hover:text-deep-purple-accent-400"

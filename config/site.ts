@@ -53,9 +53,9 @@ const baseSiteConfig = {
     { name: "instagram", href: INSTAGRAM_URL, icon: SiInstagram },
   ],
   footerProducts: [
-    { url: "#Services", name: "Services" },
-    { url: "#Pricing", name: "Packages" },
-    { url: "#FAQ", name: "FAQs" },
+    { url: "/#Services", name: "Services" },
+    { url: "/#Pricing", name: "Packages" },
+    { url: "/#FAQ", name: "FAQs" },
     { url: INSTAGRAM_URL, name: "Instagram" },
   ],
 };
