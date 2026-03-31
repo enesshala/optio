@@ -19,7 +19,7 @@ const Hero = ({
         <h1>
           {locale.title1} <LineText>{locale.title2}</LineText> {locale.title3}
         </h1>
-        <p className="mx-auto mt-6 max-w-2xl text-2xl tracking-tight text-slate-700 dark:text-slate-400">
+        <p className="mx-auto mt-6 max-w-2xl text-2xl tracking-tight text-slate-700 dark:text-slate-300">
           {locale.description}
         </p>
       </section>

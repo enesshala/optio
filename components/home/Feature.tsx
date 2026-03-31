@@ -44,7 +44,7 @@ const Feature = ({
               )}
             </div>
             <h2 className={"text-xl font-semibold mb-2"}>{feature.title}</h2>
-            <p className="text-slate-700 dark:text-slate-400">
+            <p className="text-slate-700 dark:text-slate-300">
               {feature.content}
             </p>
           </div>

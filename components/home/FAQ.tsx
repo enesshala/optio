@@ -32,7 +32,7 @@ const FAQ = ({
             {locale.title}
           </RoughNotation>
         </h2>
-        <p className="text-large text-default-500">{locale.description}</p>
+        <p className="text-large text-default-600">{locale.description}</p>
       </div>
       <Accordion
         fullWidth
@@ -42,7 +42,7 @@ const FAQ = ({
           base: "px-6 !bg-default-100 !shadow-none hover:!bg-default-200/50",
           title: "font-medium",
           trigger: "py-6",
-          content: "pt-0 pb-6 text-base text-default-500",
+          content: "pt-0 pb-6 text-base text-default-600",
         }}
         items={FAQS}
         selectionMode="multiple"

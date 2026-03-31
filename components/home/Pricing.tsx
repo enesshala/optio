@@ -41,7 +41,7 @@ const Pricing = ({
           {locale.title2}
         </h3>
         <Spacer y={4} />
-        <p className="text-large text-default-500">{locale.description}</p>
+        <p className="text-large text-default-600">{locale.description}</p>
       </div>
       <Spacer y={8} />
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 justify-items-center w-full max-w-6xl">
@@ -49,7 +49,7 @@ const Pricing = ({
           <Card key={tier.key} className="p-3 flex-1 w-[90%]" shadow="md">
             <CardHeader className="flex flex-col items-start gap-2 pb-6">
               <h2 className="text-large font-medium">{tier.title}</h2>
-              <p className="text-medium text-default-500">{tier.description}</p>
+              <p className="text-medium text-default-600">{tier.description}</p>
             </CardHeader>
             <Divider />
             <CardBody className="gap-8">
@@ -58,7 +58,7 @@ const Pricing = ({
                   {tier.price}
                 </span>
                 {typeof tier.price !== "string" ? (
-                  <span className="text-small font-medium text-default-400">
+                  <span className="text-small font-medium text-default-600">
                     {tier.price}
                   </span>
                 ) : null}
@@ -67,7 +67,7 @@ const Pricing = ({
                 {tier.features?.map((feature) => (
                   <li key={feature} className="flex items-center gap-2">
                     <FaCheck className="text-emerald-500" />
-                    <p className="text-default-500">{feature}</p>
+                    <p className="text-default-600">{feature}</p>
                   </li>
                 ))}
               </ul>
@@ -90,7 +90,7 @@ const Pricing = ({
       </div>
       <Spacer y={12} />
       <div className="flex py-2">
-        <p className="text-default-400 text-center">
+        <p className="text-default-600 text-center">
           {locale.doYouLike}&nbsp;
           <Link
             color="foreground"

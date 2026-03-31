@@ -12,7 +12,7 @@ const SocialProof = ({ locale }: { locale: any }) => {
               <Image
                 key={index}
                 src={user.image}
-                alt=""
+                alt={`Client ${index + 1}`}
                 height={40}
                 width={40}
                 className="rounded-full -m-[5px] border border-white"
@@ -20,7 +20,7 @@ const SocialProof = ({ locale }: { locale: any }) => {
             );
           })}
         </div>
-        <p className="text-sm text-slate-700 dark:text-slate-400">
+        <p className="text-sm text-slate-700 dark:text-slate-300">
           <span className="text-primary font-semibold text-base">{count}</span>{" "}
           {locale.maker}
         </p>

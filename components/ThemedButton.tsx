@@ -21,8 +21,12 @@ export function ThemedButton() {
   }
 
   return (
-    <div onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+    <button
+      type="button"
+      aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
+      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+    >
       {theme === "light" ? <PhMoonFill /> : <PhSunBold />}
-    </div>
+    </button>
   );
 }

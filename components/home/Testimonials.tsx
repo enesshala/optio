@@ -17,7 +17,7 @@ const Testimonials = ({ id, locale }: { id: string; locale: any }) => {
             {locale.title}
           </RoughNotation>
         </h2>
-        <p className="text-large text-default-500">
+        <p className="text-large text-default-600">
           {/* Don't take our word for it. Here's what they have to say. */}
           {locale.description1}{" "}
           <Link
@@ -41,14 +41,14 @@ const Testimonials = ({ id, locale }: { id: string; locale: any }) => {
                 <div className="flex items-start gap-2">
                   <Image
                     src={testimonial.user.image}
-                    alt="maker"
+                    alt={`${testimonial.user.name} profile photo`}
                     height={40}
                     width={40}
                     className="w-12 h-12 rounded-full object-cover object-top"
                   />
                   <div className="flex flex-col items-start">
                     <p className="font-bold">{testimonial.user.name}</p>
-                    <p className="dark:text-zinc-400">
+                    <p className="dark:text-zinc-300">
                       @{testimonial.user.username}
                     </p>
                   </div>
