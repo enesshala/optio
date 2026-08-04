@@ -10,6 +10,7 @@ import { CgClose } from "react-icons/cg";
 import { ThemedButton } from "../ThemedButton";
 
 const links = [
+  { label: "Projects", href: "#Projects" },
   { label: "Services", href: "#Services" },
   { label: "Pricing", href: "#Pricing" },
   { label: "Testimonials", href: "#Testimonials" },

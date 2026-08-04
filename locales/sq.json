@@ -1,0 +1,53 @@
+{
+  "Hero": {
+    "title1": "Ndërto.",
+    "title2": "Konverto.",
+    "title3": "Rritu.",
+    "description": "Ndihmojmë markat në Kosovë dhe jashtë saj të rriten në botën digjitale. Nga idea te ekzekutimi, ndërtojmë përvoja digjitale që konvertojnë."
+  },
+  "SocialProof": {
+    "count": "50+",
+    "maker": "marka i besojnë OPTIO-s në mbarë botën"
+  },
+  "Showcase": {
+    "title": "Projektet",
+    "description": "Punë të përzgjedhura që kemi dorëzuar për marka dhe ekipe produkti.",
+    "eyebrow": "Punë e përzgjedhur"
+  },
+  "Feature": {
+    "title": "Çfarë bëjmë"
+  },
+  "Pricing": {
+    "title": "Paketat",
+    "title2": "Fusha të qarta. Rezultate reale.",
+    "description": "Punojmë me startupe dhe biznese në Kosovë dhe botërisht — me dizajn të pastër, strategji të mençur dhe rezultate konkrete.",
+    "doYouLike": "Dëshironi të flasim për projektin tuaj?",
+    "follow": "Na shkruani në Instagram.",
+    "eyebrow": "Angazhimet",
+    "mostChosen": "Më e zgjedhura",
+    "popular": "Popullore",
+    "scopedAfter": "Çmimi pas zbulimit"
+  },
+  "Testimonials": {
+    "title": "Çfarë thonë klientët",
+    "description1": "Bashkëpunojmë me themelues dhe ekipe që duan ekzekutim, jo fjalë boshe.",
+    "description2": "Ja si duket",
+    "description3": " të punosh me OPTIO."
+  },
+  "FAQ": {
+    "title": "Pyetjet e shpeshta",
+    "description": "Përgjigje për pyetjet e zakonshme rreth bashkëpunimit me OPTIO."
+  },
+  "CTA": {
+    "title": "Gati ta rritni markën tuaj?",
+    "description1": "Nga",
+    "description2": "strategjia",
+    "description3": "te",
+    "description4": "lansimi, dorëzojmë përvoja të ndërtuara për të",
+    "description5": "konvertuar",
+    "description6": "."
+  },
+  "CTAButton": {
+    "title": "Fillo projektin tënd"
+  }
+}

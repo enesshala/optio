@@ -1,16 +1,42 @@
-const NEXT_PUBLIC_SHOWCASE_LIST = process.env.NEXT_PUBLIC_SHOWCASE_LIST;
+export type ShowcaseProject = {
+  name: string;
+  url: string;
+  description: string;
+  tag: string;
+  image: string;
+};
 
-const ENV_SHOWCASE_LIST =
-  (NEXT_PUBLIC_SHOWCASE_LIST &&
-    NEXT_PUBLIC_SHOWCASE_LIST.split(",").map((i) => {
-      return {
-        url: i,
-      };
-    })) ||
-  [];
-
-export const showcases = [
+export const showcases: ShowcaseProject[] = [
   {
-    url: "https://optio.digital",
+    name: "AromaDream",
+    url: "https://aromadream-ks.com",
+    description:
+      "Fragrance brand storefront for home, car, and space scents — warm product storytelling built for Kosovo shoppers.",
+    tag: "E-commerce",
+    image: "/images/projects/aromadream.png",
   },
-].concat(ENV_SHOWCASE_LIST);
+  {
+    name: "Plus Trade",
+    url: "https://plustrade-ks.com",
+    description:
+      "Electrical services company site with clear service offers, trust signals, and a path to request work.",
+    tag: "Business",
+    image: "/images/projects/plustrade.png",
+  },
+  {
+    name: "HARKU",
+    url: "https://harku-ks.com",
+    description:
+      "Heating, climate, ventilation, and water installation brand — professional services site for Kosovo homes and businesses.",
+    tag: "Services",
+    image: "/images/projects/harku.png",
+  },
+  {
+    name: "classroomX",
+    url: "https://classroom-x.com",
+    description:
+      "Live coding classroom product — real-time editor sync so students follow the teacher’s workspace in the browser.",
+    tag: "Product",
+    image: "/images/projects/classroomx.png",
+  },
+];

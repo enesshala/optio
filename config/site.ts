@@ -7,13 +7,17 @@ const INSTAGRAM_URL = "https://www.instagram.com/optio.digital/";
 const baseSiteConfig = {
   name: "OPTIO",
   description:
-    "We help brands grow in the digital world — globally. From idea to execution, we build digital experiences that convert.",
+    "We help brands in Kosovo and worldwide grow in the digital world. From idea to execution, we build digital experiences that convert.",
   url: "https://optio.digital",
   ogImage: "https://optio.digital/og.png",
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || "https://optio.digital"
   ),
   keywords: [
+    "digital agency Kosovo",
+    "web development Prishtina",
+    "web development Kosovo",
+    "OPTIO Kosovo",
     "digital agency",
     "web development",
     "web app",
@@ -53,6 +57,7 @@ const baseSiteConfig = {
     { name: "instagram", href: INSTAGRAM_URL, icon: SiInstagram },
   ],
   footerProducts: [
+    { url: "/#Projects", name: "Projects" },
     { url: "/#Services", name: "Services" },
     { url: "/#Pricing", name: "Packages" },
     { url: "/#FAQ", name: "FAQs" },

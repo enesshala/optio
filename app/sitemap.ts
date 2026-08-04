@@ -1,28 +1,22 @@
 import type { MetadataRoute } from "next";
-
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://optio.digital";
-
-const locales = ["en", "ar", "de", "fr", "sv", "zh"];
+import { buildLanguageAlternates } from "@/lib/seoMetadata";
+import { contentLocales, defaultLocale } from "@/lib/i18n";
+import { localePath, SITE_URL } from "@/config/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
+  const languages = buildLanguageAlternates();
 
-  const defaultEntry = {
-    url: SITE_URL,
-    lastModified,
-    changeFrequency: "weekly" as const,
-    priority: 1,
-  };
-
-  const localeEntries = locales
-    .filter((l) => l !== "en")
-    .map((locale) => ({
-      url: `${SITE_URL}/${locale}`,
+  return contentLocales.map((locale) => {
+    const path = localePath(locale);
+    return {
+      url: new URL(path, SITE_URL).toString(),
       lastModified,
       changeFrequency: "weekly" as const,
-      priority: 0.8,
-    }));
-
-  return [defaultEntry, ...localeEntries];
+      priority: locale === defaultLocale ? 1 : 0.8,
+      alternates: {
+        languages,
+      },
+    };
+  });
 }

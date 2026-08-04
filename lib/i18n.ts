@@ -6,6 +6,9 @@ export const locales = [
   "",
   "en",
   "en-US",
+  "sq",
+  "sq-AL",
+  "sq-XK",
   "ar",
   "de",
   "de-DE",
@@ -24,10 +27,11 @@ export const locales = [
 ];
 
 /**
- * Order in language picker and footer: default English first, then ISO 639-1 (ar, de, fr, sv, zh).
+ * Order in language picker and footer: English first, then Albanian (Kosovo), then others.
  */
 export const localesDisplayOrder = [
   "en",
+  "sq",
   "ar",
   "de",
   "fr",
@@ -38,6 +42,7 @@ export const localesDisplayOrder = [
 export const localeNames: Record<(typeof localesDisplayOrder)[number], string> =
   {
     en: "🇺🇸 English",
+    sq: "🇦🇱 Shqip",
     ar: "🇸🇦 العربية",
     de: "🇩🇪 Deutsch",
     fr: "🇫🇷 Français",
@@ -47,6 +52,9 @@ export const localeNames: Record<(typeof localesDisplayOrder)[number], string> =
 
 export const defaultLocale = "en";
 
+/** Content locales used for sitemap and static generation (no empty / regional tags). */
+export const contentLocales = [...localesDisplayOrder];
+
 export function getLocale(headers: any): string {
   const languages = new Negotiator({ headers }).languages();
   return match(languages, locales, defaultLocale);
@@ -54,6 +62,7 @@ export function getLocale(headers: any): string {
 
 const dictionaries: Record<string, () => Promise<Record<string, unknown>>> = {
   en: () => import("@/locales/en.json").then((module) => module.default),
+  sq: () => import("@/locales/sq.json").then((module) => module.default),
   ar: () => import("@/locales/ar.json").then((module) => module.default),
   de: () => import("@/locales/de.json").then((module) => module.default),
   fr: () => import("@/locales/fr.json").then((module) => module.default),
@@ -72,16 +81,21 @@ const localeAliases: Record<string, string> = {
   "fr-CA": "fr",
   "fr-BE": "fr",
   "sv-SE": "sv",
+  "sq-AL": "sq",
+  "sq-XK": "sq",
 };
 
-export const getDictionary = async (locale: string) => {
+export function normalizeLocale(locale: string): string {
   if (locale in localeAliases) {
-    locale = localeAliases[locale];
+    return localeAliases[locale];
   }
-
   if (!Object.keys(dictionaries).includes(locale)) {
-    locale = "en";
+    return defaultLocale;
   }
+  return locale;
+}
 
+export const getDictionary = async (locale: string) => {
+  locale = normalizeLocale(locale);
   return dictionaries[locale]();
 };

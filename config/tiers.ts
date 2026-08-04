@@ -1,7 +1,8 @@
 import { Tier, TiersEnum } from "@/types/pricing";
 
 const INSTAGRAM_URL = "https://www.instagram.com/optio.digital/";
-const EMAIL_PROJECT = "mailto:info@optio-digital.com?subject=Project%20inquiry%20%E2%80%94%20OPTIO";
+const EMAIL_PROJECT =
+  "mailto:info@optio-digital.com?subject=Project%20inquiry%20%E2%80%94%20OPTIO";
 
 const optioTiersEn: Array<Tier> = [
   {
@@ -37,6 +38,7 @@ const optioTiersEn: Array<Tier> = [
     buttonText: "DM on Instagram",
     buttonColor: "primary",
     buttonVariant: "solid",
+    mostPopular: true,
   },
   {
     key: TiersEnum.Customize,
@@ -52,12 +54,69 @@ const optioTiersEn: Array<Tier> = [
       "Ongoing performance & iteration",
     ],
     buttonText: "Let's talk",
-    buttonColor: "default",
-    buttonVariant: "flat",
+    buttonColor: "primary",
+    buttonVariant: "solid",
+  },
+];
+
+const optioTiersSq: Array<Tier> = [
+  {
+    key: TiersEnum.Free,
+    title: "Starter",
+    price: "Sipas projektit",
+    href: EMAIL_PROJECT,
+    description:
+      "Prani webi e gatshme për lansim, për marka që duan qartësi dhe shpejtësi.",
+    features: [
+      "Faqe marketingu ose landing (deri në 5 seksione)",
+      "Layout responsiv & baza të performancës",
+      "Udhëzim për vendosjen e analytics",
+      "Një raund i strukturuar rishikimesh",
+    ],
+    buttonText: "Na shkruani email",
+    buttonColor: "primary",
+    buttonVariant: "solid",
+  },
+  {
+    key: TiersEnum.Pro,
+    title: "Growth",
+    price: "Sipas projektit",
+    href: INSTAGRAM_URL,
+    description:
+      "Faqe ose app plus themele marke dhe sociale për të rritur blerjen.",
+    features: [
+      "Faqe me shumë faqe ose web app i lehtë",
+      "Logo & kit bazë marke (ngjyra, tipografi, përdorim)",
+      "Strategji 30-ditore sociale & shtylla përmbajtjeje",
+      "Dritare prioritare bashkëpunimi",
+    ],
+    buttonText: "DM në Instagram",
+    buttonColor: "primary",
+    buttonVariant: "solid",
+    mostPopular: true,
+  },
+  {
+    key: TiersEnum.Customize,
+    title: "Enterprise",
+    price: "Sipas projektit",
+    href: EMAIL_PROJECT,
+    description:
+      "Ndërtime komplekse, software i personalizuar dhe optimizim i vazhdueshëm me lider të dedikuar.",
+    features: [
+      "Software i personalizuar & integrime",
+      "Web app të avancuara & API (sipas nevojës)",
+      "Udhërrëfyes, milestone dhe stakeholderë",
+      "Performancë & përsëritje e vazhdueshme",
+    ],
+    buttonText: "Le të flasim",
+    buttonColor: "primary",
+    buttonVariant: "solid",
   },
 ];
 
 export const TIERS_EN = optioTiersEn;
+
+export const TIERS_SQ = optioTiersSq;
 
 export const TIERS_ZH = optioTiersEn;
 
@@ -75,6 +134,7 @@ interface TiersCollection {
 
 export const ALL_TIERS: TiersCollection = {
   TIERS_EN,
+  TIERS_SQ,
   TIERS_ZH,
   TIERS_AR,
   TIERS_DE,

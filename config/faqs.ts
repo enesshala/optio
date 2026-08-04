@@ -2,12 +2,12 @@ const optioFaqs = [
   {
     title: "What does OPTIO do?",
     content:
-      "OPTIO is a digital agency. We build websites and web apps, custom software, brand identity, and social media strategy — from idea through execution — for startups and businesses worldwide.",
+      "OPTIO is a digital agency based in Kosovo. We build websites and web apps, custom software, brand identity, and social media strategy — from idea through execution — for startups and businesses in Kosovo and worldwide.",
   },
   {
     title: "Who do you work with?",
     content:
-      "We work with founders, marketing leads, and growing teams that want clean design, clear strategy, and shipping speed — whether you're local or fully remote across time zones.",
+      "We work with founders, marketing leads, and growing teams that want clean design, clear strategy, and shipping speed — whether you're in Prishtina, elsewhere in Kosovo, or fully remote across time zones.",
   },
   {
     title: "How do projects usually start?",
@@ -22,7 +22,7 @@ const optioFaqs = [
   {
     title: "Do you work with international clients?",
     content:
-      "Yes. We're set up for async collaboration, written specs, and scheduled calls so we can partner with teams globally.",
+      "Yes. We're set up for async collaboration, written specs, and scheduled calls so we can partner with teams in Kosovo and globally.",
   },
   {
     title: "How much does a project cost?",
@@ -41,7 +41,52 @@ const optioFaqs = [
   },
 ];
 
+const optioFaqsSq = [
+  {
+    title: "Çfarë bën OPTIO?",
+    content:
+      "OPTIO është agjenci dixhitale me bazë në Kosovë. Ndërtojmë website dhe web app, software të personalizuar, identitet marke dhe strategji në rrjetet sociale — nga idea te ekzekutimi — për startupe dhe biznese në Kosovë e botërisht.",
+  },
+  {
+    title: "Me kë punoni?",
+    content:
+      "Punojmë me themelues, drejtues marketingu dhe ekipe në rritje që duan dizajn të pastër, strategji të qartë dhe shpejtësi dorëzimi — në Prishtinë, kudo në Kosovë, ose plotësisht në distancë.",
+  },
+  {
+    title: "Si nisin zakonisht projektet?",
+    content:
+      "Shumica e angazhimeve fillojnë me një zbulim të shkurtër: qëllimet, audienca, afatet dhe buxheti. Pastaj propozojmë një udhërrëfyes me fusha të qarta (milestone, dorëzime dhe ritëm komunikimi) para ndërtimit të rëndë.",
+  },
+  {
+    title: "Sa zgjat tipikisht një website?",
+    content:
+      "Faqet e marketingut shpesh përfundojnë brenda disa javësh, në varësi të gatishmërisë së përmbajtjes dhe kompleksitetit. Web app dhe software i personalizuar ndryshojnë më shumë; pas zbulimit ju japim një vlerësim real.",
+  },
+  {
+    title: "A punoni me klientë ndërkombëtarë?",
+    content:
+      "Po. Jemi të përgatitur për bashkëpunim asinkron, specifikime të shkruara dhe thirrje të planifikuara — me ekipe në Kosovë dhe kudo në botë.",
+  },
+  {
+    title: "Sa kushton një projekt?",
+    content:
+      "Çdo fushë është e ndryshme. Çmimet i bazojmë te rezultatet dhe milestone-t — jo te kutitë e errëta me orë. Na dërgoni briefing-un dhe përgjigjemi me opsione që i përshtaten fazës suaj.",
+  },
+  {
+    title: "Çfarë përfshihet te identiteti i markës?",
+    content:
+      "Zakonisht koncepte logoje, drejtim ngjyrash dhe tipografie, plus udhëzues praktikë që marka të duket e qëndrueshme në web, social dhe materiale të printueshme kur duhet.",
+  },
+  {
+    title: "Si të kontaktoj?",
+    content:
+      "Na shkruani në Instagram @optio.digital ose email info@optio-digital.com — na tregoni çfarë po ndërtoni dhe kthehemi shpejt.",
+  },
+];
+
 export const FAQS_EN = optioFaqs;
+
+export const FAQS_SQ = optioFaqsSq;
 
 export const FAQS_ZH = optioFaqs;
 
@@ -61,6 +106,7 @@ interface FAQSCollection {
 }
 export const ALL_FAQS: FAQSCollection = {
   FAQS_EN,
+  FAQS_SQ,
   FAQS_ZH,
   FAQS_AR,
   FAQS_DE,

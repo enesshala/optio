@@ -3,19 +3,16 @@
     "title1": "Build.",
     "title2": "Convert.",
     "title3": "Grow.",
-    "description": "We help brands grow in the digital world — globally. From idea to execution, we build digital experiences that convert."
+    "description": "We help brands in Kosovo and worldwide grow in the digital world. From idea to execution, we build digital experiences that convert."
   },
   "SocialProof": {
     "count": "50+",
     "maker": "brands trust OPTIO worldwide"
   },
   "Showcase": {
-    "title": "Showcase",
-    "description": "See how we help teams ship digital products that perform."
-  },
-  "Showcase": {
-    "title": "Showcase",
-    "description": "See how we help teams ship digital products that perform."
+    "title": "Projects",
+    "description": "Selected work we've shipped for brands and product teams.",
+    "eyebrow": "Selected work"
   },
   "Feature": {
     "title": "What We Do"
@@ -23,9 +20,13 @@
   "Pricing": {
     "title": "Packages",
     "title2": "Clear scopes. Real outcomes.",
-    "description": "We work with startups and businesses worldwide — focused on clean design, smart strategy, and real results.",
+    "description": "We work with startups and businesses in Kosovo and worldwide — focused on clean design, smart strategy, and real results.",
     "doYouLike": "Want to talk through your project?",
-    "follow": "Message us on Instagram."
+    "follow": "Message us on Instagram.",
+    "eyebrow": "Engagements",
+    "mostChosen": "Most chosen",
+    "popular": "Popular",
+    "scopedAfter": "Scoped after discovery"
   },
   "Testimonials": {
     "title": "What clients say",

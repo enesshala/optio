@@ -37,12 +37,53 @@ const optioServices = [
   {
     title: "Global Collaboration",
     content:
-      "We work with startups and businesses worldwide — async-friendly, clear communication, on your timeline.",
+      "We work with startups and businesses in Kosovo and worldwide — async-friendly, clear communication, on your timeline.",
+    icon: FaEarthAsia,
+  },
+];
+
+const optioServicesSq = [
+  {
+    title: "Zhvillim Website & Web App",
+    content:
+      "Faqe të shpejta, të aksesueshme dhe web app të gatshme për produkt që duken profesionale dhe rriten me ju.",
+    icon: FaMobileScreenButton,
+  },
+  {
+    title: "Zgjidhje Softuerike të Personalizuara",
+    content:
+      "Mjete, sisteme të brendshme dhe integrime që përputhen me mënyrën reale të punës së biznesit tuaj.",
+    icon: FaToolbox,
+  },
+  {
+    title: "Logo & Identitet Marke",
+    content:
+      "Sisteme vizuale të dallueshme — logo, ngjyra, tipografi dhe udhëzues — që marka juaj të ndihet e njëjtë kudo.",
+    icon: FaPenFancy,
+  },
+  {
+    title: "Marketing & Strategji në Rrjetet Sociale",
+    content:
+      "Strategji kanalesh, drejtim përmbajtjeje dhe kampanja të ndërtuara për të rritur shtrirjen dhe konvertimet.",
+    icon: Megaphone,
+  },
+  {
+    title: "SEO & Zbulueshmëri",
+    content:
+      "SEO teknike, performancë dhe strukturë që ndihmojnë njerëzit e duhur t'ju gjejnë — në Kosovë dhe më gjerë.",
+    icon: MagnetIcon,
+  },
+  {
+    title: "Bashkëpunim Global",
+    content:
+      "Punojmë me startupe dhe biznese në Kosovë e botërisht — komunikim i qartë, asinkron dhe në kohën tuaj.",
     icon: FaEarthAsia,
   },
 ];
 
 export const FEATURES_EN = optioServices;
+
+export const FEATURES_SQ = optioServicesSq;
 
 export const FEATURES_ZH = optioServices;
 
@@ -64,6 +105,7 @@ interface FeaturesCollection {
 
 export const ALL_FEATURES: FeaturesCollection = {
   FEATURES_EN,
+  FEATURES_SQ,
   FEATURES_ZH,
   FEATURES_AR,
   FEATURES_DE,

@@ -10,24 +10,20 @@ import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import "@/styles/loading.css";
 import { Analytics } from "@vercel/analytics/next";
-import type { Viewport } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter as FontSans } from "next/font/google";
+import { headers } from "next/headers";
 
 export const fontSans = FontSans({
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   variable: "--font-sans",
 });
 
-export const metadata = {
-  title: siteConfig.name,
-  description: siteConfig.description,
-  keywords: siteConfig.keywords,
+export const metadata: Metadata = {
+  metadataBase: siteConfig.metadataBase,
+  icons: siteConfig.icons,
   authors: siteConfig.authors,
   creator: siteConfig.creator,
-  icons: siteConfig.icons,
-  metadataBase: siteConfig.metadataBase,
-  openGraph: siteConfig.openGraph,
-  twitter: siteConfig.twitter,
   robots: {
     index: true,
     follow: true,
@@ -40,20 +36,21 @@ export const metadata = {
     },
   },
 };
+
 export const viewport: Viewport = {
   themeColor: siteConfig.themeColors,
 };
 
 export default async function RootLayout({
   children,
-  params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ lang?: string }>;
 }) {
-  const { lang } = await params;
+  const headersList = await headers();
+  const lang = headersList.get("x-locale") || defaultLocale;
+
   return (
-    <html lang={lang || defaultLocale} suppressHydrationWarning>
+    <html lang={lang} suppressHydrationWarning>
       <head />
       <body
         className={cn(
