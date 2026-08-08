@@ -79,20 +79,24 @@ export const collabs: Collab[] = [
     ],
     gallery: [
       {
-        id: "workshop",
-        label: "Discovery workshop — office collaboration",
+        id: "build",
+        label: "Build session — shipping HARKU alongside OPTIO",
+        src: "/images/collab/harku/build-session.png",
       },
       {
         id: "review",
-        label: "Design review — office collaboration",
+        label: "Design review — services in light & dark",
+        src: "/images/collab/harku/design-review.png",
       },
       {
-        id: "build",
-        label: "Build session — office collaboration",
+        id: "hero",
+        label: "Hero polish — dual-screen collaboration",
+        src: "/images/collab/harku/hero-polish.png",
       },
       {
-        id: "launch",
-        label: "Launch moment — office collaboration",
+        id: "focused",
+        label: "Focused build — crafting the experience",
+        src: "/images/collab/harku/focused-build.png",
       },
     ],
     seoTitle: "HARKU — Collaboration | OPTIO",
