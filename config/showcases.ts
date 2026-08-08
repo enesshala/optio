@@ -4,6 +4,8 @@ export type ShowcaseProject = {
   description: string;
   tag: string;
   image: string;
+  /** When set, Projects card links to the Optio collab page instead of the live site */
+  slug?: string;
 };
 
 export const showcases: ShowcaseProject[] = [
@@ -30,6 +32,7 @@ export const showcases: ShowcaseProject[] = [
       "Heating, climate, ventilation, and water installation brand — professional services site for Kosovo homes and businesses.",
     tag: "Services",
     image: "/images/projects/harku.png",
+    slug: "harku",
   },
   {
     name: "classroomX",

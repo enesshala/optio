@@ -2,6 +2,9 @@ import { defaultLocale, locales, normalizeLocale } from "./lib/i18n";
 
 import { NextRequest, NextResponse } from "next/server";
 
+/** App routes (non-locale first segment) that must not redirect to home */
+const APP_ROUTE_ROOTS = new Set(["collab"]);
+
 function localeFromPath(pathname: string): string {
   const segment = pathname.split("/").filter(Boolean)[0];
   if (segment && locales.includes(segment) && segment !== "") {
@@ -19,7 +22,10 @@ export function middleware(request: NextRequest) {
       (pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`)
   );
 
-  if (pathname === "/" || isKnownLocalePath) {
+  const first = pathname.split("/").filter(Boolean)[0];
+  const isAppRoute = Boolean(first && APP_ROUTE_ROOTS.has(first));
+
+  if (pathname === "/" || isKnownLocalePath || isAppRoute) {
     const requestHeaders = new Headers(request.headers);
     requestHeaders.set("x-locale", localeFromPath(pathname));
     return NextResponse.next({
@@ -27,7 +33,6 @@ export function middleware(request: NextRequest) {
     });
   }
 
-  const first = pathname.split("/").filter(Boolean)[0];
   if (first && !locales.includes(first)) {
     request.nextUrl.pathname = `/`;
     return NextResponse.redirect(request.nextUrl);

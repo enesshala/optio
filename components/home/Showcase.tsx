@@ -1,10 +1,19 @@
 "use client";
 
 import WebsiteCard from "@/components/WebsiteCard";
+import { collabPath } from "@/config/seo";
 import { showcases } from "@/config/showcases";
 import { RoughNotation } from "react-rough-notation";
 
-const Showcase = ({ id, locale }: { id: string; locale: any }) => {
+const Showcase = ({
+  id,
+  locale,
+  langName = "en",
+}: {
+  id: string;
+  locale: any;
+  langName?: string;
+}) => {
   return (
     <section
       id={id}
@@ -33,17 +42,26 @@ const Showcase = ({ id, locale }: { id: string; locale: any }) => {
         </div>
 
         <div className="grid w-full grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
-          {showcases.map((site, index) => (
-            <WebsiteCard
-              key={site.url}
-              title={site.name}
-              description={site.description}
-              tag={site.tag}
-              image={site.image}
-              url={site.url}
-              index={index}
-            />
-          ))}
+          {showcases.map((site, index) => {
+            const hasCollab = Boolean(site.slug);
+            return (
+              <WebsiteCard
+                key={site.url}
+                title={site.name}
+                description={site.description}
+                tag={site.tag}
+                image={site.image}
+                url={site.url}
+                href={
+                  hasCollab && site.slug
+                    ? collabPath(langName, site.slug)
+                    : site.url
+                }
+                external={!hasCollab}
+                index={index}
+              />
+            );
+          })}
         </div>
       </div>
     </section>

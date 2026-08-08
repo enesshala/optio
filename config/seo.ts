@@ -110,3 +110,10 @@ export function localePath(lang: string): string {
   if (!lang || lang === "en") return "/";
   return `/${lang}`;
 }
+
+/** Locale-aware path for a collab case study, e.g. /collab/harku or /sq/collab/harku */
+export function collabPath(lang: string, slug: string): string {
+  const base = localePath(lang);
+  if (base === "/") return `/collab/${slug}`;
+  return `${base}/collab/${slug}`;
+}

@@ -11,13 +11,19 @@ const WebsiteCard = ({
   tag,
   image,
   url,
+  href,
+  external = true,
   index = 0,
 }: {
   title: string;
   description: string;
   tag: string;
   image: string;
+  /** Live site hostname display source */
   url: string;
+  /** Navigation target — collab page or live site */
+  href: string;
+  external?: boolean;
   index?: number;
 }) => {
   const hostname = url.replace(/^https?:\/\//, "").replace(/\/$/, "");
@@ -31,11 +37,12 @@ const WebsiteCard = ({
       className="w-full group"
     >
       <Link
-        href={url}
+        href={href}
         title={title}
-        aria-label={`Visit ${title}`}
-        target="_blank"
-        rel="noopener noreferrer"
+        aria-label={external ? `Visit ${title}` : `View ${title} collaboration`}
+        {...(external
+          ? { target: "_blank", rel: "noopener noreferrer" }
+          : {})}
         className="block relative overflow-hidden rounded-2xl border border-white/10 bg-zinc-950 shadow-[0_20px_50px_-28px_rgba(0,0,0,0.75)] transition-[border-color,box-shadow,transform] duration-500 hover:border-emerald-500/50 hover:shadow-[0_28px_60px_-24px_rgba(5,150,105,0.35)] hover:-translate-y-1"
       >
         <div className="relative aspect-[16/11] overflow-hidden">

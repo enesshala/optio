@@ -20,7 +20,7 @@ export default async function HomeIndex({ lang }: { lang: string }) {
       <Hero locale={dict.Hero} langName={langName} CTALocale={dict.CTAButton} />
       <SocialProof locale={dict.SocialProof} />
       <ScrollingLogos />
-      <Showcase id="Projects" locale={dict.Showcase} />
+      <Showcase id="Projects" locale={dict.Showcase} langName={langName} />
       <Feature id="Services" locale={dict.Feature} langName={langName} />
       <Pricing id="Pricing" locale={dict.Pricing} langName={langName} />
       <Testimonials id="Testimonials" locale={dict.Testimonials} />
