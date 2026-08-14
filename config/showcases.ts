@@ -16,6 +16,7 @@ export const showcases: ShowcaseProject[] = [
       "Fragrance brand storefront for home, car, and space scents — warm product storytelling built for Kosovo shoppers.",
     tag: "E-commerce",
     image: "/images/projects/aromadream.png",
+    slug: "aromadream",
   },
   {
     name: "Plus Trade",
@@ -24,6 +25,7 @@ export const showcases: ShowcaseProject[] = [
       "Electrical services company site with clear service offers, trust signals, and a path to request work.",
     tag: "Business",
     image: "/images/projects/plustrade.png",
+    slug: "plustrade",
   },
   {
     name: "HARKU",
