@@ -117,3 +117,10 @@ export function collabPath(lang: string, slug: string): string {
   if (base === "/") return `/collab/${slug}`;
   return `${base}/collab/${slug}`;
 }
+
+/** Locale-aware path for a bootcamp page, e.g. /bootcamp/2026 or /sq/bootcamp/2026 */
+export function bootcampPath(lang: string, year: string): string {
+  const base = localePath(lang);
+  if (base === "/") return `/bootcamp/${year}`;
+  return `${base}/bootcamp/${year}`;
+}

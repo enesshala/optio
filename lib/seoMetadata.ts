@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
-import { getSeoForLocale, localePath, collabPath, SITE_URL } from "@/config/seo";
+import {
+  getSeoForLocale,
+  localePath,
+  collabPath,
+  bootcampPath,
+  SITE_URL,
+} from "@/config/seo";
 import type { Collab } from "@/config/collabs";
+import type { Bootcamp } from "@/config/bootcamps";
 import { localesDisplayOrder } from "@/lib/i18n";
 import { siteConfig } from "@/config/site";
 
@@ -108,6 +115,69 @@ export function buildCollabMetadata(lang: string, collab: Collab): Metadata {
       title,
       description,
       images: [coverAbsolute],
+    },
+  };
+}
+
+export function buildBootcampLanguageAlternates(
+  year: string
+): Record<string, string> {
+  const languages: Record<string, string> = {
+    "x-default": bootcampPath("en", year),
+  };
+
+  for (const locale of localesDisplayOrder) {
+    languages[locale] = bootcampPath(locale, year);
+  }
+
+  return languages;
+}
+
+export function buildBootcampMetadata(
+  lang: string,
+  bootcamp: Bootcamp
+): Metadata {
+  const normalized = lang || "en";
+  const seo = getSeoForLocale(normalized);
+  const canonical = bootcampPath(normalized, bootcamp.year);
+  const absoluteCanonical = new URL(canonical, SITE_URL).toString();
+  const title = bootcamp.seoTitle;
+  const description = bootcamp.seoDescription;
+
+  return {
+    title,
+    description,
+    keywords: [
+      "OPTIO Bootcamp",
+      "full stack bootcamp Kosovo",
+      "React",
+      "Express",
+      "PostgreSQL",
+      "paid internship",
+      ...seo.keywords.slice(0, 6),
+    ],
+    authors: siteConfig.authors,
+    creator: siteConfig.creator,
+    alternates: {
+      canonical,
+      languages: buildBootcampLanguageAlternates(bootcamp.year),
+    },
+    openGraph: {
+      type: "website",
+      locale: seo.openGraphLocale,
+      url: absoluteCanonical,
+      title,
+      description,
+      siteName: siteConfig.name,
+      images: [`${SITE_URL}/og.png`],
+    },
+    twitter: {
+      card: "summary_large_image",
+      site: siteConfig.creator,
+      creator: siteConfig.creator,
+      title,
+      description,
+      images: [`${SITE_URL}/og.png`],
     },
   };
 }

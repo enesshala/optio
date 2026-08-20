@@ -60,6 +60,7 @@ const baseSiteConfig = {
     { url: "/#Projects", name: "Projects" },
     { url: "/#Services", name: "Services" },
     { url: "/#Pricing", name: "Packages" },
+    { url: "/bootcamp/2026", name: "Bootcamp" },
     { url: "/#FAQ", name: "FAQs" },
     { url: INSTAGRAM_URL, name: "Instagram" },
   ],

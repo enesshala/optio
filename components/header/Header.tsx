@@ -1,4 +1,5 @@
 "use client";
+import BootcampNavLink from "@/components/header/BootcampNavLink";
 import HeaderLinks from "@/components/header/HeaderLinks";
 import { LangSwitcher } from "@/components/header/LangSwitcher";
 import { MenuIcon } from "lucide-react";
@@ -51,7 +52,7 @@ const Header = () => {
         </div>
 
         {/* Center section - Navigation */}
-        <ul className="hidden md:flex items-center justify-center gap-6 flex-1">
+        <ul className="hidden md:flex items-center justify-center gap-5 flex-1">
           {links.map((link) => (
             <li key={link.label}>
               <Link
@@ -64,6 +65,9 @@ const Header = () => {
               </Link>
             </li>
           ))}
+          <li>
+            <BootcampNavLink lang={lang} />
+          </li>
         </ul>
 
         {/* Right section */}
@@ -136,6 +140,12 @@ const Header = () => {
                         </Link>
                       </li>
                     ))}
+                    <li>
+                      <BootcampNavLink
+                        lang={lang}
+                        onNavigate={() => setIsMenuOpen(false)}
+                      />
+                    </li>
                   </ul>
                 </nav>
                 <div className="pt-4">

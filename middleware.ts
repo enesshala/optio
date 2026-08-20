@@ -3,7 +3,7 @@ import { defaultLocale, locales, normalizeLocale } from "./lib/i18n";
 import { NextRequest, NextResponse } from "next/server";
 
 /** App routes (non-locale first segment) that must not redirect to home */
-const APP_ROUTE_ROOTS = new Set(["collab"]);
+const APP_ROUTE_ROOTS = new Set(["collab", "bootcamp"]);
 
 function localeFromPath(pathname: string): string {
   const segment = pathname.split("/").filter(Boolean)[0];

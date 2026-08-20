@@ -1,8 +1,13 @@
 import type { MetadataRoute } from "next";
 import { getCollabSlugs } from "@/config/collabs";
-import { buildLanguageAlternates, buildCollabLanguageAlternates } from "@/lib/seoMetadata";
+import { getBootcampYears } from "@/config/bootcamps";
+import {
+  buildLanguageAlternates,
+  buildCollabLanguageAlternates,
+  buildBootcampLanguageAlternates,
+} from "@/lib/seoMetadata";
 import { contentLocales, defaultLocale } from "@/lib/i18n";
-import { localePath, collabPath, SITE_URL } from "@/config/seo";
+import { localePath, collabPath, bootcampPath, SITE_URL } from "@/config/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
@@ -38,5 +43,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   });
 
-  return [...homeEntries, ...collabEntries];
+  const years = getBootcampYears();
+  const bootcampEntries = years.flatMap((year) => {
+    const languages = buildBootcampLanguageAlternates(year);
+    return contentLocales.map((locale) => {
+      const path = bootcampPath(locale, year);
+      return {
+        url: new URL(path, SITE_URL).toString(),
+        lastModified,
+        changeFrequency: "monthly" as const,
+        priority: locale === defaultLocale ? 0.8 : 0.7,
+        alternates: {
+          languages,
+        },
+      };
+    });
+  });
+
+  return [...homeEntries, ...collabEntries, ...bootcampEntries];
 }
