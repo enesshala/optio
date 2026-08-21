@@ -3,6 +3,7 @@
 import BootcampRobot from "@/components/bootcamp/BootcampRobot";
 import {
   motion,
+  useMotionValue,
   useMotionValueEvent,
   useScroll,
   useSpring,
@@ -10,9 +11,17 @@ import {
 } from "framer-motion";
 import { useEffect, useRef, useState, type RefObject } from "react";
 
+const PARK = {
+  startRight: 0.62,
+  left: 0.08,
+  endRight: 0.72,
+} as const;
+
+type Park = (typeof PARK)[keyof typeof PARK];
+
 /**
- * Fixed companion that weaves left/right while scrolling,
- * and tracks the cursor anywhere on the page.
+ * Weaves left/right on scroll — once a crossing starts, springs all the way
+ * to the destination even if scrolling stops mid-way.
  */
 export default function BootcampRobotGuide({
   trackRef,
@@ -22,8 +31,9 @@ export default function BootcampRobotGuide({
   spawnLabel: string;
 }) {
   const [active, setActive] = useState(false);
-  // -1 = look left (toward content when parked on the right)
   const facingRef = useRef(-1);
+  const walkIntentRef = useRef(false);
+  const committedRef = useRef<Park>(PARK.startRight);
 
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 1024px)");
@@ -38,17 +48,11 @@ export default function BootcampRobotGuide({
     offset: ["start start", "end end"],
   });
 
-  // Few crossings, long holds — start center-right
-  const sideTarget = useTransform(
-    scrollYProgress,
-    [0, 0.28, 0.4, 0.72, 0.84, 1],
-    [0.62, 0.62, 0.08, 0.08, 0.72, 0.72]
-  );
-
-  const side = useSpring(sideTarget, {
-    stiffness: 28,
-    damping: 32,
-    mass: 1.6,
+  const park = useMotionValue<number>(PARK.startRight);
+  const side = useSpring(park, {
+    stiffness: 22,
+    damping: 28,
+    mass: 1.8,
     restDelta: 0.001,
   });
 
@@ -62,9 +66,26 @@ export default function BootcampRobotGuide({
 
   const opacity = useTransform(scrollYProgress, [0, 0.9, 0.98], [1, 1, 0]);
 
+  useMotionValueEvent(scrollYProgress, "change", (p) => {
+    const current = committedRef.current;
+    let next: Park = current;
+
+    // Hysteresis: commit full destination parks, never a mid-cross scroll blend
+    if (current === PARK.startRight && p >= 0.34) next = PARK.left;
+    else if (current === PARK.left && p >= 0.78) next = PARK.endRight;
+    else if (current === PARK.endRight && p < 0.74) next = PARK.left;
+    else if (current === PARK.left && p < 0.3) next = PARK.startRight;
+
+    if (next !== current) {
+      committedRef.current = next;
+      park.set(next);
+    }
+  });
+
   useMotionValueEvent(side, "change", (value) => {
-    // Face page center: right → look left, left → look right
     facingRef.current = value > 0.5 ? -1 : 1;
+    walkIntentRef.current =
+      Math.abs(value - committedRef.current) > 0.03;
   });
 
   if (!active) return null;
@@ -75,7 +96,11 @@ export default function BootcampRobotGuide({
       className="pointer-events-none fixed top-24 z-[4] hidden h-[min(72vh,40rem)] w-[min(28rem,42vw)] lg:block"
       style={{ left, opacity }}
     >
-      <BootcampRobot spawnLabel={spawnLabel} facingRef={facingRef} />
+      <BootcampRobot
+        spawnLabel={spawnLabel}
+        facingRef={facingRef}
+        walkIntentRef={walkIntentRef}
+      />
     </motion.div>
   );
 }

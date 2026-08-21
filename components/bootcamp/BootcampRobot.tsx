@@ -13,17 +13,22 @@ export default function BootcampRobot({
   spawnLabel = "Spawning…",
   className = "",
   facingRef,
+  walkIntentRef,
 }: {
   spawnLabel?: string;
   className?: string;
   /** 1 = face toward +X content bias, -1 = face the other way (scroll weave). */
   facingRef?: MutableRefObject<number>;
+  /** When true, keep Walking until the side-to-side cross finishes. */
+  walkIntentRef?: MutableRefObject<boolean>;
 }) {
   const mountRef = useRef<HTMLDivElement>(null);
   const [loaded, setLoaded] = useState(false);
   const [failed, setFailed] = useState(false);
   const facingFallback = useRef(1);
   const facing = facingRef ?? facingFallback;
+  const walkFallback = useRef(false);
+  const walkIntent = walkIntentRef ?? walkFallback;
 
   useEffect(() => {
     const mount = mountRef.current;
@@ -170,11 +175,13 @@ export default function BootcampRobot({
       const dtMs = Math.max(now - lastScrollTs, 1);
       lastScrollY = window.scrollY;
       lastScrollTs = now;
-      if (dy / dtMs > 0.06) {
+      if (dy / dtMs > 0.06 || walkIntent.current) {
         busyEmote = false;
         fadeTo("Walking", 0.22);
         if (idleReturnTimer) window.clearTimeout(idleReturnTimer);
-        idleReturnTimer = window.setTimeout(() => fadeTo("Idle", 0.4), 240);
+        if (!walkIntent.current) {
+          idleReturnTimer = window.setTimeout(() => fadeTo("Idle", 0.4), 240);
+        }
       }
     };
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -274,6 +281,21 @@ export default function BootcampRobot({
       timer.update();
       const dt = timer.getDelta();
       mixer?.update(dt);
+
+      // Keep Walking for the full independent side cross
+      if (!reducedMotion && mixer && actions.Walking) {
+        if (walkIntent.current && activeName !== "Walking") {
+          busyEmote = false;
+          fadeTo("Walking", 0.25);
+          if (idleReturnTimer) window.clearTimeout(idleReturnTimer);
+        } else if (
+          !walkIntent.current &&
+          activeName === "Walking" &&
+          !idleReturnTimer
+        ) {
+          idleReturnTimer = window.setTimeout(() => fadeTo("Idle", 0.4), 180);
+        }
+      }
 
       if (model && !reducedMotion) {
         const face = facing.current >= 0 ? 1 : -1;
