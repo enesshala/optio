@@ -1,5 +1,7 @@
 "use client";
 
+import BootcampRobot from "@/components/bootcamp/BootcampRobot";
+import BootcampRobotGuide from "@/components/bootcamp/BootcampRobotGuide";
 import CTA from "@/components/home/CTA";
 import type { Bootcamp } from "@/config/bootcamps";
 import { localePath } from "@/config/seo";
@@ -18,9 +20,25 @@ import {
   Zap,
 } from "lucide-react";
 import Link from "next/link";
-import { useRef, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { FaLinkedin } from "react-icons/fa";
 import { RoughNotation } from "react-rough-notation";
+
+/** Mobile-only robot (desktop uses BootcampRobotGuide). */
+function BootcampRobotMobile({ spawnLabel }: { spawnLabel: string }) {
+  const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const sync = () => setActive(!mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+
+  if (!active) return null;
+  return <BootcampRobot spawnLabel={spawnLabel} />;
+}
 
 const fadeUp = {
   initial: { opacity: 0, y: 28 },
@@ -166,163 +184,119 @@ export default function BootcampView({
 }) {
   const homeHref = localePath(lang);
   const { gameUi } = bootcamp;
+  const trackRef = useRef<HTMLDivElement>(null);
+  const spawnLabel = lang === "sq" ? "Duke u ngarkuar…" : "Spawning…";
 
   return (
     <div className="relative w-full">
       <AmbientBackground />
 
-      {/* Hero */}
-      <section className="mx-auto w-[95%] max-w-7xl pb-16 pt-8 md:pt-12">
-        <motion.div {...fadeUp}>
-          <Link
-            href={homeHref}
-            className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-zinc-600 transition-colors hover:text-emerald-700 dark:text-zinc-400 dark:hover:text-emerald-400"
-          >
-            OPTIO
-          </Link>
-        </motion.div>
+      <div ref={trackRef} className="relative mx-auto w-[95%] max-w-7xl">
+        <BootcampRobotGuide trackRef={trackRef} spawnLabel={spawnLabel} />
 
-        <div className="grid items-end gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
-          <div className="flex flex-col gap-5">
-            <motion.p
-              {...fadeUp}
-              transition={{ ...fadeUp.transition, delay: 0.04 }}
-              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-emerald-600 dark:text-emerald-500"
-            >
-              <Sparkles className="h-3.5 w-3.5" />
-              {bootcamp.brandName} · {gameUi.season}
-            </motion.p>
-
-            <motion.div
-              {...fadeUp}
-              transition={{ ...fadeUp.transition, delay: 0.06 }}
-              className="flex flex-wrap items-center gap-2"
-            >
-              <HudChip accent>{bootcamp.statusLabel}</HudChip>
-              <HudChip>{gameUi.hudSeats}</HudChip>
-              <HudChip>{gameUi.hudWeeks}</HudChip>
-              <HudChip>{gameUi.hudQuests}</HudChip>
-              <HudChip accent>
-                <Trophy className="h-3 w-3" />
-                {gameUi.hudReward}
-              </HudChip>
+        <div className="relative z-10">
+          {/* Hero — leave room on the right for the robot at scroll start */}
+          <section className="pb-10 pt-8 md:min-h-[70vh] md:pb-16 md:pt-12">
+            <motion.div {...fadeUp}>
+              <Link
+                href={homeHref}
+                className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-zinc-600 transition-colors hover:text-emerald-700 dark:text-zinc-400 dark:hover:text-emerald-400"
+              >
+                OPTIO
+              </Link>
             </motion.div>
 
-            <HeroTitle title={bootcamp.headline} />
+            <div className="flex max-w-xl flex-col gap-5 lg:max-w-2xl">
+              <motion.p
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: 0.04 }}
+                className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-emerald-600 dark:text-emerald-500"
+              >
+                <Sparkles className="h-3.5 w-3.5" />
+                {bootcamp.brandName} · {gameUi.season}
+              </motion.p>
 
-            <motion.p
-              {...fadeUp}
-              transition={{ ...fadeUp.transition, delay: 0.12 }}
-              className="max-w-2xl text-lg leading-relaxed text-slate-700 dark:text-slate-300 sm:text-xl"
-            >
-              {bootcamp.summary}
-            </motion.p>
-
-            <motion.p
-              {...fadeUp}
-              transition={{ ...fadeUp.transition, delay: 0.14 }}
-              className="max-w-xl text-base font-semibold leading-relaxed text-emerald-800 dark:text-emerald-300"
-            >
-              {bootcamp.promise}
-            </motion.p>
-
-            <motion.div
-              {...fadeUp}
-              transition={{ ...fadeUp.transition, delay: 0.16 }}
-            >
-              <XpBar label={gameUi.xpLabel} levels={gameUi.xpLevels} />
-            </motion.div>
-
-            <motion.div
-              {...fadeUp}
-              transition={{ ...fadeUp.transition, delay: 0.18 }}
-              className="mt-2 flex flex-wrap items-center gap-3"
-            >
               <motion.div
-                whileHover={{ scale: 1.04, y: -1 }}
-                whileTap={{ scale: 0.97 }}
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: 0.06 }}
+                className="flex flex-wrap items-center gap-2"
               >
-                <Link
-                  href={bootcamp.applyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bootcamp-nav-link group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_0_24px_-4px_rgba(16,185,129,0.55)]"
-                >
-                  <span
-                    aria-hidden
-                    className="bootcamp-nav-shimmer pointer-events-none absolute inset-0"
-                  />
-                  <Sparkles className="relative h-4 w-4" />
-                  <span className="relative">{gameUi.startRun}</span>
-                  <ArrowUpRight className="relative h-4 w-4" />
-                </Link>
+                <HudChip accent>{bootcamp.statusLabel}</HudChip>
+                <HudChip>{gameUi.hudSeats}</HudChip>
+                <HudChip>{gameUi.hudWeeks}</HudChip>
+                <HudChip>{gameUi.hudQuests}</HudChip>
+                <HudChip accent>
+                  <Trophy className="h-3 w-3" />
+                  {gameUi.hudReward}
+                </HudChip>
               </motion.div>
-              <a
-                href="#curriculum"
-                className="inline-flex items-center gap-2 rounded-full border border-zinc-300 bg-transparent px-5 py-2.5 text-sm font-semibold text-zinc-700 transition-colors hover:border-emerald-500/50 hover:text-emerald-800 dark:border-white/15 dark:text-zinc-300 dark:hover:border-emerald-500/40 dark:hover:text-white"
+
+              <HeroTitle title={bootcamp.headline} />
+
+              <motion.p
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: 0.12 }}
+                className="max-w-xl text-lg leading-relaxed text-slate-700 dark:text-slate-300 sm:text-xl"
               >
-                <Swords className="h-4 w-4" />
-                {gameUi.viewQuests}
-              </a>
-            </motion.div>
+                {bootcamp.summary}
+              </motion.p>
+
+              <motion.p
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: 0.14 }}
+                className="max-w-xl text-base font-semibold leading-relaxed text-emerald-800 dark:text-emerald-300"
+              >
+                {bootcamp.promise}
+              </motion.p>
+
+              <motion.div
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: 0.16 }}
+              >
+                <XpBar label={gameUi.xpLabel} levels={gameUi.xpLevels} />
+              </motion.div>
+
+              <motion.div
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: 0.18 }}
+                className="mt-2 flex flex-wrap items-center gap-3"
+              >
+                <motion.div
+                  whileHover={{ scale: 1.04, y: -1 }}
+                  whileTap={{ scale: 0.97 }}
+                >
+                  <Link
+                    href={bootcamp.applyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bootcamp-nav-link group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_0_24px_-4px_rgba(16,185,129,0.55)]"
+                  >
+                    <span
+                      aria-hidden
+                      className="bootcamp-nav-shimmer pointer-events-none absolute inset-0"
+                    />
+                    <Sparkles className="relative h-4 w-4" />
+                    <span className="relative">{gameUi.startRun}</span>
+                    <ArrowUpRight className="relative h-4 w-4" />
+                  </Link>
+                </motion.div>
+                <a
+                  href="#curriculum"
+                  className="inline-flex items-center gap-2 rounded-full border border-zinc-300 bg-transparent px-5 py-2.5 text-sm font-semibold text-zinc-700 transition-colors hover:border-emerald-500/50 hover:text-emerald-800 dark:border-white/15 dark:text-zinc-300 dark:hover:border-emerald-500/40 dark:hover:text-white"
+                >
+                  <Swords className="h-4 w-4" />
+                  {gameUi.viewQuests}
+                </a>
+              </motion.div>
+            </div>
+          </section>
+
+          <div className="mb-8 h-[22rem] sm:h-[26rem] lg:hidden">
+            <BootcampRobotMobile spawnLabel={spawnLabel} />
           </div>
 
-          <motion.div
-            {...fadeUp}
-            transition={{ ...fadeUp.transition, delay: 0.1 }}
-            className="relative overflow-hidden rounded-2xl border border-emerald-500/25 bg-gradient-to-b from-emerald-500/10 via-transparent to-transparent p-6 dark:border-emerald-500/20 dark:from-emerald-500/15"
-          >
-            <div
-              aria-hidden
-              className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-emerald-400/20 blur-2xl"
-            />
-            <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-400">
-              {gameUi.legendary}
-            </p>
-            <div className="mb-6 flex items-center gap-4">
-              <motion.div
-                animate={{ rotate: [0, -6, 6, 0], scale: [1, 1.06, 1] }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="flex h-16 w-16 items-center justify-center rounded-2xl border border-emerald-400/40 bg-emerald-500/20 text-emerald-700 dark:text-emerald-300"
-              >
-                <Trophy className="h-8 w-8" />
-              </motion.div>
-              <div>
-                <p className="text-3xl font-bold text-emerald-950 dark:text-white">
-                  ×3
-                </p>
-                <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                  {bootcamp.internshipTitle}
-                </p>
-              </div>
-            </div>
-            <ul className="space-y-3">
-              {[gameUi.hudSeats, gameUi.hudWeeks, gameUi.hudQuests].map(
-                (stat, i) => (
-                  <li
-                    key={stat}
-                    className="flex items-center justify-between border-b border-emerald-500/15 pb-2 text-sm last:border-0 dark:border-white/10"
-                  >
-                    <span className="text-zinc-500 dark:text-zinc-400">
-                      {gameUi.missionClear} {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <span className="font-semibold text-emerald-800 dark:text-emerald-300">
-                      {stat}
-                    </span>
-                  </li>
-                )
-              )}
-            </ul>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Outcomes / Achievements */}
-      <section className="mx-auto w-[95%] max-w-7xl py-16 md:py-20">
+          {/* Outcomes / Achievements */}
+          <section className="py-16 md:py-20">
         <SectionHeading
           eyebrow={gameUi.achievements}
           title={bootcamp.outcomesTitle}
@@ -336,7 +310,7 @@ export default function BootcampView({
                 {...fadeUp}
                 transition={{ ...fadeUp.transition, delay: index * 0.06 }}
                 whileHover={{ y: -4, scale: 1.01 }}
-                className="group relative overflow-hidden rounded-2xl border border-emerald-500/20 bg-gradient-to-b from-emerald-500/5 to-transparent p-6 dark:border-white/10"
+                className="group relative overflow-hidden rounded-2xl border border-emerald-500/20 bg-white/90 p-6 shadow-sm backdrop-blur-sm dark:border-white/10 dark:bg-zinc-950/85 dark:shadow-none"
               >
                 <div
                   aria-hidden
@@ -363,14 +337,14 @@ export default function BootcampView({
       </section>
 
       {/* Trainer / Party lead */}
-      <section className="mx-auto w-[95%] max-w-7xl py-16 md:py-20">
+      <section className="py-16 md:py-20">
         <SectionHeading
           eyebrow={gameUi.partyLead}
           title={bootcamp.trainerTitle}
         />
         <motion.div
           {...fadeUp}
-          className="relative overflow-hidden rounded-2xl border border-emerald-500/25 p-6 sm:p-8"
+          className="relative overflow-hidden rounded-2xl border border-emerald-500/25 bg-white/90 p-6 shadow-sm backdrop-blur-sm dark:bg-zinc-950/85 dark:shadow-none sm:p-8"
         >
           <div
             aria-hidden
@@ -421,7 +395,7 @@ export default function BootcampView({
       </section>
 
       {/* Stack / Loadout */}
-      <section className="mx-auto w-[95%] max-w-7xl py-16 md:py-20">
+      <section className="py-16 md:py-20">
         <SectionHeading
           eyebrow={gameUi.loadout}
           title={bootcamp.stackTitle}
@@ -436,7 +410,7 @@ export default function BootcampView({
                 {...fadeUp}
                 transition={{ ...fadeUp.transition, delay: index * 0.06 }}
                 whileHover={{ y: -3 }}
-                className="rounded-2xl border border-zinc-200 bg-gradient-to-br from-emerald-500/5 to-transparent p-5 dark:border-white/10"
+                className="rounded-2xl border border-zinc-200 bg-white/90 p-5 shadow-sm backdrop-blur-sm dark:border-white/10 dark:bg-zinc-950/85 dark:shadow-none"
               >
                 <div className="mb-3 flex items-center justify-between">
                   <Icon className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
@@ -459,7 +433,7 @@ export default function BootcampView({
       {/* Curriculum / Quest board */}
       <section
         id="curriculum"
-        className="mx-auto w-[95%] max-w-7xl scroll-mt-24 py-16 md:py-20"
+        className="scroll-mt-24 py-16 md:py-20"
       >
         <SectionHeading
           className="mb-12 max-w-2xl"
@@ -554,7 +528,7 @@ export default function BootcampView({
       </section>
 
       {/* Format / Power-ups */}
-      <section className="mx-auto w-[95%] max-w-7xl py-16 md:py-20">
+      <section className="py-16 md:py-20">
         <SectionHeading
           eyebrow={gameUi.powerUps}
           title={bootcamp.formatTitle}
@@ -568,7 +542,7 @@ export default function BootcampView({
                 {...fadeUp}
                 transition={{ ...fadeUp.transition, delay: index * 0.06 }}
                 whileHover={{ scale: 1.02 }}
-                className="rounded-2xl border border-zinc-200 p-5 dark:border-white/10"
+                className="rounded-2xl border border-zinc-200 bg-white/90 p-5 shadow-sm backdrop-blur-sm dark:border-white/10 dark:bg-zinc-950/85 dark:shadow-none"
               >
                 <Icon className="mb-3 h-5 w-5 text-emerald-600 dark:text-emerald-400" />
                 <h3 className="!mb-3 !text-xl text-emerald-950 sm:!text-2xl dark:text-zinc-100">
@@ -584,7 +558,7 @@ export default function BootcampView({
       </section>
 
       {/* Internship / Legendary */}
-      <section className="mx-auto w-[95%] max-w-7xl py-16 md:py-20">
+      <section className="py-16 md:py-20">
         <motion.div
           {...fadeUp}
           className="relative overflow-hidden rounded-2xl border border-emerald-300/60 bg-gradient-to-b from-emerald-50 via-white to-white px-6 py-10 shadow-sm dark:border-emerald-500/30 dark:bg-zinc-950/80 dark:from-transparent dark:via-transparent dark:to-transparent dark:shadow-none sm:px-10 sm:py-14"
@@ -628,7 +602,7 @@ export default function BootcampView({
       </section>
 
       {/* FAQ */}
-      <section className="mx-auto w-[95%] max-w-7xl py-16 md:py-20">
+      <section className="py-16 md:py-20">
         <SectionHeading
           eyebrow={bootcamp.faqEyebrow}
           title={bootcamp.faqTitle}
@@ -653,7 +627,7 @@ export default function BootcampView({
       </section>
 
       {/* Apply / Join raid */}
-      <section className="mx-auto w-[95%] max-w-7xl py-16 md:py-20">
+      <section className="py-16 md:py-20">
         <motion.div
           {...fadeUp}
           className="relative overflow-hidden rounded-2xl border border-emerald-500/30 px-6 py-10 sm:px-10 sm:py-14"
@@ -694,6 +668,8 @@ export default function BootcampView({
           </motion.div>
         </motion.div>
       </section>
+        </div>
+      </div>
 
       <CTA locale={ctaSectionLocale} CTALocale={ctaLocale} />
     </div>
