@@ -1,5 +1,6 @@
 import CollabView from "@/components/collab/CollabView";
 import { getCollabBySlug, getCollabSlugs } from "@/config/collabs";
+import { features } from "@/config/features";
 import {
   contentLocales,
   defaultLocale,
@@ -11,6 +12,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
+  if (!features.showProjects) return [];
   const langs = contentLocales.filter((lang) => lang !== defaultLocale);
   const slugs = getCollabSlugs();
   return langs.flatMap((lang) => slugs.map((slug) => ({ lang, slug })));
@@ -21,6 +23,7 @@ export async function generateMetadata({
 }: {
   params: Promise<{ lang: string; slug: string }>;
 }): Promise<Metadata> {
+  if (!features.showProjects) return {};
   const { lang, slug } = await params;
   const collab = getCollabBySlug(slug);
   if (!collab) return {};
@@ -32,6 +35,8 @@ export default async function LangCollabPage({
 }: {
   params: Promise<{ lang: string; slug: string }>;
 }) {
+  if (!features.showProjects) notFound();
+
   const { lang, slug } = await params;
   const langName = normalizeLocale(lang);
 

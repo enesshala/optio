@@ -2,6 +2,7 @@
 import BootcampNavLink from "@/components/header/BootcampNavLink";
 import HeaderLinks from "@/components/header/HeaderLinks";
 import { LangSwitcher } from "@/components/header/LangSwitcher";
+import { features } from "@/config/features";
 import { MenuIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,7 +12,9 @@ import { CgClose } from "react-icons/cg";
 import { ThemedButton } from "../ThemedButton";
 
 const links = [
-  { label: "Projects", href: "#Projects" },
+  ...(features.showProjects
+    ? [{ label: "Projects", href: "#Projects" }]
+    : []),
   { label: "Services", href: "#Services" },
   { label: "Pricing", href: "#Pricing" },
   { label: "Testimonials", href: "#Testimonials" },

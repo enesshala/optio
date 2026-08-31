@@ -1,3 +1,4 @@
+import { features } from "@/config/features";
 import { SiteConfig } from "@/types/siteConfig";
 import { MdEmail } from "react-icons/md";
 import { SiInstagram } from "react-icons/si";
@@ -57,7 +58,9 @@ const baseSiteConfig = {
     { name: "instagram", href: INSTAGRAM_URL, icon: SiInstagram },
   ],
   footerProducts: [
-    { url: "/#Projects", name: "Projects" },
+    ...(features.showProjects
+      ? [{ url: "/#Projects", name: "Projects" }]
+      : []),
     { url: "/#Services", name: "Services" },
     { url: "/#Pricing", name: "Packages" },
     { url: "/bootcamp/2026", name: "Bootcamp" },

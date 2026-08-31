@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getCollabSlugs } from "@/config/collabs";
 import { getBootcampYears } from "@/config/bootcamps";
+import { features } from "@/config/features";
 import {
   buildLanguageAlternates,
   buildCollabLanguageAlternates,
@@ -26,22 +27,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     };
   });
 
-  const slugs = getCollabSlugs();
-  const collabEntries = slugs.flatMap((slug) => {
-    const languages = buildCollabLanguageAlternates(slug);
-    return contentLocales.map((locale) => {
-      const path = collabPath(locale, slug);
-      return {
-        url: new URL(path, SITE_URL).toString(),
-        lastModified,
-        changeFrequency: "monthly" as const,
-        priority: locale === defaultLocale ? 0.7 : 0.6,
-        alternates: {
-          languages,
-        },
-      };
-    });
-  });
+  const collabEntries = features.showProjects
+    ? getCollabSlugs().flatMap((slug) => {
+        const languages = buildCollabLanguageAlternates(slug);
+        return contentLocales.map((locale) => {
+          const path = collabPath(locale, slug);
+          return {
+            url: new URL(path, SITE_URL).toString(),
+            lastModified,
+            changeFrequency: "monthly" as const,
+            priority: locale === defaultLocale ? 0.7 : 0.6,
+            alternates: {
+              languages,
+            },
+          };
+        });
+      })
+    : [];
 
   const years = getBootcampYears();
   const bootcampEntries = years.flatMap((year) => {
