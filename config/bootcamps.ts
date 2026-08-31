@@ -95,11 +95,11 @@ const bootcampEn: Bootcamp = {
   brandName: "OPTIO Bootcamp",
   cohortLabel: "Oct – 31 Dec 2026",
   statusLabel: "Applications open",
-  seatsLabel: "20 seats",
+  seatsLabel: "25 seats",
   priceLabel: "Contact us",
   headline: "Guaranteed paid internship for the top 3 graduates.",
   summary:
-    "A 3-month full-stack bootcamp — October through 31 December — from the beginning to a real product with React, Express, and PostgreSQL. Led by a senior engineer. Only 20 seats in this first cohort.",
+    "A 3-month full-stack bootcamp — October through 31 December — from the beginning to a real product with React, Express, and PostgreSQL. Led by a senior engineer. Only 25 seats in this first cohort.",
   promise:
     "Ship a real app step by step. Finish strong and one of three paid Optio Digital internships is yours.",
   applyCta: "Apply on Instagram",
@@ -250,12 +250,12 @@ const bootcampEn: Bootcamp = {
   internshipEyebrow: "Internship",
   internshipTitle: "3 paid internships — guaranteed",
   internshipBody:
-    "The top 3 graduates of OPTIO Bootcamp 2026 are guaranteed a paid internship at Optio Digital. You earn it with craft, consistency, and ownership — then work on real projects beside the team that trained you. Twenty seats. Three offers. Compete.",
+    "The top 3 graduates of OPTIO Bootcamp 2026 are guaranteed a paid internship at Optio Digital. You earn it with craft, consistency, and ownership — then work on real projects beside the team that trained you. Twenty-five seats. Three offers. Compete.",
   internshipHighlights: [
     "Guaranteed paid internship for the top 3",
     "Real projects with Optio Digital",
     "Mentorship that continues after the bootcamp",
-    "Only 20 seats in the first cohort",
+    "Only 25 seats in the first cohort",
   ],
   faqEyebrow: "FAQ",
   faqTitle: "Before you apply",
@@ -283,7 +283,7 @@ const bootcampEn: Bootcamp = {
     {
       question: "How many seats are there?",
       answer:
-        "20 seats for this first bootcamp — so mentorship stays real. When seats fill, applications close for the October–December 2026 cohort.",
+        "25 seats for this first bootcamp — so mentorship stays real. When seats fill, applications close for the October–December 2026 cohort.",
     },
     {
       question: "How do I apply?",
@@ -302,18 +302,18 @@ const bootcampEn: Bootcamp = {
     },
   ],
   applyBandEyebrow: "Apply",
-  applyBandTitle: "20 seats. 3 internships. Apply now.",
+  applyBandTitle: "25 seats. 3 internships. Apply now.",
   applyBandBody:
     "Message Optio on Instagram. Tell us who you are and why you want OPTIO Bootcamp 2026 — we will take it from there.",
   applyBandCta: "DM @optio.digital",
   seoTitle:
     "OPTIO Bootcamp 2026 — React, Express & PostgreSQL | 3 Guaranteed Internships",
   seoDescription:
-    "3-month OPTIO Bootcamp (October–31 December 2026) led by senior engineer Enes Shala. Build a real full-stack project with React, Express, and PostgreSQL. Top 3 graduates get a guaranteed paid internship at Optio Digital. Only 20 seats.",
+    "3-month OPTIO Bootcamp (October–31 December 2026) led by senior engineer Enes Shala. Build a real full-stack project with React, Express, and PostgreSQL. Top 3 graduates get a guaranteed paid internship at Optio Digital. Only 25 seats.",
   applyUrl: INSTAGRAM_URL,
   gameUi: {
     season: "Season 2026 · Oct–Dec",
-    hudSeats: "20 seats",
+    hudSeats: "25 seats",
     hudWeeks: "3 months",
     hudQuests: "6 quests",
     hudReward: "×3 internships",
@@ -339,11 +339,11 @@ const bootcampSq: Bootcamp = {
   brandName: "OPTIO Bootcamp",
   cohortLabel: "Tetor – 31 Dhjetor 2026",
   statusLabel: "Aplikimet janë hapur",
-  seatsLabel: "20 vende",
+  seatsLabel: "25 vende",
   priceLabel: "Na kontaktoni",
   headline: "Tre studentët më të mirë fitojnë praktikë të paguar te Optio — e garantuar.",
   summary:
-    "Bootcamp full-stack 3-mujor — nga tetori deri më 31 dhjetor — nga baza deri te një aplikacion i vërtetë me React, Express dhe PostgreSQL. I udhëhequr nga një inxhinier senior. Vetëm 20 vende në grupin e parë.",
+    "Bootcamp full-stack 3-mujor — nga tetori deri më 31 dhjetor — nga baza deri te një aplikacion i vërtetë me React, Express dhe PostgreSQL. I udhëhequr nga një inxhinier senior. Vetëm 25 vende në grupin e parë.",
   promise:
     "Ndërto hap pas hapi. Nëse je ndër tre më të mirët, praktika e paguar te Optio Digital është e jotja.",
   applyCta: "Apliko në Instagram",
@@ -494,12 +494,12 @@ const bootcampSq: Bootcamp = {
   internshipEyebrow: "Praktika",
   internshipTitle: "Tre praktika të paguara — të garantuara",
   internshipBody:
-    "Tre studentët më të mirë të OPTIO Bootcamp 2026 kanë të garantuar një praktikë të paguar te Optio Digital. E fiton me punë, konsistencë dhe përgjegjësi — pastaj punon në projekte reale pranë ekipit që të ka trajnuar. 20 vende. Tre oferta. Vendin e fiton ti.",
+    "Tre studentët më të mirë të OPTIO Bootcamp 2026 kanë të garantuar një praktikë të paguar te Optio Digital. E fiton me punë, konsistencë dhe përgjegjësi — pastaj punon në projekte reale pranë ekipit që të ka trajnuar. 25 vende. Tre oferta. Vendin e fiton ti.",
   internshipHighlights: [
     "Praktikë e paguar e garantuar për tre më të mirët",
     "Projekte reale me Optio Digital",
     "Mentorim që vazhdon edhe pas bootcamp-it",
-    "Vetëm 20 vende në grupin e parë",
+    "Vetëm 25 vende në grupin e parë",
   ],
   faqEyebrow: "Pyetje të shpeshta",
   faqTitle: "Para se të aplikosh",
@@ -527,7 +527,7 @@ const bootcampSq: Bootcamp = {
     {
       question: "Sa vende ka?",
       answer:
-        "20 vende për këtë bootcamp të parë, që mentorimi të mbetet i vërtetë. Kur vendet mbushen, aplikimet mbyllen për grupin Tetor–Dhjetor 2026.",
+        "25 vende për këtë bootcamp të parë, që mentorimi të mbetet i vërtetë. Kur vendet mbushen, aplikimet mbyllen për grupin Tetor–Dhjetor 2026.",
     },
     {
       question: "Si aplikoj?",
@@ -546,18 +546,18 @@ const bootcampSq: Bootcamp = {
     },
   ],
   applyBandEyebrow: "Apliko",
-  applyBandTitle: "20 vende. Tre praktika. Apliko tani.",
+  applyBandTitle: "25 vende. Tre praktika. Apliko tani.",
   applyBandBody:
     "Shkruaji Optio në Instagram. Thuaj kush je dhe pse do OPTIO Bootcamp 2026 — ne e vazhdojmë nga aty.",
   applyBandCta: "DM @optio.digital",
   seoTitle:
     "OPTIO Bootcamp 2026 — React, Express & PostgreSQL | 3 Praktika të Garantuar",
   seoDescription:
-    "OPTIO Bootcamp 3-mujor (Tetor–31 Dhjetor 2026) me trajnerin Enes Shala. Ndërto një projekt real full-stack me React, Express dhe PostgreSQL. Tre studentët më të mirë fitojnë praktikë të paguar të garantuar te Optio Digital. Vetëm 20 vende.",
+    "OPTIO Bootcamp 3-mujor (Tetor–31 Dhjetor 2026) me trajnerin Enes Shala. Ndërto një projekt real full-stack me React, Express dhe PostgreSQL. Tre studentët më të mirë fitojnë praktikë të paguar të garantuar te Optio Digital. Vetëm 25 vende.",
   applyUrl: INSTAGRAM_URL,
   gameUi: {
     season: "Sezoni 2026 · Tet–Dhj",
-    hudSeats: "20 vende",
+    hudSeats: "25 vende",
     hudWeeks: "3 muaj",
     hudQuests: "6 quest-e",
     hudReward: "×3 praktika",
