@@ -11,6 +11,9 @@ import { buildCollabMetadata } from "@/lib/seoMetadata";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+// Only serve slugs from generateStaticParams (empty while Projects are hidden).
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   if (!features.showProjects) return [];
   const langs = contentLocales.filter((lang) => lang !== defaultLocale);
