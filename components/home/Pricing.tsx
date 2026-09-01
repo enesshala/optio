@@ -115,9 +115,7 @@ const Pricing = ({
                 </ul>
 
                 <Link
-                  href={tier.href}
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
+                  href={`?package=${encodeURIComponent(tier.title)}#Contact`}
                   className={cn(
                     "inline-flex w-full items-center justify-center rounded-xl px-4 py-3 text-sm font-semibold text-white transition-all duration-300",
                     popular

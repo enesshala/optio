@@ -1,4 +1,5 @@
 import CTA from "@/components/home/CTA";
+import Contact from "@/components/home/Contact";
 import FAQ from "@/components/home/FAQ";
 import Feature from "@/components/home/Feature";
 import Hero from "@/components/home/Hero";
@@ -28,6 +29,7 @@ export default async function HomeIndex({ lang }: { lang: string }) {
       <Pricing id="Pricing" locale={dict.Pricing} langName={langName} />
       <Testimonials id="Testimonials" locale={dict.Testimonials} />
       <FAQ id="FAQ" locale={dict.FAQ} langName={langName} />
+      <Contact id="Contact" locale={dict.Contact} />
       <CTA locale={dict.CTA} CTALocale={dict.CTAButton} />
     </>
   );

@@ -2,6 +2,7 @@
 
 import BootcampRobot from "@/components/bootcamp/BootcampRobot";
 import BootcampRobotGuide from "@/components/bootcamp/BootcampRobotGuide";
+import ContactForm from "@/components/forms/ContactForm";
 import CTA from "@/components/home/CTA";
 import type { Bootcamp } from "@/config/bootcamps";
 import { localePath } from "@/config/seo";
@@ -176,11 +177,13 @@ export default function BootcampView({
   lang,
   ctaLocale,
   ctaSectionLocale,
+  applyFormLocale,
 }: {
   bootcamp: Bootcamp;
   lang: string;
   ctaLocale: any;
   ctaSectionLocale: any;
+  applyFormLocale: any;
 }) {
   const homeHref = localePath(lang);
   const { gameUi } = bootcamp;
@@ -646,26 +649,24 @@ export default function BootcampView({
           <p className="relative mb-8 max-w-2xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
             {bootcamp.applyBandBody}
           </p>
-          <motion.div
-            whileHover={{ scale: 1.04, y: -1 }}
-            whileTap={{ scale: 0.97 }}
-            className="relative inline-flex"
-          >
-            <Link
-              href={bootcamp.applyUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bootcamp-nav-link relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-500 px-6 py-3 text-sm font-semibold text-white"
-            >
-              <span
-                aria-hidden
-                className="bootcamp-nav-shimmer pointer-events-none absolute inset-0"
-              />
-              <Sparkles className="relative h-4 w-4" />
-              <span className="relative">{bootcamp.applyBandCta}</span>
-              <ArrowUpRight className="relative h-4 w-4" />
-            </Link>
-          </motion.div>
+          <div className="relative max-w-xl rounded-2xl border border-zinc-200 bg-white p-6 dark:border-white/10 dark:bg-zinc-950/90 sm:p-8">
+            <ContactForm
+              variant="bootcamp"
+              locale={applyFormLocale.form}
+              source={`bootcamp/${bootcamp.year}`}
+            />
+            <p className="mt-6 text-sm text-zinc-500 dark:text-zinc-400">
+              {applyFormLocale.orInstagram}{" "}
+              <Link
+                href={bootcamp.applyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-emerald-600 underline underline-offset-4 hover:text-emerald-700 dark:text-emerald-400"
+              >
+                @optio.digital
+              </Link>
+            </p>
+          </div>
         </motion.div>
       </section>
         </div>

@@ -46,6 +46,7 @@ export default async function LangBootcampPage({
   if (!bootcamp) notFound();
 
   const dict = await getDictionary(langName);
+  const enDict = await getDictionary("en");
 
   return (
     <BootcampView
@@ -53,6 +54,7 @@ export default async function LangBootcampPage({
       lang={langName}
       ctaLocale={dict.CTAButton}
       ctaSectionLocale={dict.CTA}
+      applyFormLocale={dict.BootcampApply ?? enDict.BootcampApply}
     />
   );
 }

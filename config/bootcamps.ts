@@ -288,7 +288,7 @@ const bootcampEn: Bootcamp = {
     {
       question: "How do I apply?",
       answer:
-        "DM us on Instagram @optio.digital with a short note about why you want in. We will follow up with next steps.",
+        "Fill out the application form on this page. Tell us who you are and why you want OPTIO Bootcamp 2026 — we will follow up with next steps. You can also DM us on Instagram if you prefer.",
     },
     {
       question: "Is the internship guaranteed?",
@@ -298,14 +298,14 @@ const bootcampEn: Bootcamp = {
     {
       question: "How much does it cost?",
       answer:
-        "Reach out on Instagram for current pricing and payment details for the October–December 2026 cohort.",
+        "Submit the application form on this page and we will follow up with current pricing and payment details for the October–December 2026 cohort.",
     },
   ],
   applyBandEyebrow: "Apply",
   applyBandTitle: "25 seats. 3 internships. Apply now.",
   applyBandBody:
-    "Message Optio on Instagram. Tell us who you are and why you want OPTIO Bootcamp 2026 — we will take it from there.",
-  applyBandCta: "DM @optio.digital",
+    "Fill out the form below. Tell us who you are and why you want OPTIO Bootcamp 2026 — we will take it from there.",
+  applyBandCta: "Submit application",
   seoTitle:
     "OPTIO Bootcamp 2026 — React, Express & PostgreSQL | 3 Guaranteed Internships",
   seoDescription:
@@ -532,7 +532,7 @@ const bootcampSq: Bootcamp = {
     {
       question: "Si aplikoj?",
       answer:
-        "Na shkruaj DM në Instagram @optio.digital me pak fjalë pse do të bëhesh pjesë. Ne të kthejmë përgjigje me hapat e ardhshëm.",
+        "Plotëso formularin e aplikimit në këtë faqe. Na thuaj kush je dhe pse do OPTIO Bootcamp 2026 — ne të kthejmë përgjigje me hapat e ardhshëm. Mund të na shkruash edhe në Instagram nëse preferon.",
     },
     {
       question: "A garantohet praktika?",
@@ -542,14 +542,14 @@ const bootcampSq: Bootcamp = {
     {
       question: "Sa kushton?",
       answer:
-        "Na shkruaj në Instagram për çmimin dhe detajet e pagesës për grupin Tetor–Dhjetor 2026.",
+        "Dërgo formularin e aplikimit në këtë faqe dhe do të kthehemi me çmimin dhe detajet e pagesës për grupin Tetor–Dhjetor 2026.",
     },
   ],
   applyBandEyebrow: "Apliko",
   applyBandTitle: "25 vende. Tre praktika. Apliko tani.",
   applyBandBody:
-    "Shkruaji Optio në Instagram. Thuaj kush je dhe pse do OPTIO Bootcamp 2026 — ne e vazhdojmë nga aty.",
-  applyBandCta: "DM @optio.digital",
+    "Plotëso formularin më poshtë. Na thuaj kush je dhe pse do OPTIO Bootcamp 2026 — ne e vazhdojmë nga aty.",
+  applyBandCta: "Dërgo aplikimin",
   seoTitle:
     "OPTIO Bootcamp 2026 — React, Express & PostgreSQL | 3 Praktika të Garantuar",
   seoDescription:

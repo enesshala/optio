@@ -38,6 +38,38 @@
     "title": "Pyetjet e shpeshta",
     "description": "Përgjigje për pyetjet e zakonshme rreth bashkëpunimit me OPTIO."
   },
+  "Contact": {
+    "title": "Na kontaktoni",
+    "description": "Na tregoni çfarë po ndërtoni — kthehemi shpejt.",
+    "eyebrow": "Kontakt",
+    "orInstagram": "Preferoni Instagram?",
+    "form": {
+      "nameLabel": "Emri",
+      "namePlaceholder": "Emri juaj",
+      "emailLabel": "Email",
+      "emailPlaceholder": "ju@kompania.com",
+      "phoneLabel": "Telefoni",
+      "phonePlaceholder": "+383 …",
+      "experienceLabel": "Përvoja",
+      "experiencePlaceholder": "Opsionale",
+      "messageLabel": "Mesazhi",
+      "messagePlaceholder": "Çfarë dëshironi të ndërtoni? Afatet, qëllimet, çdo detaj i dobishëm…",
+      "packageLabel": "Paketa",
+      "packagePrefill": "Jam i interesuar për paketën {package}.",
+      "submit": "Dërgo mesazhin",
+      "submitting": "Duke dërguar…",
+      "success": "Faleminderit — do t'ju kthehemi së shpejti.",
+      "error": "Diçka shkoi keq. Ju lutemi provoni përsëri.",
+      "errors": {
+        "nameMin": "Shkruani të paktën 2 karaktere.",
+        "emailInvalid": "Shkruani një adresë email të vlefshme.",
+        "phoneInvalid": "Shkruani një numër telefoni të vlefshëm.",
+        "messageMin": "Mesazhi duhet të ketë të paktën 10 karaktere.",
+        "messageMax": "Mesazhi është shumë i gjatë (max 2000 karaktere).",
+        "experienceMax": "Përvoja është shumë e gjatë (max 500 karaktere)."
+      }
+    }
+  },
   "CTA": {
     "title": "Gati ta rritni markën tuaj?",
     "description1": "Nga",
@@ -49,5 +81,33 @@
   },
   "CTAButton": {
     "title": "Fillo projektin tënd"
+  },
+  "BootcampApply": {
+    "orInstagram": "Ose na shkruani në Instagram",
+    "form": {
+      "nameLabel": "Emri",
+      "namePlaceholder": "Emri juaj",
+      "emailLabel": "Email",
+      "emailPlaceholder": "ju@email.com",
+      "phoneLabel": "Telefoni (opsionale)",
+      "phonePlaceholder": "+383 …",
+      "experienceLabel": "Përvoja (opsionale)",
+      "experiencePlaceholder": "Student, ndryshim karriere, junior dev…",
+      "messageLabel": "Pse dëshiron të aplikosh?",
+      "messagePlaceholder": "Na thuaj kush je, qëllimet e tua dhe pse OPTIO Bootcamp 2026 të përshtatet…",
+      "submit": "Dërgo aplikimin",
+      "submitting": "Duke dërguar…",
+      "success": "Aplikimi u dërgua — do të kthehemi së shpejti.",
+      "successShort": "Aplikimi u dërgua!",
+      "error": "Diçka shkoi keq. Ju lutemi provoni përsëri.",
+      "errors": {
+        "nameMin": "Shkruani të paktën 2 karaktere.",
+        "emailInvalid": "Shkruani një adresë email të vlefshme.",
+        "phoneInvalid": "Shkruani një numër telefoni të vlefshëm.",
+        "messageMin": "Mesazhi duhet të ketë të paktën 10 karaktere.",
+        "messageMax": "Mesazhi është shumë i gjatë (max 2000 karaktere).",
+        "experienceMax": "Përvoja është shumë e gjatë (max 500 karaktere)."
+      }
+    }
   }
 }
