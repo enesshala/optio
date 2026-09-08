@@ -23,8 +23,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang, year } = await params;
   const langName = normalizeLocale(lang);
-  const contentLang = langName === "sq" ? "sq" : "en";
-  const bootcamp = getBootcamp(year, contentLang);
+  const bootcamp = getBootcamp(year, langName);
   if (!bootcamp) return {};
   return buildBootcampMetadata(langName, bootcamp);
 }
@@ -41,12 +40,10 @@ export default async function LangBootcampPage({
     notFound();
   }
 
-  const contentLang = langName === "sq" ? "sq" : "en";
-  const bootcamp = getBootcamp(year, contentLang);
+  const bootcamp = getBootcamp(year, langName);
   if (!bootcamp) notFound();
 
   const dict = await getDictionary(langName);
-  const enDict = await getDictionary("en");
 
   return (
     <BootcampView
@@ -54,7 +51,7 @@ export default async function LangBootcampPage({
       lang={langName}
       ctaLocale={dict.CTAButton}
       ctaSectionLocale={dict.CTA}
-      applyFormLocale={dict.BootcampApply ?? enDict.BootcampApply}
+      applyFormLocale={dict.BootcampApply}
     />
   );
 }

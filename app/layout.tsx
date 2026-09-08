@@ -48,9 +48,10 @@ export default async function RootLayout({
 }) {
   const headersList = await headers();
   const lang = headersList.get("x-locale") || defaultLocale;
+  const dir = lang === "ar" ? "rtl" : "ltr";
 
   return (
-    <html lang={lang} suppressHydrationWarning>
+    <html lang={lang} dir={dir} suppressHydrationWarning>
       <head />
       <body
         className={cn(

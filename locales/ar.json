@@ -1,48 +1,113 @@
 {
   "Hero": {
-    "title1": "Build.",
-    "title2": "Convert.",
-    "title3": "Grow.",
-    "description": "We help brands grow in the digital world — globally. From idea to execution, we build digital experiences that convert."
+    "title1": "ابنِ.",
+    "title2": "حوِّل.",
+    "title3": "انمُ.",
+    "description": "نساعد العلامات التجارية على النمو في العالم الرقمي — حول العالم. من الفكرة إلى التنفيذ، نبني تجارب رقمية تحوّل الزوار إلى عملاء."
   },
   "SocialProof": {
     "count": "50+",
-    "maker": "brands trust OPTIO worldwide"
+    "maker": "علامة تجارية تثق بـ OPTIO حول العالم"
   },
   "Showcase": {
-    "title": "Projects",
-    "description": "Selected work we've shipped for brands and product teams."
+    "title": "المشاريع",
+    "description": "أعمال مختارة سلّمناها للعلامات التجارية وفرق المنتجات.",
+    "eyebrow": "أعمال مختارة"
   },
   "Feature": {
-    "title": "What We Do"
+    "title": "ماذا نفعل"
   },
   "Pricing": {
-    "title": "Packages",
-    "title2": "Clear scopes. Real outcomes.",
-    "description": "We work with startups and businesses worldwide — focused on clean design, smart strategy, and real results.",
-    "doYouLike": "Want to talk through your project?",
-    "follow": "Message us on Instagram."
+    "title": "الباقات",
+    "title2": "نطاقات واضحة. نتائج حقيقية.",
+    "description": "نعمل مع الشركات الناشئة والأعمال حول العالم — بتركيز على تصميم نظيف واستراتيجية ذكية ونتائج ملموسة.",
+    "doYouLike": "هل تريد مناقشة مشروعك؟",
+    "follow": "راسلنا على Instagram.",
+    "eyebrow": "التعاون",
+    "mostChosen": "الأكثر اختيارًا",
+    "popular": "شائع",
+    "scopedAfter": "يُحدد النطاق بعد الاستكشاف"
   },
   "Testimonials": {
-    "title": "What clients say",
-    "description1": "We partner with founders and teams who need execution, not fluff.",
-    "description2": "Here's what it's like",
-    "description3": " to work with OPTIO."
+    "title": "ماذا يقول العملاء",
+    "description1": "نتعاون مع المؤسسين والفرق التي تحتاج تنفيذًا، لا كلامًا فارغًا.",
+    "description2": "إليك كيف يبدو",
+    "description3": " العمل مع OPTIO."
   },
   "FAQ": {
-    "title": "FAQs",
-    "description": "Answers to common questions about working with OPTIO."
+    "title": "الأسئلة الشائعة",
+    "description": "إجابات على الأسئلة الشائعة حول العمل مع OPTIO."
+  },
+  "Contact": {
+    "title": "تواصل معنا",
+    "description": "أخبرنا بما تبنيه — سنرد بسرعة.",
+    "eyebrow": "اتصل",
+    "orInstagram": "تفضل Instagram؟",
+    "form": {
+      "nameLabel": "الاسم",
+      "namePlaceholder": "اسمك",
+      "emailLabel": "البريد الإلكتروني",
+      "emailPlaceholder": "you@company.com",
+      "phoneLabel": "الهاتف",
+      "phonePlaceholder": "+966 …",
+      "experienceLabel": "الخلفية",
+      "experiencePlaceholder": "اختياري",
+      "messageLabel": "الرسالة",
+      "messagePlaceholder": "ماذا تريد أن تبني؟ الجدول الزمني، الأهداف، أي تفاصيل مفيدة…",
+      "packageLabel": "الباقة",
+      "packagePrefill": "أنا مهتم بباقة {package}.",
+      "submit": "إرسال الرسالة",
+      "submitting": "جارٍ الإرسال…",
+      "success": "شكرًا — سنعود إليك قريبًا.",
+      "error": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+      "errors": {
+        "nameMin": "يرجى إدخال حرفين على الأقل.",
+        "emailInvalid": "يرجى إدخال عنوان بريد إلكتروني صالح.",
+        "phoneInvalid": "يرجى إدخال رقم هاتف صالح.",
+        "messageMin": "يجب أن تحتوي الرسالة على 10 أحرف على الأقل.",
+        "messageMax": "الرسالة طويلة جدًا (الحد الأقصى 2000 حرف).",
+        "experienceMax": "الخلفية طويلة جدًا (الحد الأقصى 500 حرف)."
+      }
+    }
   },
   "CTA": {
-    "title": "Ready to grow your brand?",
-    "description1": "From",
-    "description2": "strategy",
-    "description3": "to",
-    "description4": "launch, we ship experiences built to",
-    "description5": "convert",
+    "title": "هل أنت مستعد لتنمية علامتك؟",
+    "description1": "من",
+    "description2": "الاستراتيجية",
+    "description3": "إلى",
+    "description4": "الإطلاق، نسلّم تجارب مصممة لـ",
+    "description5": "التحويل",
     "description6": "."
   },
   "CTAButton": {
-    "title": "Start your project"
+    "title": "ابدأ مشروعك"
+  },
+  "BootcampApply": {
+    "orInstagram": "أو راسلنا على Instagram",
+    "form": {
+      "nameLabel": "الاسم",
+      "namePlaceholder": "اسمك",
+      "emailLabel": "البريد الإلكتروني",
+      "emailPlaceholder": "you@email.com",
+      "phoneLabel": "الهاتف (اختياري)",
+      "phonePlaceholder": "+966 …",
+      "experienceLabel": "الخلفية (اختياري)",
+      "experiencePlaceholder": "طالب، تغيير مسار مهني، مطور مبتدئ…",
+      "messageLabel": "لماذا تريد الانضمام؟",
+      "messagePlaceholder": "أخبرنا من أنت وأهدافك ولماذا يناسبك OPTIO Bootcamp 2026…",
+      "submit": "إرسال الطلب",
+      "submitting": "جارٍ الإرسال…",
+      "success": "تم إرسال الطلب — سنتابع معك قريبًا.",
+      "successShort": "تم إرسال الطلب!",
+      "error": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+      "errors": {
+        "nameMin": "يرجى إدخال حرفين على الأقل.",
+        "emailInvalid": "يرجى إدخال عنوان بريد إلكتروني صالح.",
+        "phoneInvalid": "يرجى إدخال رقم هاتف صالح.",
+        "messageMin": "يجب أن تحتوي الرسالة على 10 أحرف على الأقل.",
+        "messageMax": "الرسالة طويلة جدًا (الحد الأقصى 2000 حرف).",
+        "experienceMax": "الخلفية طويلة جدًا (الحد الأقصى 500 حرف)."
+      }
+    }
   }
 }

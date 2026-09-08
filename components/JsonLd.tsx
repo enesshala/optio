@@ -55,7 +55,7 @@ export default function JsonLd({ lang }: JsonLdProps) {
     "@type": "WebSite",
     name: "OPTIO",
     url: SITE_URL,
-    inLanguage: lang === "sq" ? "sq" : lang || "en",
+    inLanguage: lang || "en",
     publisher: {
       "@type": "Organization",
       name: "OPTIO",

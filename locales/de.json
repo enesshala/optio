@@ -11,7 +11,8 @@
   },
   "Showcase": {
     "title": "Projekte",
-    "description": "Ausgewählte Arbeiten, die wir für Marken und Produktteams geliefert haben."
+    "description": "Ausgewählte Arbeiten, die wir für Marken und Produktteams geliefert haben.",
+    "eyebrow": "Ausgewählte Arbeiten"
   },
   "Feature": {
     "title": "Was wir tun"
@@ -21,7 +22,11 @@
     "title2": "Klare Leistungsumfänge. Echte Ergebnisse.",
     "description": "Wir arbeiten mit Startups und Unternehmen weltweit — mit Fokus auf klares Design, kluge Strategie und messbare Resultate.",
     "doYouLike": "Möchten Sie Ihr Projekt besprechen?",
-    "follow": "Schreiben Sie uns auf Instagram."
+    "follow": "Schreiben Sie uns auf Instagram.",
+    "eyebrow": "Engagements",
+    "mostChosen": "Am häufigsten gewählt",
+    "popular": "Beliebt",
+    "scopedAfter": "Umfang nach dem Discovery"
   },
   "Testimonials": {
     "title": "Was Kunden sagen",
@@ -32,6 +37,38 @@
   "FAQ": {
     "title": "FAQs",
     "description": "Antworten auf häufige Fragen zur Zusammenarbeit mit OPTIO."
+  },
+  "Contact": {
+    "title": "Kontakt aufnehmen",
+    "description": "Erzählen Sie uns, was Sie bauen — wir melden uns schnell.",
+    "eyebrow": "Kontakt",
+    "orInstagram": "Lieber Instagram?",
+    "form": {
+      "nameLabel": "Name",
+      "namePlaceholder": "Ihr Name",
+      "emailLabel": "E-Mail",
+      "emailPlaceholder": "sie@firma.com",
+      "phoneLabel": "Telefon",
+      "phonePlaceholder": "+49 …",
+      "experienceLabel": "Hintergrund",
+      "experiencePlaceholder": "Optional",
+      "messageLabel": "Nachricht",
+      "messagePlaceholder": "Was möchten Sie bauen? Zeitplan, Ziele, alles Hilfreiche…",
+      "packageLabel": "Paket",
+      "packagePrefill": "Ich interessiere mich für das Paket {package}.",
+      "submit": "Nachricht senden",
+      "submitting": "Wird gesendet…",
+      "success": "Danke — wir melden uns bald.",
+      "error": "Etwas ist schiefgelaufen. Bitte erneut versuchen.",
+      "errors": {
+        "nameMin": "Bitte mindestens 2 Zeichen eingeben.",
+        "emailInvalid": "Bitte eine gültige E-Mail-Adresse eingeben.",
+        "phoneInvalid": "Bitte eine gültige Telefonnummer eingeben.",
+        "messageMin": "Die Nachricht muss mindestens 10 Zeichen haben.",
+        "messageMax": "Die Nachricht ist zu lang (max. 2000 Zeichen).",
+        "experienceMax": "Der Hintergrund ist zu lang (max. 500 Zeichen)."
+      }
+    }
   },
   "CTA": {
     "title": "Bereit, Ihre Marke auszubauen?",
@@ -44,5 +81,33 @@
   },
   "CTAButton": {
     "title": "Projekt starten"
+  },
+  "BootcampApply": {
+    "orInstagram": "Oder schreib uns auf Instagram",
+    "form": {
+      "nameLabel": "Name",
+      "namePlaceholder": "Dein Name",
+      "emailLabel": "E-Mail",
+      "emailPlaceholder": "du@email.com",
+      "phoneLabel": "Telefon (optional)",
+      "phonePlaceholder": "+49 …",
+      "experienceLabel": "Hintergrund (optional)",
+      "experiencePlaceholder": "Student, Quereinsteiger, Junior-Dev…",
+      "messageLabel": "Warum willst du dabei sein?",
+      "messagePlaceholder": "Erzähl uns, wer du bist, deine Ziele und warum OPTIO Bootcamp 2026 zu dir passt…",
+      "submit": "Bewerbung absenden",
+      "submitting": "Wird gesendet…",
+      "success": "Bewerbung gesendet — wir melden uns bald.",
+      "successShort": "Bewerbung gesendet!",
+      "error": "Etwas ist schiefgelaufen. Bitte erneut versuchen.",
+      "errors": {
+        "nameMin": "Bitte mindestens 2 Zeichen eingeben.",
+        "emailInvalid": "Bitte eine gültige E-Mail-Adresse eingeben.",
+        "phoneInvalid": "Bitte eine gültige Telefonnummer eingeben.",
+        "messageMin": "Die Nachricht muss mindestens 10 Zeichen haben.",
+        "messageMax": "Die Nachricht ist zu lang (max. 2000 Zeichen).",
+        "experienceMax": "Der Hintergrund ist zu lang (max. 500 Zeichen)."
+      }
+    }
   }
 }

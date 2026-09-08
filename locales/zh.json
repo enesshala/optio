@@ -1,48 +1,113 @@
 {
   "Hero": {
-    "title1": "Build.",
-    "title2": "Convert.",
-    "title3": "Grow.",
-    "description": "We help brands grow in the digital world — globally. From idea to execution, we build digital experiences that convert."
+    "title1": "构建。",
+    "title2": "转化。",
+    "title3": "增长。",
+    "description": "我们帮助全球品牌在数字世界中成长。从创意到落地，我们打造能够转化的数字体验。"
   },
   "SocialProof": {
     "count": "50+",
-    "maker": "brands trust OPTIO worldwide"
+    "maker": "全球品牌信赖 OPTIO"
   },
   "Showcase": {
-    "title": "Projects",
-    "description": "Selected work we've shipped for brands and product teams."
+    "title": "项目",
+    "description": "我们为品牌与产品团队交付的精选作品。",
+    "eyebrow": "精选作品"
   },
   "Feature": {
-    "title": "What We Do"
+    "title": "我们做什么"
   },
   "Pricing": {
-    "title": "Packages",
-    "title2": "Clear scopes. Real outcomes.",
-    "description": "We work with startups and businesses worldwide — focused on clean design, smart strategy, and real results.",
-    "doYouLike": "Want to talk through your project?",
-    "follow": "Message us on Instagram."
+    "title": "套餐",
+    "title2": "清晰范围。真实成果。",
+    "description": "我们与全球初创公司和企业合作——专注干净的设计、聪明的策略与切实的结果。",
+    "doYouLike": "想聊聊你的项目吗？",
+    "follow": "在 Instagram 上联系我们。",
+    "eyebrow": "合作方式",
+    "mostChosen": "最受欢迎",
+    "popular": "热门",
+    "scopedAfter": "需求梳理后定价"
   },
   "Testimonials": {
-    "title": "What clients say",
-    "description1": "We partner with founders and teams who need execution, not fluff.",
-    "description2": "Here's what it's like",
-    "description3": " to work with OPTIO."
+    "title": "客户怎么说",
+    "description1": "我们与需要落地执行、而非空话的创始人和团队合作。",
+    "description2": "这就是",
+    "description3": " 与 OPTIO 合作的感觉。"
   },
   "FAQ": {
-    "title": "FAQs",
-    "description": "Answers to common questions about working with OPTIO."
+    "title": "常见问题",
+    "description": "关于与 OPTIO 合作的常见问题解答。"
+  },
+  "Contact": {
+    "title": "联系我们",
+    "description": "告诉我们你在做什么——我们会尽快回复。",
+    "eyebrow": "联系",
+    "orInstagram": "更喜欢 Instagram？",
+    "form": {
+      "nameLabel": "姓名",
+      "namePlaceholder": "你的姓名",
+      "emailLabel": "邮箱",
+      "emailPlaceholder": "you@company.com",
+      "phoneLabel": "电话",
+      "phonePlaceholder": "+86 …",
+      "experienceLabel": "背景",
+      "experiencePlaceholder": "可选",
+      "messageLabel": "留言",
+      "messagePlaceholder": "你想做什么？时间、目标，任何有用的细节…",
+      "packageLabel": "套餐",
+      "packagePrefill": "我对 {package} 套餐感兴趣。",
+      "submit": "发送留言",
+      "submitting": "发送中…",
+      "success": "谢谢——我们会尽快回复。",
+      "error": "出了点问题。请重试。",
+      "errors": {
+        "nameMin": "请至少输入 2 个字符。",
+        "emailInvalid": "请输入有效的邮箱地址。",
+        "phoneInvalid": "请输入有效的电话号码。",
+        "messageMin": "留言至少需要 10 个字符。",
+        "messageMax": "留言过长（最多 2000 个字符）。",
+        "experienceMax": "背景过长（最多 500 个字符）。"
+      }
+    }
   },
   "CTA": {
-    "title": "Ready to grow your brand?",
-    "description1": "From",
-    "description2": "strategy",
-    "description3": "to",
-    "description4": "launch, we ship experiences built to",
-    "description5": "convert",
-    "description6": "."
+    "title": "准备好让品牌增长了吗？",
+    "description1": "从",
+    "description2": "策略",
+    "description3": "到",
+    "description4": "上线，我们交付为",
+    "description5": "转化",
+    "description6": " 而构建的体验。"
   },
   "CTAButton": {
-    "title": "Start your project"
+    "title": "开始你的项目"
+  },
+  "BootcampApply": {
+    "orInstagram": "或在 Instagram 私信我们",
+    "form": {
+      "nameLabel": "姓名",
+      "namePlaceholder": "你的姓名",
+      "emailLabel": "邮箱",
+      "emailPlaceholder": "you@email.com",
+      "phoneLabel": "电话（可选）",
+      "phonePlaceholder": "+86 …",
+      "experienceLabel": "背景（可选）",
+      "experiencePlaceholder": "学生、转行者、初级开发者…",
+      "messageLabel": "你为什么想加入？",
+      "messagePlaceholder": "告诉我们你是谁、你的目标，以及为什么 OPTIO Bootcamp 2026 适合你…",
+      "submit": "提交申请",
+      "submitting": "发送中…",
+      "success": "申请已发送——我们会尽快跟进。",
+      "successShort": "申请已发送！",
+      "error": "出了点问题。请重试。",
+      "errors": {
+        "nameMin": "请至少输入 2 个字符。",
+        "emailInvalid": "请输入有效的邮箱地址。",
+        "phoneInvalid": "请输入有效的电话号码。",
+        "messageMin": "留言至少需要 10 个字符。",
+        "messageMax": "留言过长（最多 2000 个字符）。",
+        "experienceMax": "背景过长（最多 500 个字符）。"
+      }
+    }
   }
 }

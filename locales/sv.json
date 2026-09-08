@@ -11,7 +11,8 @@
   },
   "Showcase": {
     "title": "Projekt",
-    "description": "Utvalt arbete vi levererat för varumärken och produktteam."
+    "description": "Utvalt arbete vi levererat för varumärken och produktteam.",
+    "eyebrow": "Utvalt arbete"
   },
   "Feature": {
     "title": "Vad vi gör"
@@ -21,7 +22,11 @@
     "title2": "Tydliga ramar. Verkliga resultat.",
     "description": "Vi jobbar med startups och företag världen över — fokus på ren design, smart strategi och mätbara resultat.",
     "doYouLike": "Vill du prata om ert projekt?",
-    "follow": "Hör av dig på Instagram."
+    "follow": "Hör av dig på Instagram.",
+    "eyebrow": "Engagemang",
+    "mostChosen": "Mest vald",
+    "popular": "Populär",
+    "scopedAfter": "Omfattning efter discovery"
   },
   "Testimonials": {
     "title": "Vad kunderna säger",
@@ -32,6 +37,38 @@
   "FAQ": {
     "title": "Vanliga frågor",
     "description": "Svar på vanliga frågor om att arbeta med OPTIO."
+  },
+  "Contact": {
+    "title": "Hör av dig",
+    "description": "Berätta vad ni bygger — vi återkommer snabbt.",
+    "eyebrow": "Kontakt",
+    "orInstagram": "Föredrar du Instagram?",
+    "form": {
+      "nameLabel": "Namn",
+      "namePlaceholder": "Ditt namn",
+      "emailLabel": "E-post",
+      "emailPlaceholder": "du@foretag.com",
+      "phoneLabel": "Telefon",
+      "phonePlaceholder": "+46 …",
+      "experienceLabel": "Bakgrund",
+      "experiencePlaceholder": "Valfritt",
+      "messageLabel": "Meddelande",
+      "messagePlaceholder": "Vad vill ni bygga? Tidplan, mål, allt som hjälper…",
+      "packageLabel": "Paket",
+      "packagePrefill": "Jag är intresserad av paketet {package}.",
+      "submit": "Skicka meddelande",
+      "submitting": "Skickar…",
+      "success": "Tack — vi återkommer snart.",
+      "error": "Något gick fel. Försök igen.",
+      "errors": {
+        "nameMin": "Ange minst 2 tecken.",
+        "emailInvalid": "Ange en giltig e-postadress.",
+        "phoneInvalid": "Ange ett giltigt telefonnummer.",
+        "messageMin": "Meddelandet måste vara minst 10 tecken.",
+        "messageMax": "Meddelandet är för långt (max 2000 tecken).",
+        "experienceMax": "Bakgrunden är för lång (max 500 tecken)."
+      }
+    }
   },
   "CTA": {
     "title": "Redo att växa med ert varumärke?",
@@ -44,5 +81,33 @@
   },
   "CTAButton": {
     "title": "Starta ert projekt"
+  },
+  "BootcampApply": {
+    "orInstagram": "Eller DM:a oss på Instagram",
+    "form": {
+      "nameLabel": "Namn",
+      "namePlaceholder": "Ditt namn",
+      "emailLabel": "E-post",
+      "emailPlaceholder": "du@email.com",
+      "phoneLabel": "Telefon (valfritt)",
+      "phonePlaceholder": "+46 …",
+      "experienceLabel": "Bakgrund (valfritt)",
+      "experiencePlaceholder": "Student, karriärbytare, juniorutvecklare…",
+      "messageLabel": "Varför vill du vara med?",
+      "messagePlaceholder": "Berätta vem du är, dina mål och varför OPTIO Bootcamp 2026 passar dig…",
+      "submit": "Skicka ansökan",
+      "submitting": "Skickar…",
+      "success": "Ansökan skickad — vi återkommer snart.",
+      "successShort": "Ansökan skickad!",
+      "error": "Något gick fel. Försök igen.",
+      "errors": {
+        "nameMin": "Ange minst 2 tecken.",
+        "emailInvalid": "Ange en giltig e-postadress.",
+        "phoneInvalid": "Ange ett giltigt telefonnummer.",
+        "messageMin": "Meddelandet måste vara minst 10 tecken.",
+        "messageMax": "Meddelandet är för långt (max 2000 tecken).",
+        "experienceMax": "Bakgrunden är för lång (max 500 tecken)."
+      }
+    }
   }
 }

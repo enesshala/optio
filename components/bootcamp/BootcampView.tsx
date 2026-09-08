@@ -188,7 +188,7 @@ export default function BootcampView({
   const homeHref = localePath(lang);
   const { gameUi } = bootcamp;
   const trackRef = useRef<HTMLDivElement>(null);
-  const spawnLabel = lang === "sq" ? "Duke u ngarkuar…" : "Spawning…";
+  const spawnLabel = gameUi.spawnLabel;
 
   return (
     <div className="relative w-full">
