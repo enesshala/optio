@@ -25,9 +25,15 @@ export const Makers: Maker[] = [
     image: "/images/users/3.png",
   },
   {
-    name: "Agon",
+    name: "Fitim",
     role: "Growth Craftsman",
     vibe: "Connects strategy, code, and conversion into one motion.",
     image: "/images/users/4.png",
+  },
+  {
+    name: "Aldi",
+    role: "Experience Engineer",
+    vibe: "Builds interactions that feel fast, clear, and a little magical.",
+    image: "/images/users/5.png",
   },
 ];

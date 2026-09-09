@@ -1,43 +1,43 @@
 export const TestimonialsData = [
   {
     user: {
-      name: "Sofia M.",
+      name: "Arben Krasniqi",
       username: "client",
-      image: "/images/users/1.png",
+      image: "/images/users/2.png",
     },
     content:
       "OPTIO turned our messy brief into a tight brand and site in weeks. Communication was clear, the design felt premium, and conversions picked up right after launch.",
   },
   {
     user: {
-      name: "James K.",
+      name: "Blerta Gashi",
       username: "client",
-      image: "/images/users/2.png",
+      image: "/images/users/1.png",
     },
     content:
       "We needed a small internal tool fast. They scoped it properly, shipped on time, and documented everything so our team could extend it later.",
   },
   {
     user: {
-      name: "Elena R.",
+      name: "Driton Berisha",
       username: "client",
-      image: "/images/users/3.png",
+      image: "/images/users/4.png",
     },
     content:
       "Social strategy finally matches our product story. The content pillars and launch plan made it easy for our team to stay consistent.",
   },
   {
     user: {
-      name: "Marcus T.",
+      name: "Liridona Hoxha",
       username: "client",
-      image: "/images/users/4.png",
+      image: "/images/users/3.png",
     },
     content:
       "Clean UI, fast pages, and solid SEO fundamentals. Exactly the kind of disciplined execution you want from a partner.",
   },
   {
     user: {
-      name: "Priya N.",
+      name: "Valon Mustafa",
       username: "client",
       image: "/images/users/5.png",
     },
@@ -46,9 +46,9 @@ export const TestimonialsData = [
   },
   {
     user: {
-      name: "Daniel H.",
+      name: "Erza Shala",
       username: "client",
-      image: "/images/users/weijunext.jpeg",
+      image: "/images/users/1.png",
     },
     content:
       "From logo to landing page, everything feels like one brand. We have commented more than once how polished it looks compared to competitors.",
