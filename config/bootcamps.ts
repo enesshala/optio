@@ -22,6 +22,8 @@ export type Bootcamp = {
   statusLabel: string;
   seatsLabel: string;
   priceLabel: string;
+  discountPercent: string;
+  discountLabel: string;
   headline: string;
   summary: string;
   promise: string;
@@ -98,6 +100,8 @@ const bootcampEn: Bootcamp = {
   statusLabel: "Applications open",
   seatsLabel: "25 seats",
   priceLabel: "Contact us",
+  discountPercent: "−50%",
+  discountLabel: "Launch offer",
   headline: "Guaranteed paid internship for the top 3 graduates.",
   summary:
     "A 3-month full-stack bootcamp — October through 31 December — from the beginning to a real product with React, Express, and PostgreSQL. Led by a senior engineer. Only 25 seats in this first cohort.",
@@ -299,7 +303,7 @@ const bootcampEn: Bootcamp = {
     {
       question: "How much does it cost?",
       answer:
-        "Submit the application form on this page and we will follow up with current pricing and payment details for the October–December 2026 cohort.",
+        "The bootcamp is not free — this first cohort is 50% off. Submit the application form and we will follow up with pricing and payment details for the October–December 2026 cohort.",
     },
   ],
   applyBandEyebrow: "Apply",
@@ -343,6 +347,8 @@ const bootcampSq: Bootcamp = {
   statusLabel: "Aplikimet janë hapur",
   seatsLabel: "25 vende",
   priceLabel: "Na kontaktoni",
+  discountPercent: "−50%",
+  discountLabel: "Ofertë e hapjes",
   headline: "Tre studentët më të mirë fitojnë praktikë të paguar te Optio — e garantuar.",
   summary:
     "Bootcamp full-stack 3-mujor — nga tetori deri më 31 dhjetor — nga baza deri te një aplikacion i vërtetë me React, Express dhe PostgreSQL. I udhëhequr nga një inxhinier senior. Vetëm 25 vende në grupin e parë.",
@@ -544,7 +550,7 @@ const bootcampSq: Bootcamp = {
     {
       question: "Sa kushton?",
       answer:
-        "Dërgo formularin e aplikimit në këtë faqe dhe do të kthehemi me çmimin dhe detajet e pagesës për grupin Tetor–Dhjetor 2026.",
+        "Bootcamp-i nuk është falas — grupi i parë ka 50% zbritje. Dërgo formularin e aplikimit në këtë faqe dhe do të kthehemi me çmimin dhe detajet e pagesës për grupin Tetor–Dhjetor 2026.",
     },
   ],
   applyBandEyebrow: "Apliko",
@@ -588,6 +594,8 @@ const bootcampDe: Bootcamp = {
   statusLabel: "Bewerbungen offen",
   seatsLabel: "25 Plätze",
   priceLabel: "Kontaktiere uns",
+  discountPercent: "−50%",
+  discountLabel: "Startangebot",
   headline: "Garantiertes bezahltes Praktikum für die Top 3 Absolventen.",
   summary:
     "Ein 3-monatiges Full-Stack-Bootcamp — Oktober bis 31. Dezember — vom Einstieg bis zu einem echten Produkt mit React, Express und PostgreSQL. Geleitet von einem Senior Engineer. Nur 25 Plätze in der ersten Kohorte.",
@@ -789,7 +797,7 @@ const bootcampDe: Bootcamp = {
     {
       question: "Was kostet es?",
       answer:
-        "Sende das Bewerbungsformular auf dieser Seite — wir melden uns mit aktuellen Preisen und Zahlungsdetails für die Kohorte Oktober–Dezember 2026.",
+        "Das Bootcamp ist nicht kostenlos — die erste Kohorte gibt es 50% günstiger. Sende das Bewerbungsformular auf dieser Seite — wir melden uns mit aktuellen Preisen und Zahlungsdetails für die Kohorte Oktober–Dezember 2026.",
     },
   ],
   applyBandEyebrow: "Bewerben",
@@ -833,6 +841,8 @@ const bootcampFr: Bootcamp = {
   statusLabel: "Candidatures ouvertes",
   seatsLabel: "25 places",
   priceLabel: "Contactez-nous",
+  discountPercent: "−50%",
+  discountLabel: "Offre de lancement",
   headline: "Stage rémunéré garanti pour les 3 meilleurs diplômés.",
   summary:
     "Un bootcamp full-stack de 3 mois — d'octobre au 31 décembre — des bases jusqu'à un vrai produit avec React, Express et PostgreSQL. Dirigé par un ingénieur senior. Seulement 25 places pour cette première cohorte.",
@@ -1034,7 +1044,7 @@ const bootcampFr: Bootcamp = {
     {
       question: "Combien ça coûte ?",
       answer:
-        "Soumettez le formulaire sur cette page et nous vous enverrons les tarifs et détails de paiement pour la cohorte octobre–décembre 2026.",
+        "Le bootcamp n'est pas gratuit — cette première cohorte est à −50%. Soumettez le formulaire sur cette page et nous vous enverrons les tarifs et détails de paiement pour la cohorte octobre–décembre 2026.",
     },
   ],
   applyBandEyebrow: "Postuler",
@@ -1078,6 +1088,8 @@ const bootcampSv: Bootcamp = {
   statusLabel: "Ansökningar öppna",
   seatsLabel: "25 platser",
   priceLabel: "Kontakta oss",
+  discountPercent: "−50%",
+  discountLabel: "Lanseringserbjudande",
   headline: "Garanterad betald praktik för de 3 bästa deltagarna.",
   summary:
     "Ett 3-månaders full-stack-bootcamp — oktober till 31 december — från grunden till en riktig produkt med React, Express och PostgreSQL. Leds av en senior engineer. Endast 25 platser i första kohorten.",
@@ -1279,7 +1291,7 @@ const bootcampSv: Bootcamp = {
     {
       question: "Vad kostar det?",
       answer:
-        "Skicka ansökningsformuläret på den här sidan så återkommer vi med aktuellt pris och betalningsdetaljer för kohorten oktober–december 2026.",
+        "Bootcampet är inte gratis — den första kohorten har 50% rabatt. Skicka ansökningsformuläret på den här sidan så återkommer vi med aktuellt pris och betalningsdetaljer för kohorten oktober–december 2026.",
     },
   ],
   applyBandEyebrow: "Ansök",
@@ -1323,6 +1335,8 @@ const bootcampAr: Bootcamp = {
   statusLabel: "الطلبات مفتوحة",
   seatsLabel: "25 مقعدًا",
   priceLabel: "تواصل معنا",
+  discountPercent: "−50%",
+  discountLabel: "عرض الإطلاق",
   headline: "تدريب مدفوع مضمون لأفضل 3 خريجين.",
   summary:
     "معسكر برمجة full-stack لمدة 3 أشهر — من أكتوبر حتى 31 ديسمبر — من البداية إلى منتج حقيقي باستخدام React وExpress وPostgreSQL. بإشراف مهندس أول. 25 مقعدًا فقط في الدفعة الأولى.",
@@ -1524,7 +1538,7 @@ const bootcampAr: Bootcamp = {
     {
       question: "كم التكلفة؟",
       answer:
-        "أرسل نموذج الطلب في هذه الصفحة وسنعود إليك بالأسعار وتفاصيل الدفع لدفعة أكتوبر–ديسمبر 2026.",
+        "المعسكر ليس مجانيًا — الدفعة الأولى بخصم 50%. أرسل نموذج الطلب في هذه الصفحة وسنعود إليك بالأسعار وتفاصيل الدفع لدفعة أكتوبر–ديسمبر 2026.",
     },
   ],
   applyBandEyebrow: "قدّم",
@@ -1568,6 +1582,8 @@ const bootcampZh: Bootcamp = {
   statusLabel: "正在接受申请",
   seatsLabel: "25 个名额",
   priceLabel: "联系我们",
+  discountPercent: "−50%",
+  discountLabel: "开营优惠",
   headline: "前三名毕业生获得保证带薪实习。",
   summary:
     "为期 3 个月的全栈训练营——从 10 月到 12 月 31 日——从入门到用 React、Express 和 PostgreSQL 交付真实产品。由资深工程师主导。首期仅 25 个名额。",
@@ -1769,7 +1785,7 @@ const bootcampZh: Bootcamp = {
     {
       question: "费用多少？",
       answer:
-        "提交本页申请表后，我们会跟进 2026 年 10–12 月批次的价格与付款细节。",
+        "训练营不是免费的——首期优惠 50%。提交本页申请表后，我们会跟进 2026 年 10–12 月批次的价格与付款细节。",
     },
   ],
   applyBandEyebrow: "申请",

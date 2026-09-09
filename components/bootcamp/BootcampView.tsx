@@ -172,6 +172,49 @@ function HudChip({
   );
 }
 
+function DiscountOffer({
+  percent,
+  label,
+  size = "md",
+}: {
+  percent: string;
+  label: string;
+  size?: "sm" | "md";
+}) {
+  const compact = size === "sm";
+
+  return (
+    <div
+      dir="ltr"
+      aria-label={`${percent} ${label}`}
+      className={`bootcamp-discount-badge relative inline-flex items-stretch overflow-hidden border border-amber-400/50 bg-gradient-to-br from-amber-50 via-white to-orange-50 dark:border-amber-400/35 dark:from-amber-500/20 dark:via-zinc-950/90 dark:to-orange-500/15 ${
+        compact ? "rounded-xl" : "rounded-2xl"
+      }`}
+    >
+      <span
+        aria-hidden
+        className="bootcamp-discount-shimmer pointer-events-none absolute inset-0"
+      />
+      <span
+        className={`relative flex items-center justify-center bg-gradient-to-br from-amber-400 via-amber-500 to-orange-600 font-black tracking-tight text-white ${
+          compact
+            ? "px-3 py-2 text-lg"
+            : "px-4 py-3 text-2xl sm:px-5 sm:text-3xl"
+        }`}
+      >
+        {percent}
+      </span>
+      <span
+        className={`relative flex items-center px-4 font-semibold uppercase tracking-[0.18em] text-amber-800 dark:text-amber-200 ${
+          compact ? "py-2 text-[10px]" : "py-3 text-xs"
+        }`}
+      >
+        {label}
+      </span>
+    </div>
+  );
+}
+
 export default function BootcampView({
   bootcamp,
   lang,
@@ -232,6 +275,16 @@ export default function BootcampView({
                   <Trophy className="h-3 w-3" />
                   {gameUi.hudReward}
                 </HudChip>
+              </motion.div>
+
+              <motion.div
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: 0.08 }}
+              >
+                <DiscountOffer
+                  percent={bootcamp.discountPercent}
+                  label={bootcamp.discountLabel}
+                />
               </motion.div>
 
               <HeroTitle title={bootcamp.headline} />
@@ -646,9 +699,16 @@ export default function BootcampView({
           <h2 className="relative !mb-4 !text-3xl text-emerald-950 sm:!text-4xl dark:text-white">
             {bootcamp.applyBandTitle}
           </h2>
-          <p className="relative mb-8 max-w-2xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
+          <p className="relative mb-6 max-w-2xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
             {bootcamp.applyBandBody}
           </p>
+          <div className="relative mb-8">
+            <DiscountOffer
+              percent={bootcamp.discountPercent}
+              label={bootcamp.discountLabel}
+              size="sm"
+            />
+          </div>
           <div className="relative max-w-xl rounded-2xl border border-zinc-200 bg-white p-6 dark:border-white/10 dark:bg-zinc-950/90 sm:p-8">
             <ContactForm
               variant="bootcamp"

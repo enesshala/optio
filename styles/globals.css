@@ -118,6 +118,16 @@ h6 {
   }
 }
 
+@keyframes bootcamp-discount-pulse {
+  0%,
+  100% {
+    box-shadow: 0 8px 28px -10px rgba(245, 158, 11, 0.55);
+  }
+  50% {
+    box-shadow: 0 8px 36px -6px rgba(251, 191, 36, 0.75);
+  }
+}
+
 .bootcamp-nav-link {
   animation: bootcamp-nav-pulse 2.8s ease-out infinite;
 }
@@ -132,9 +142,25 @@ h6 {
   animation: bootcamp-nav-shimmer 2.8s ease-in-out infinite;
 }
 
+.bootcamp-discount-badge {
+  animation: bootcamp-discount-pulse 2.6s ease-out infinite;
+}
+
+.bootcamp-discount-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  animation: bootcamp-nav-shimmer 2.4s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .bootcamp-nav-link,
-  .bootcamp-nav-shimmer {
+  .bootcamp-nav-shimmer,
+  .bootcamp-discount-badge,
+  .bootcamp-discount-shimmer {
     animation: none;
   }
 }

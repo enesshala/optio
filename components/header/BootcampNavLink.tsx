@@ -26,8 +26,8 @@ export default function BootcampNavLink({
     >
       <Link
         href={href}
-        aria-label="OPTIO Bootcamp 2026"
-        title="OPTIO Bootcamp 2026"
+        aria-label="OPTIO Bootcamp 2026, 50% off"
+        title="OPTIO Bootcamp 2026 — 50% off"
         onClick={onNavigate}
         className="bootcamp-nav-link group relative inline-flex items-center gap-1.5 overflow-hidden rounded-full border border-emerald-400/40 bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-500 px-3.5 py-1.5 text-sm font-semibold text-white shadow-[0_0_0_0_rgba(16,185,129,0.45)] transition-shadow hover:shadow-[0_0_20px_2px_rgba(16,185,129,0.35)]"
       >
@@ -57,9 +57,9 @@ export default function BootcampNavLink({
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="relative rounded-full bg-white/20 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-white backdrop-blur-sm"
+          className="relative rounded-full bg-amber-300 px-1.5 py-0.5 text-[10px] font-black tracking-tight text-amber-950 shadow-[0_0_12px_-2px_rgba(251,191,36,0.9)]"
         >
-          ×3
+          −50%
         </motion.span>
       </Link>
     </motion.div>
