@@ -58,6 +58,8 @@ function validationMessages(locale: ContactFormLocale): ContactValidationMessage
   return {
     nameMin: locale.errors?.nameMin ?? "Please enter at least 2 characters.",
     emailInvalid: locale.errors?.emailInvalid ?? "Please enter a valid email address.",
+    phoneRequired:
+      locale.errors?.phoneRequired ?? "Please enter your phone number.",
     phoneInvalid: locale.errors?.phoneInvalid ?? "Please enter a valid phone number.",
     messageMin: locale.errors?.messageMin ?? "Message must be at least 10 characters.",
     messageMax: locale.errors?.messageMax ?? "Message is too long.",
@@ -285,6 +287,7 @@ function ContactFormInner({
                   onChange={field.onChange}
                   onBlur={field.onBlur}
                   disabled={disabled}
+                  required={variant === "bootcamp"}
                   className={cn(errors.phone && "[&_input]:border-red-500")}
                 />
               )}
