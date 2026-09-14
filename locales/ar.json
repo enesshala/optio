@@ -89,7 +89,7 @@
       "namePlaceholder": "اسمك",
       "emailLabel": "البريد الإلكتروني",
       "emailPlaceholder": "you@email.com",
-      "phoneLabel": "الهاتف (اختياري)",
+      "phoneLabel": "الهاتف",
       "phonePlaceholder": "+966 …",
       "experienceLabel": "الخلفية (اختياري)",
       "experiencePlaceholder": "طالب، تغيير مسار مهني، مطور مبتدئ…",
@@ -103,6 +103,7 @@
       "errors": {
         "nameMin": "يرجى إدخال حرفين على الأقل.",
         "emailInvalid": "يرجى إدخال عنوان بريد إلكتروني صالح.",
+        "phoneRequired": "يرجى إدخال رقم هاتفك.",
         "phoneInvalid": "يرجى إدخال رقم هاتف صالح.",
         "messageMin": "يجب أن تحتوي الرسالة على 10 أحرف على الأقل.",
         "messageMax": "الرسالة طويلة جدًا (الحد الأقصى 2000 حرف).",

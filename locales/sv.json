@@ -89,7 +89,7 @@
       "namePlaceholder": "Ditt namn",
       "emailLabel": "E-post",
       "emailPlaceholder": "du@email.com",
-      "phoneLabel": "Telefon (valfritt)",
+      "phoneLabel": "Telefon",
       "phonePlaceholder": "+46 …",
       "experienceLabel": "Bakgrund (valfritt)",
       "experiencePlaceholder": "Student, karriärbytare, juniorutvecklare…",
@@ -103,6 +103,7 @@
       "errors": {
         "nameMin": "Ange minst 2 tecken.",
         "emailInvalid": "Ange en giltig e-postadress.",
+        "phoneRequired": "Ange ditt telefonnummer.",
         "phoneInvalid": "Ange ett giltigt telefonnummer.",
         "messageMin": "Meddelandet måste vara minst 10 tecken.",
         "messageMax": "Meddelandet är för långt (max 2000 tecken).",
