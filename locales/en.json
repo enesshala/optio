@@ -43,6 +43,8 @@
     "description": "Tell us what you're building — we'll follow up quickly.",
     "eyebrow": "Contact",
     "orInstagram": "Prefer Instagram?",
+    "privacyNoticePrefix": "By sending this message, you agree to our",
+    "privacyNoticeLink": "Privacy Policy",
     "form": {
       "nameLabel": "Name",
       "namePlaceholder": "Your name",

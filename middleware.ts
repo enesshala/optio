@@ -3,7 +3,7 @@ import { defaultLocale, locales, normalizeLocale } from "./lib/i18n";
 import { NextRequest, NextResponse } from "next/server";
 
 /** App routes (non-locale first segment) that must not redirect to home */
-const APP_ROUTE_ROOTS = new Set(["collab", "bootcamp"]);
+const APP_ROUTE_ROOTS = new Set(["collab", "bootcamp", "privacy", "terms"]);
 
 function localeFromPath(pathname: string): string {
   const segment = pathname.split("/").filter(Boolean)[0];
@@ -47,6 +47,6 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/((?!api|_next/static|_next/image|terms|.*\\.(?:txt|xml|ico|png|jpg|jpeg|svg|gif|webp|js|css|woff|woff2|ttf|eot|glb|gltf|bin|hdr)).*)",
+    "/((?!api|_next/static|_next/image|terms|privacy|.*\\.(?:txt|xml|ico|png|jpg|jpeg|svg|gif|webp|js|css|woff|woff2|ttf|eot|glb|gltf|bin|hdr)).*)",
   ],
 };

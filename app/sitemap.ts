@@ -8,7 +8,13 @@ import {
   buildBootcampLanguageAlternates,
 } from "@/lib/seoMetadata";
 import { contentLocales, defaultLocale } from "@/lib/i18n";
-import { localePath, collabPath, bootcampPath, SITE_URL } from "@/config/seo";
+import {
+  localePath,
+  collabPath,
+  bootcampPath,
+  legalPath,
+  SITE_URL,
+} from "@/config/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
@@ -46,6 +52,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     : [];
 
   const years = getBootcampYears();
+  const legalPages = ["privacy", "terms"] as const;
+  const legalEntries = legalPages.flatMap((page) =>
+    contentLocales.map((locale) => ({
+      url: new URL(legalPath(locale, page), SITE_URL).toString(),
+      lastModified,
+      changeFrequency: "yearly" as const,
+      priority: 0.3,
+    })),
+  );
+
   const bootcampEntries = years.flatMap((year) => {
     const languages = buildBootcampLanguageAlternates(year);
     return contentLocales.map((locale) => {
@@ -62,5 +78,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   });
 
-  return [...homeEntries, ...collabEntries, ...bootcampEntries];
+  return [...homeEntries, ...collabEntries, ...legalEntries, ...bootcampEntries];
 }

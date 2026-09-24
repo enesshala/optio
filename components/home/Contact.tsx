@@ -3,7 +3,15 @@ import { siteConfig } from "@/config/site";
 import Link from "next/link";
 import { RoughNotation } from "react-rough-notation";
 
-const Contact = ({ id, locale }: { id: string; locale: any }) => {
+const Contact = ({
+  id,
+  locale,
+  privacyHref = "/privacy",
+}: {
+  id: string;
+  locale: any;
+  privacyHref?: string;
+}) => {
   return (
     <section
       id={id}
@@ -23,7 +31,17 @@ const Contact = ({ id, locale }: { id: string; locale: any }) => {
 
       <div className="w-full rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-zinc-950/80 sm:p-8">
         <ContactForm variant="home" locale={locale.form} />
-        <p className="mt-6 text-center text-sm text-zinc-500 dark:text-zinc-400">
+        <p className="mt-4 text-center text-xs text-zinc-500 dark:text-zinc-400">
+          {locale.privacyNoticePrefix ?? "By sending this message, you agree to our"}{" "}
+          <Link
+            href={privacyHref}
+            className="font-medium text-emerald-600 underline underline-offset-4 hover:text-emerald-700 dark:text-emerald-400"
+          >
+            {locale.privacyNoticeLink ?? "Privacy Policy"}
+          </Link>
+          .
+        </p>
+        <p className="mt-4 text-center text-sm text-zinc-500 dark:text-zinc-400">
           {locale.orInstagram}{" "}
           <Link
             href={siteConfig.authors[0].url as string}

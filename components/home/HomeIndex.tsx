@@ -10,6 +10,7 @@ import SocialProof from "@/components/home/SocialProof";
 import Testimonials from "@/components/home/Testimonials";
 import JsonLd from "@/components/JsonLd";
 import { features } from "@/config/features";
+import { legalPath } from "@/config/seo";
 import { defaultLocale, getDictionary, normalizeLocale } from "@/lib/i18n";
 
 export default async function HomeIndex({ lang }: { lang: string }) {
@@ -29,7 +30,11 @@ export default async function HomeIndex({ lang }: { lang: string }) {
       <Pricing id="Pricing" locale={dict.Pricing} langName={langName} />
       <Testimonials id="Testimonials" locale={dict.Testimonials} />
       <FAQ id="FAQ" locale={dict.FAQ} langName={langName} />
-      <Contact id="Contact" locale={dict.Contact} />
+      <Contact
+        id="Contact"
+        locale={dict.Contact}
+        privacyHref={legalPath(langName, "privacy")}
+      />
       <CTA locale={dict.CTA} CTALocale={dict.CTAButton} />
     </>
   );

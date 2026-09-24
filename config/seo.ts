@@ -144,3 +144,10 @@ export function bootcampPath(lang: string, year: string): string {
   if (base === "/") return `/bootcamp/${year}`;
   return `${base}/bootcamp/${year}`;
 }
+
+/** Locale-aware path for legal pages, e.g. /privacy or /sq/privacy */
+export function legalPath(lang: string, page: "privacy" | "terms"): string {
+  const base = localePath(lang);
+  if (base === "/") return `/${page}`;
+  return `${base}/${page}`;
+}

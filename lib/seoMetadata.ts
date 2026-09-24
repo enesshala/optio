@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
 import {
+  getPrivacyDocument,
+  getTermsDocument,
+} from "@/config/legal";
+import {
   getSeoForLocale,
   localePath,
   collabPath,
   bootcampPath,
+  legalPath,
   SITE_URL,
 } from "@/config/seo";
 import type { Collab } from "@/config/collabs";
@@ -178,6 +183,38 @@ export function buildBootcampMetadata(
       title,
       description,
       images: [`${SITE_URL}/og.png`],
+    },
+  };
+}
+
+export function buildLegalMetadata(
+  lang: string,
+  kind: "privacy" | "terms",
+): Metadata {
+  const document =
+    kind === "privacy" ? getPrivacyDocument(lang) : getTermsDocument(lang);
+  const canonical = legalPath(lang, kind);
+  const absoluteCanonical = new URL(canonical, SITE_URL).toString();
+  const description = document.intro;
+
+  return {
+    title: `${document.title} | ${siteConfig.name}`,
+    description,
+    alternates: {
+      canonical,
+    },
+    robots: { index: true, follow: true },
+    openGraph: {
+      type: "website",
+      url: absoluteCanonical,
+      title: document.title,
+      description,
+      siteName: siteConfig.name,
+    },
+    twitter: {
+      card: "summary",
+      title: document.title,
+      description,
     },
   };
 }

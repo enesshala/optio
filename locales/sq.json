@@ -43,6 +43,8 @@
     "description": "Na tregoni çfarë po ndërtoni — kthehemi shpejt.",
     "eyebrow": "Kontakt",
     "orInstagram": "Preferoni Instagram?",
+    "privacyNoticePrefix": "Duke dërguar mesazhin, pranoni",
+    "privacyNoticeLink": "Politikën e privatësisë",
     "form": {
       "nameLabel": "Emri",
       "namePlaceholder": "Emri juaj",
