@@ -4,6 +4,7 @@ import { z } from "zod";
 export const defaultValidationMessages = {
   nameMin: "Please enter at least 2 characters.",
   emailInvalid: "Please enter a valid email address.",
+  phoneRequired: "Please enter your phone number.",
   phoneInvalid: "Please enter a valid phone number.",
   messageMin: "Message must be at least 10 characters.",
   messageMax: "Message is too long (max 2000 characters).",
@@ -19,6 +20,14 @@ function optionalPhoneSchema(message: string) {
     .string()
     .optional()
     .refine((val) => !val || isValidPhoneNumber(val), { message });
+}
+
+function requiredPhoneSchema(messages: ContactValidationMessages) {
+  return z
+    .string()
+    .trim()
+    .min(1, messages.phoneRequired)
+    .refine((val) => isValidPhoneNumber(val), { message: messages.phoneInvalid });
 }
 
 function baseFields(messages: ContactValidationMessages) {
@@ -53,6 +62,7 @@ export function createBootcampContactSchema(
   return z.object({
     type: z.literal("bootcamp"),
     ...baseFields(messages),
+    phone: requiredPhoneSchema(messages),
     experience: z
       .string()
       .trim()

@@ -89,7 +89,7 @@
       "namePlaceholder": "Votre nom",
       "emailLabel": "E-mail",
       "emailPlaceholder": "vous@email.com",
-      "phoneLabel": "Téléphone (optionnel)",
+      "phoneLabel": "Téléphone",
       "phonePlaceholder": "+33 …",
       "experienceLabel": "Parcours (optionnel)",
       "experiencePlaceholder": "Étudiant, reconversion, junior dev…",
@@ -103,6 +103,7 @@
       "errors": {
         "nameMin": "Veuillez saisir au moins 2 caractères.",
         "emailInvalid": "Veuillez saisir une adresse e-mail valide.",
+        "phoneRequired": "Veuillez saisir votre numéro de téléphone.",
         "phoneInvalid": "Veuillez saisir un numéro de téléphone valide.",
         "messageMin": "Le message doit contenir au moins 10 caractères.",
         "messageMax": "Le message est trop long (max. 2000 caractères).",

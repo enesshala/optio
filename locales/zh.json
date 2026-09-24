@@ -89,7 +89,7 @@
       "namePlaceholder": "你的姓名",
       "emailLabel": "邮箱",
       "emailPlaceholder": "you@email.com",
-      "phoneLabel": "电话（可选）",
+      "phoneLabel": "电话",
       "phonePlaceholder": "+86 …",
       "experienceLabel": "背景（可选）",
       "experiencePlaceholder": "学生、转行者、初级开发者…",
@@ -103,6 +103,7 @@
       "errors": {
         "nameMin": "请至少输入 2 个字符。",
         "emailInvalid": "请输入有效的邮箱地址。",
+        "phoneRequired": "请输入您的电话号码。",
         "phoneInvalid": "请输入有效的电话号码。",
         "messageMin": "留言至少需要 10 个字符。",
         "messageMax": "留言过长（最多 2000 个字符）。",
