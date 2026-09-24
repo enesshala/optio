@@ -36,4 +36,16 @@ export const Makers: Maker[] = [
     vibe: "Builds interactions that feel fast, clear, and a little magical.",
     image: "/images/users/5.png",
   },
+  {
+    name: "Dion",
+    role: "Full-Stack Builder",
+    vibe: "Ships reliable products from idea to production with steady craft.",
+    image: "/images/users/6.png",
+  },
+  {
+    name: "Dreni",
+    role: "Digital Strategist",
+    vibe: "Turns goals into roadmaps and measurable wins for growing brands.",
+    image: "/images/users/7.png",
+  },
 ];
