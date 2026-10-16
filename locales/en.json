@@ -1,9 +1,64 @@
 {
   "Hero": {
+    "eyebrow": "Open capacity for new projects",
+    "titlePrefix": "Growth through",
+    "keywords": [
+      "Platforms",
+      "Automation & AI",
+      "E-commerce",
+      "Digital Growth",
+      "Web Apps",
+      "Integrations"
+    ],
     "title1": "Build.",
     "title2": "Convert.",
     "title3": "Grow.",
-    "description": "We help brands in Kosovo and worldwide grow in the digital world. From idea to execution, we build digital experiences that convert."
+    "description": "From platforms and software to automation and growth systems — we ship what converts, for teams worldwide.",
+    "secondaryCta": "Explore services",
+    "statProjects": "50+",
+    "statProjectsLabel": "Projects shipped",
+    "statRating": "5.0/5",
+    "statRatingLabel": "Client rating",
+    "statReply": "24h",
+    "statReplyLabel": "Response time",
+    "statReach": "Worldwide",
+    "statReachLabel": "Remote delivery"
+  },
+  "Inquiry": {
+    "title": "Start a project inquiry",
+    "heading": "How can we reach you?",
+    "subheading": "Your contact details first — project details come next.",
+    "description": "Three quick steps — then we’ll take it from there.",
+    "stepContact": "Contact",
+    "stepService": "Service",
+    "stepBudget": "Budget",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@company.com",
+    "phoneLabel": "Phone",
+    "phonePlaceholder": "+383 …",
+    "next": "Continue",
+    "back": "Back",
+    "finish": "Send inquiry",
+    "services": [
+      "Custom Platforms",
+      "Automation & AI",
+      "E-commerce",
+      "Digital Growth",
+      "Product & Web Apps",
+      "Integrations & APIs"
+    ],
+    "budgets": [
+      "Under €5k",
+      "€5k – €15k",
+      "€15k – €40k",
+      "€40k+",
+      "Not sure yet"
+    ]
+  },
+  "Logos": {
+    "title": "Built with modern stacks"
   },
   "SocialProof": {
     "count": "50+",
@@ -11,16 +66,38 @@
   },
   "Showcase": {
     "title": "Projects",
-    "description": "Selected work we've shipped for brands and product teams.",
-    "eyebrow": "Selected work"
+    "titlePrefix": "Own ideas.",
+    "titleAccent": "Real projects.",
+    "description": "Selected work we've shipped for brands and product teams — each with its own fingerprint.",
+    "eyebrow": "Selected work",
+    "viewProject": "View project"
   },
   "Feature": {
-    "title": "What We Do"
+    "title": "What We Do",
+    "titlePrefix": "What we",
+    "titleAccent": "deliver.",
+    "eyebrow": "Services",
+    "description": "Platforms, automation, or growth: pick a lane and see what we can ship for your project.",
+    "allCta": "Talk about a service",
+    "groups": {
+      "platforms": {
+        "title": "Platforms & apps",
+        "description": "Custom systems and customer-facing products."
+      },
+      "automation": {
+        "title": "Automation & systems",
+        "description": "AI workflows and reliable integrations."
+      },
+      "commerce": {
+        "title": "Commerce & growth",
+        "description": "Stores, funnels, and acquisition systems."
+      }
+    }
   },
   "Pricing": {
     "title": "Packages",
     "title2": "Clear scopes. Real outcomes.",
-    "description": "We work with startups and businesses in Kosovo and worldwide — focused on clean design, smart strategy, and real results.",
+    "description": "We work with startups and businesses worldwide — focused on platforms, automation, e-commerce, and growth that ships.",
     "doYouLike": "Want to talk through your project?",
     "follow": "Message us on Instagram.",
     "eyebrow": "Engagements",
@@ -30,18 +107,38 @@
   },
   "Testimonials": {
     "title": "What clients say",
-    "description1": "We partner with founders and teams who need execution, not fluff.",
-    "description2": "Here's what it's like",
-    "description3": " to work with OPTIO."
+    "titlePrefix": "Client reviews.",
+    "titleAccent": "All five stars.",
+    "badge": "Client reviews",
+    "count": "50+",
+    "description1": "What founders and teams say about shipping with OPTIO",
+    "description2": "— clear communication,",
+    "description3": " real execution.",
+    "rating": "5.0",
+    "ratingLabel": "from client feedback",
+    "reviewSource": "OPTIO client"
   },
   "FAQ": {
     "title": "FAQs",
-    "description": "Answers to common questions about working with OPTIO."
+    "titlePrefix": "Common questions.",
+    "titleAccent": "Clear answers.",
+    "description": "Cost, process, timelines — the essentials. Everything else we clarify personally.",
+    "sideTitle": "Don’t see your question?",
+    "sideDescription": "Write us directly — you talk to the people who ship your project.",
+    "sideCta": "Get in touch"
   },
   "Contact": {
     "title": "Get in touch",
     "description": "Tell us what you're building — we'll follow up quickly.",
     "eyebrow": "Contact",
+    "ctaTitlePrefix": "Let’s build",
+    "ctaTitleAccent": "something big.",
+    "ctaDescription": "Tell us about your project. On a short intro call we clarify goals, scope, and the best path — honestly, with no hard sell.",
+    "ctaButton": "Start a project",
+    "ctaChip1": "50+ projects shipped",
+    "ctaChip2": "Reply within 24h",
+    "rating": "5.0",
+    "ratingLabel": "client feedback",
     "orInstagram": "Prefer Instagram?",
     "privacyNoticePrefix": "By sending this message, you agree to our",
     "privacyNoticeLink": "Privacy Policy",
@@ -73,16 +170,16 @@
     }
   },
   "CTA": {
-    "title": "Ready to grow your brand?",
+    "title": "Ready to automate and scale?",
     "description1": "From",
-    "description2": "strategy",
+    "description2": "platforms",
     "description3": "to",
-    "description4": "launch, we ship experiences built to",
+    "description4": "growth systems, we ship software built to",
     "description5": "convert",
     "description6": "."
   },
   "CTAButton": {
-    "title": "Start your project"
+    "title": "Start a project"
   },
   "BootcampApply": {
     "orInstagram": "Or DM us on Instagram",

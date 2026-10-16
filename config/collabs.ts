@@ -35,9 +35,9 @@ export const collabs: Collab[] = [
     url: "https://aromadream-ks.com",
     coverImage: "/images/projects/aromadream.png",
     summary:
-      "A fragrance brand storefront for home, car, and space scents — warm product storytelling built for Kosovo shoppers.",
+      "A fragrance brand storefront for home, car, and space scents — warm product storytelling built for modern shoppers.",
     challenge:
-      "AromaDream had a distinctive scent catalog, but online it needed a storefront that felt as inviting as the products — clear collections, product stories that sell atmosphere, and a shopping path Kosovo customers could trust from browse to checkout.",
+      "AromaDream had a distinctive scent catalog, but online it needed a storefront that felt as inviting as the products — clear collections, product stories that sell atmosphere, and a shopping path customers could trust from browse to checkout.",
     approach:
       "We partnered from first conversation through launch — shaping a scent-led information architecture, designing a warm e-commerce experience, and shipping a store that makes discovery, product detail, and purchase feel effortless.",
     outcome:
@@ -46,7 +46,7 @@ export const collabs: Collab[] = [
       {
         title: "Discovery",
         description:
-          "Workshops and interviews to map collections, audiences, and what “atmosphere” means for a scent brand in Kosovo.",
+          "Workshops and interviews to map collections, audiences, and what “atmosphere” means for a scent brand.",
       },
       {
         title: "Strategy",
@@ -98,7 +98,7 @@ export const collabs: Collab[] = [
     ],
     seoTitle: "AromaDream — Collaboration | OPTIO",
     seoDescription:
-      "How OPTIO partnered with AromaDream from idea to completion — a fragrance brand storefront for home, car, and space scents in Kosovo.",
+      "How OPTIO partnered with AromaDream from idea to completion — a fragrance brand storefront for home, car, and space scents.",
   },
   {
     slug: "plustrade",
@@ -118,7 +118,7 @@ export const collabs: Collab[] = [
       {
         title: "Discovery",
         description:
-          "Workshops and interviews to map services, audiences, and what trust looks like for electrical work in Kosovo.",
+          "Workshops and interviews to map services, audiences, and what trust looks like for electrical work.",
       },
       {
         title: "Strategy",
@@ -179,7 +179,7 @@ export const collabs: Collab[] = [
     url: "https://harku-ks.com",
     coverImage: "/images/projects/harku.png",
     summary:
-      "A professional services presence for heating, climate, ventilation, and water installation — built for Kosovo homes and businesses.",
+      "A professional services presence for heating, climate, ventilation, and water installation — built for homes and businesses.",
     challenge:
       "HARKU needed a digital home that matched the reliability of their craft. Service offerings were strong in the field, but online the brand lacked a clear story, structured service presentation, and a confident path for homeowners and businesses to request work.",
     approach:
@@ -190,7 +190,7 @@ export const collabs: Collab[] = [
       {
         title: "Discovery",
         description:
-          "Workshops and interviews to map services, audiences, and what “professional” means for installation work in Kosovo.",
+          "Workshops and interviews to map services, audiences, and what “professional” means for installation work.",
       },
       {
         title: "Strategy",
@@ -245,7 +245,7 @@ export const collabs: Collab[] = [
     ],
     seoTitle: "HARKU — Collaboration | OPTIO",
     seoDescription:
-      "How OPTIO partnered with HARKU from idea to completion — a professional heating, climate, ventilation, and water services site for Kosovo.",
+      "How OPTIO partnered with HARKU from idea to completion — a professional heating, climate, ventilation, and water services site.",
   },
 ];
 

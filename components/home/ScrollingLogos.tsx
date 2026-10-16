@@ -1,27 +1,31 @@
 "use client";
+
 import { LOGOS } from "@/config/logos";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 
-const ScrollingLogos = () => {
-  const { theme } = useTheme();
+const ScrollingLogos = ({ locale }: { locale?: { title?: string } }) => {
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
+
   return (
-    <section className="mx-auto w-full md:max-w-5xl lg:max-w-7xl px-0 md:px-6 lg:px-8 pt-16">
-      <Marquee direction="left" autoFill pauseOnHover>
+    <section className="relative overflow-hidden border-y border-zinc-950/5 bg-white/40 py-10 dark:border-white/5 dark:bg-zinc-950/40">
+      <p className="sr-only">{locale?.title ?? "Built with modern stacks"}</p>
+      <Marquee direction="left" autoFill pauseOnHover speed={36}>
         {LOGOS.map((image, index) => (
-          <div className="mx-6 text-gray-500" key={index}>
+          <div
+            className="mx-10 flex items-center opacity-50 transition-opacity hover:opacity-100"
+            key={`${image.name}-${index}`}
+          >
             <Image
               src={image.image}
               alt={image.name}
-              width={50}
-              height={50}
-              style={{
-                objectFit: "cover", // cover, contain, none
-              }}
-              className={`${
-                theme === "dark" ? "filter dark:invert grayscale" : ""
-              } hover:filter-none transition-all duration-300 cursor-pointer text-gray-500`}
+              width={48}
+              height={48}
+              className={`h-9 w-9 object-contain ${
+                isDark ? "invert grayscale" : "grayscale"
+              }`}
             />
           </div>
         ))}

@@ -13,7 +13,7 @@ export const showcases: ShowcaseProject[] = [
     name: "AromaDream",
     url: "https://aromadream-ks.com",
     description:
-      "Fragrance brand storefront for home, car, and space scents — warm product storytelling built for Kosovo shoppers.",
+      "Fragrance brand storefront for home, car, and space scents — warm product storytelling built for modern shoppers.",
     tag: "E-commerce",
     image: "/images/projects/aromadream.png",
     slug: "aromadream",
@@ -31,7 +31,7 @@ export const showcases: ShowcaseProject[] = [
     name: "HARKU",
     url: "https://harku-ks.com",
     description:
-      "Heating, climate, ventilation, and water installation brand — professional services site for Kosovo homes and businesses.",
+      "Heating, climate, ventilation, and water installation brand — professional services site for homes and businesses.",
     tag: "Services",
     image: "/images/projects/harku.png",
     slug: "harku",

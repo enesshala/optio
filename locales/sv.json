@@ -3,7 +3,26 @@
     "title1": "Bygg.",
     "title2": "Konvertera.",
     "title3": "Väx.",
-    "description": "Vi hjälper varumärken att växa i den digitala världen — globalt. Från idé till leverans bygger vi digitala upplevelser som konverterar."
+    "description": "Vi hjälper varumärken och team världen över att bygga plattformar, automatisera flöden och växa digitalt. Från idé till leverans shippar vi system som konverterar.",
+    "eyebrow": "Öppen kapacitet för nya projekt",
+    "titlePrefix": "Tillväxt genom",
+    "keywords": [
+      "plattformar",
+      "automation & AI",
+      "e-handel",
+      "digital tillväxt",
+      "webbappar",
+      "integrationer"
+    ],
+    "secondaryCta": "Utforska tjänster",
+    "statProjects": "50+",
+    "statProjectsLabel": "Levererade projekt",
+    "statReply": "24h",
+    "statReplyLabel": "Svarstid",
+    "statReach": "Världsomspännande",
+    "statReachLabel": "Remote leverans",
+    "statRating": "5,0/5",
+    "statRatingLabel": "Kundbetyg"
   },
   "SocialProof": {
     "count": "50+",
@@ -12,15 +31,37 @@
   "Showcase": {
     "title": "Projekt",
     "description": "Utvalt arbete vi levererat för varumärken och produktteam.",
-    "eyebrow": "Utvalt arbete"
+    "eyebrow": "Utvalt arbete",
+    "titlePrefix": "Egna idéer.",
+    "titleAccent": "Riktiga projekt.",
+    "viewProject": "Visa projekt"
   },
   "Feature": {
-    "title": "Vad vi gör"
+    "title": "Vad vi gör",
+    "eyebrow": "Tjänster",
+    "description": "Sex förmågor, grupperade som growth-team köper.",
+    "groups": {
+      "platforms": {
+        "title": "Plattformar & appar",
+        "description": "Skräddarsydda system och kundnära produkter."
+      },
+      "automation": {
+        "title": "Automation & system",
+        "description": "AI-flöden och pålitliga integrationer."
+      },
+      "commerce": {
+        "title": "Commerce & tillväxt",
+        "description": "Butiker, trattar och acquisition-system."
+      }
+    },
+    "titlePrefix": "Vad vi",
+    "titleAccent": "levererar.",
+    "allCta": "Prata om en tjänst"
   },
   "Pricing": {
     "title": "Paket",
     "title2": "Tydliga ramar. Verkliga resultat.",
-    "description": "Vi jobbar med startups och företag världen över — fokus på ren design, smart strategi och mätbara resultat.",
+    "description": "Vi jobbar med startups och företag världen över — fokus på plattformar, automation, e-handel och tillväxt som levererar.",
     "doYouLike": "Vill du prata om ert projekt?",
     "follow": "Hör av dig på Instagram.",
     "eyebrow": "Engagemang",
@@ -32,11 +73,20 @@
     "title": "Vad kunderna säger",
     "description1": "Vi samarbetar med grundare och team som vill ha genomförande, inte tomma löften.",
     "description2": "Så här är det",
-    "description3": " att jobba med OPTIO."
+    "description3": " att jobba med OPTIO.",
+    "rating": "5.0",
+    "ratingLabel": "Kundfeedback",
+    "titlePrefix": "Kundrecensioner.",
+    "titleAccent": "Alla fem stjärnor.",
+    "badge": "Kundrecensioner"
   },
   "FAQ": {
     "title": "Vanliga frågor",
-    "description": "Svar på vanliga frågor om att arbeta med OPTIO."
+    "description": "Svar på vanliga frågor om att arbeta med OPTIO.",
+    "titlePrefix": "Vanliga frågor.",
+    "titleAccent": "Tydliga svar.",
+    "sideTitle": "Ser du inte din fråga?",
+    "sideCta": "Kontakta oss"
   },
   "Contact": {
     "title": "Hör av dig",
@@ -68,14 +118,17 @@
         "messageMax": "Meddelandet är för långt (max 2000 tecken).",
         "experienceMax": "Bakgrunden är för lång (max 500 tecken)."
       }
-    }
+    },
+    "ctaTitlePrefix": "Låt oss bygga",
+    "ctaTitleAccent": "något stort.",
+    "ctaButton": "Starta ett projekt"
   },
   "CTA": {
-    "title": "Redo att växa med ert varumärke?",
+    "title": "Redo att automatisera och skala?",
     "description1": "Från",
-    "description2": "strategi",
+    "description2": "plattformar",
     "description3": "till",
-    "description4": "lansering levererar vi upplevelser byggda för att",
+    "description4": "tillväxtsystem levererar vi mjukvara byggd för att",
     "description5": "konvertera",
     "description6": "."
   },
@@ -110,5 +163,40 @@
         "experienceMax": "Bakgrunden är för lång (max 500 tecken)."
       }
     }
+  },
+  "Inquiry": {
+    "title": "Starta en projektförfrågan",
+    "description": "Tre snabba steg — sedan tar vi det vidare.",
+    "stepContact": "Kontakt",
+    "stepService": "Tjänst",
+    "stepBudget": "Budget",
+    "nameLabel": "Namn",
+    "namePlaceholder": "Ditt namn",
+    "emailLabel": "E-post",
+    "emailPlaceholder": "du@foretag.com",
+    "next": "Fortsätt",
+    "back": "Tillbaka",
+    "finish": "Skicka förfrågan",
+    "services": [
+      "Skräddarsydda plattformar",
+      "Automation & AI",
+      "E-handel",
+      "Digital tillväxt",
+      "Produkt & webbappar",
+      "Integrationer & API:er"
+    ],
+    "budgets": [
+      "Under 5k €",
+      "5k – 15k €",
+      "15k – 40k €",
+      "40k €+",
+      "Osäker ännu"
+    ],
+    "heading": "Hur når vi dig?",
+    "subheading": "Dina kontaktuppgifter först — projektdetaljer i nästa steg.",
+    "phoneLabel": "Telefon"
+  },
+  "Logos": {
+    "title": "Byggt med moderna stackar"
   }
 }

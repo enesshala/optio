@@ -154,7 +154,7 @@ export function buildBootcampMetadata(
     description,
     keywords: [
       "OPTIO Bootcamp",
-      "full stack bootcamp Kosovo",
+      "full stack bootcamp",
       "React",
       "Express",
       "PostgreSQL",

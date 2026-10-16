@@ -1,12 +1,9 @@
-import CTA from "@/components/home/CTA";
 import Contact from "@/components/home/Contact";
 import FAQ from "@/components/home/FAQ";
 import Feature from "@/components/home/Feature";
 import Hero from "@/components/home/Hero";
-import Pricing from "@/components/home/Pricing";
 import ScrollingLogos from "@/components/home/ScrollingLogos";
 import Showcase from "@/components/home/Showcase";
-import SocialProof from "@/components/home/SocialProof";
 import Testimonials from "@/components/home/Testimonials";
 import JsonLd from "@/components/JsonLd";
 import { features } from "@/config/features";
@@ -20,22 +17,23 @@ export default async function HomeIndex({ lang }: { lang: string }) {
   return (
     <>
       <JsonLd lang={langName} />
-      <Hero locale={dict.Hero} langName={langName} CTALocale={dict.CTAButton} />
-      <SocialProof locale={dict.SocialProof} />
-      <ScrollingLogos />
+      <Hero
+        locale={dict.Hero}
+        langName={langName}
+        inquiryLocale={dict.Inquiry as any}
+      />
+      <ScrollingLogos locale={dict.Logos as any} />
+      <Testimonials id="Reviews" locale={dict.Testimonials} />
       {features.showProjects ? (
         <Showcase id="Projects" locale={dict.Showcase} langName={langName} />
       ) : null}
       <Feature id="Services" locale={dict.Feature} langName={langName} />
-      <Pricing id="Pricing" locale={dict.Pricing} langName={langName} />
-      <Testimonials id="Testimonials" locale={dict.Testimonials} />
       <FAQ id="FAQ" locale={dict.FAQ} langName={langName} />
       <Contact
         id="Contact"
         locale={dict.Contact}
         privacyHref={legalPath(langName, "privacy")}
       />
-      <CTA locale={dict.CTA} CTALocale={dict.CTAButton} />
     </>
   );
 }

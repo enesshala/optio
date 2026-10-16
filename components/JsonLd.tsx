@@ -19,20 +19,10 @@ export default function JsonLd({ lang }: JsonLdProps) {
     logo: `${SITE_URL}/lightoptio.svg`,
     email: "info@optio-digital.com",
     sameAs: [siteConfig.authors[0]?.url].filter(Boolean),
-    areaServed: [
-      {
-        "@type": "Country",
-        name: "Kosovo",
-      },
-      {
-        "@type": "City",
-        name: "Prishtina",
-      },
-      {
-        "@type": "Place",
-        name: "Worldwide",
-      },
-    ],
+    areaServed: {
+      "@type": "Place",
+      name: "Worldwide",
+    },
     description: siteConfig.description,
     knowsLanguage: ["en", "sq"],
   };

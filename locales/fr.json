@@ -3,7 +3,26 @@
     "title1": "Construire.",
     "title2": "Convertir.",
     "title3": "Grandir.",
-    "description": "Nous aidons les marques à grandir dans le monde numérique — à l'échelle mondiale. De l'idée à la mise en œuvre, nous créons des expériences digitales qui convertissent."
+    "description": "Nous aidons marques et équipes partout dans le monde à construire des plateformes, automatiser des workflows et grandir digitalement. De l'idée à l'exécution, nous livrons des systèmes qui convertissent.",
+    "eyebrow": "Capacité ouverte pour de nouveaux projets",
+    "titlePrefix": "La croissance par",
+    "keywords": [
+      "les plateformes",
+      "l'automatisation & l'IA",
+      "l'e-commerce",
+      "la croissance digitale",
+      "les web apps",
+      "les intégrations"
+    ],
+    "secondaryCta": "Découvrir les services",
+    "statProjects": "50+",
+    "statProjectsLabel": "Projets livrés",
+    "statReply": "24h",
+    "statReplyLabel": "Délai de réponse",
+    "statReach": "Mondial",
+    "statReachLabel": "Livraison remote",
+    "statRating": "5,0/5",
+    "statRatingLabel": "Note clients"
   },
   "SocialProof": {
     "count": "50+",
@@ -12,15 +31,37 @@
   "Showcase": {
     "title": "Projets",
     "description": "Travaux sélectionnés livrés pour des marques et des équipes produit.",
-    "eyebrow": "Travaux sélectionnés"
+    "eyebrow": "Travaux sélectionnés",
+    "titlePrefix": "Nos idées.",
+    "titleAccent": "De vrais projets.",
+    "viewProject": "Voir le projet"
   },
   "Feature": {
-    "title": "Ce que nous faisons"
+    "title": "Ce que nous faisons",
+    "eyebrow": "Services",
+    "description": "Six capacités, regroupées comme les équipes growth achètent.",
+    "groups": {
+      "platforms": {
+        "title": "Plateformes & apps",
+        "description": "Systèmes sur mesure et produits clients."
+      },
+      "automation": {
+        "title": "Automatisation & systèmes",
+        "description": "Workflows IA et intégrations fiables."
+      },
+      "commerce": {
+        "title": "Commerce & croissance",
+        "description": "Boutiques, tunnels et systèmes d'acquisition."
+      }
+    },
+    "titlePrefix": "Ce que nous",
+    "titleAccent": "livrons.",
+    "allCta": "Parler d’un service"
   },
   "Pricing": {
     "title": "Forfaits",
     "title2": "Des périmètres clairs. Des résultats réels.",
-    "description": "Nous travaillons avec des startups et des entreprises du monde entier — design épuré, stratégie intelligente et résultats concrets.",
+    "description": "Nous travaillons avec des startups et des entreprises du monde entier — plateformes, automatisation, e-commerce et croissance qui shippe.",
     "doYouLike": "Envie d'échanger sur votre projet ?",
     "follow": "Écrivez-nous sur Instagram.",
     "eyebrow": "Engagements",
@@ -32,11 +73,20 @@
     "title": "Ce que disent les clients",
     "description1": "Nous accompagnons les fondateurs et les équipes qui veulent de l'exécution, pas du blabla.",
     "description2": "Voici ce que donne",
-    "description3": " la collaboration avec OPTIO."
+    "description3": " la collaboration avec OPTIO.",
+    "rating": "5.0",
+    "ratingLabel": "Avis clients",
+    "titlePrefix": "Avis clients.",
+    "titleAccent": "Tous 5 étoiles.",
+    "badge": "Avis clients"
   },
   "FAQ": {
     "title": "FAQ",
-    "description": "Réponses aux questions fréquentes sur le travail avec OPTIO."
+    "description": "Réponses aux questions fréquentes sur le travail avec OPTIO.",
+    "titlePrefix": "Questions fréquentes.",
+    "titleAccent": "Réponses claires.",
+    "sideTitle": "Votre question n’y est pas ?",
+    "sideCta": "Nous contacter"
   },
   "Contact": {
     "title": "Nous contacter",
@@ -68,14 +118,17 @@
         "messageMax": "Le message est trop long (max. 2000 caractères).",
         "experienceMax": "Le parcours est trop long (max. 500 caractères)."
       }
-    }
+    },
+    "ctaTitlePrefix": "Construisons",
+    "ctaTitleAccent": "quelque chose de grand.",
+    "ctaButton": "Démarrer un projet"
   },
   "CTA": {
-    "title": "Prêt à développer votre marque ?",
-    "description1": "De la",
-    "description2": "stratégie",
-    "description3": "au",
-    "description4": "lancement, nous livrons des expériences pensées pour",
+    "title": "Prêt à automatiser et à scaler ?",
+    "description1": "Des",
+    "description2": "plateformes",
+    "description3": "aux",
+    "description4": "systèmes de croissance, nous livrons un logiciel pensé pour",
     "description5": "convertir",
     "description6": "."
   },
@@ -110,5 +163,40 @@
         "experienceMax": "Le parcours est trop long (max. 500 caractères)."
       }
     }
+  },
+  "Inquiry": {
+    "title": "Démarrer une demande",
+    "description": "Trois étapes rapides — ensuite, on s'occupe du reste.",
+    "stepContact": "Contact",
+    "stepService": "Service",
+    "stepBudget": "Budget",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Votre nom",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "vous@entreprise.com",
+    "next": "Continuer",
+    "back": "Retour",
+    "finish": "Envoyer la demande",
+    "services": [
+      "Plateformes sur mesure",
+      "Automatisation & IA",
+      "E-commerce",
+      "Croissance digitale",
+      "Produit & web apps",
+      "Intégrations & APIs"
+    ],
+    "budgets": [
+      "Moins de 5k €",
+      "5k – 15k €",
+      "15k – 40k €",
+      "40k €+",
+      "Pas encore sûr"
+    ],
+    "heading": "Comment vous joindre ?",
+    "subheading": "Vos coordonnées d’abord — les détails du projet ensuite.",
+    "phoneLabel": "Téléphone"
+  },
+  "Logos": {
+    "title": "Construit avec des stacks modernes"
   }
 }

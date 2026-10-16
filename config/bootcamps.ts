@@ -283,7 +283,7 @@ const bootcampEn: Bootcamp = {
     {
       question: "What language is the bootcamp in?",
       answer:
-        "Sessions and materials are designed for Kosovo and the region — expect clear instruction with practical English for code and tooling.",
+        "Sessions and materials are designed for remote and in-person learners worldwide — clear instruction with practical English for code and tooling.",
     },
     {
       question: "How many seats are there?",
@@ -530,7 +530,7 @@ const bootcampSq: Bootcamp = {
     {
       question: "Në çfarë gjuhe zhvillohet?",
       answer:
-        "Sesionet dhe materialet janë për Kosovën dhe rajonin — shpjegim i qartë, me anglisht praktike kur flasim për kod dhe mjete zhvillimi.",
+        "Sesionet dhe materialet janë për nxënës remote dhe në person botërisht — shpjegim i qartë, me anglisht praktike kur flasim për kod dhe mjete zhvillimi.",
     },
     {
       question: "Sa vende ka?",
@@ -777,7 +777,7 @@ const bootcampDe: Bootcamp = {
     {
       question: "In welcher Sprache läuft das Bootcamp?",
       answer:
-        "Sessions und Materialien sind für Kosovo und die Region gedacht — klare Erklärung mit praktischem Englisch für Code und Tools.",
+        "Sessions und Materialien sind für Lernende weltweit gedacht — remote und vor Ort — klare Erklärung mit praktischem Englisch für Code und Tools.",
     },
     {
       question: "Wie viele Plätze gibt es?",
@@ -1024,7 +1024,7 @@ const bootcampFr: Bootcamp = {
     {
       question: "Dans quelle langue se déroule le bootcamp ?",
       answer:
-        "Les sessions et matériaux sont conçus pour le Kosovo et la région — explications claires avec un anglais pratique pour le code et les outils.",
+        "Les sessions et matériaux sont conçus pour des apprenants du monde entier — remote et en présentiel — explications claires avec un anglais pratique pour le code et les outils.",
     },
     {
       question: "Combien de places y a-t-il ?",
@@ -1271,7 +1271,7 @@ const bootcampSv: Bootcamp = {
     {
       question: "På vilket språk är bootcampet?",
       answer:
-        "Sessioner och material är utformade för Kosovo och regionen — tydlig undervisning med praktisk engelska för kod och verktyg.",
+        "Sessioner och material är utformade för lärande världen över — remote och på plats — tydlig undervisning med praktisk engelska för kod och verktyg.",
     },
     {
       question: "Hur många platser finns det?",
@@ -1518,7 +1518,7 @@ const bootcampAr: Bootcamp = {
     {
       question: "بأي لغة يُقدَّم المعسكر؟",
       answer:
-        "الجلسات والمواد مصممة لكوسوفو والمنطقة — شرح واضح مع إنجليزية عملية للكود والأدوات.",
+        "الجلسات والمواد مصممة للمتعلمين حول العالم — عن بُعد وحضورًا — شرح واضح مع إنجليزية عملية للكود والأدوات.",
     },
     {
       question: "كم عدد المقاعد؟",
@@ -1765,7 +1765,7 @@ const bootcampZh: Bootcamp = {
     {
       question: "训练营用什么语言？",
       answer:
-        "课程与材料面向科索沃及地区——讲解清晰，代码与工具使用实用英语。",
+        "课程与材料面向全球学习者——支持远程与线下——讲解清晰，代码与工具使用实用英语。",
     },
     {
       question: "有多少名额？",

@@ -8,23 +8,22 @@ const INSTAGRAM_URL = "https://www.instagram.com/optio.digital/";
 const baseSiteConfig = {
   name: "OPTIO",
   description:
-    "We help brands in Kosovo and worldwide grow in the digital world. From idea to execution, we build digital experiences that convert.",
+    "We help brands and teams worldwide build platforms, automate workflows, and grow digitally. From idea to execution, we ship systems that convert.",
   url: "https://optio.digital",
   ogImage: "https://optio.digital/og.png",
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || "https://optio.digital"
   ),
   keywords: [
-    "digital agency Kosovo",
-    "web development Prishtina",
-    "web development Kosovo",
-    "OPTIO Kosovo",
-    "digital agency",
-    "web development",
-    "web app",
-    "brand identity",
-    "logo design",
-    "social media marketing",
+    "digital product studio",
+    "custom CRM",
+    "HRM software",
+    "business automation",
+    "AI workflows",
+    "e-commerce systems",
+    "digital growth",
+    "web app development",
+    "API integrations",
     "OPTIO",
     "custom software",
   ],
@@ -40,7 +39,7 @@ const baseSiteConfig = {
     { media: "(prefers-color-scheme: light)", color: "#ecfdf5" },
     { media: "(prefers-color-scheme: dark)", color: "#0c0a09" },
   ],
-  nextThemeColor: "dark",
+  nextThemeColor: "light",
   icons: {
     icon: "/lightoptio.svg",
     shortcut: "/lightoptio.svg",

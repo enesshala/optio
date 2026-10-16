@@ -89,6 +89,7 @@ function ContactFormInner({
   const router = useRouter();
   const pathname = usePathname();
   const packageParam = searchParams.get("package");
+  const inquiryParam = searchParams.get("inquiry");
 
   const [sent, setSent] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState<string | null>(null);
@@ -136,16 +137,29 @@ function ContactFormInner({
   } = form;
 
   useEffect(() => {
-    if (variant !== "home" || !packageParam) return;
-    setSelectedPackage(packageParam);
-    setValue("package", packageParam);
+    if (variant !== "home") return;
     const currentMessage = form.getValues("message");
-    if (!currentMessage?.trim()) {
-      setValue("message", packageMessage(locale, packageParam), {
-        shouldValidate: true,
-      });
+    if (packageParam) {
+      setSelectedPackage(packageParam);
+      setValue("package", packageParam);
     }
-  }, [packageParam, variant, locale.packagePrefill, setValue, form]);
+    if (!currentMessage?.trim()) {
+      if (inquiryParam) {
+        setValue("message", inquiryParam, { shouldValidate: true });
+      } else if (packageParam) {
+        setValue("message", packageMessage(locale, packageParam), {
+          shouldValidate: true,
+        });
+      }
+    }
+  }, [
+    packageParam,
+    inquiryParam,
+    variant,
+    locale.packagePrefill,
+    setValue,
+    form,
+  ]);
 
   function clearPackage() {
     setSelectedPackage(null);

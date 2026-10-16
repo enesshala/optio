@@ -43,7 +43,7 @@ const privacyEn: LegalDocument = {
     {
       title: "Who we are",
       paragraphs: [
-        "OPTIO Digital provides digital agency services (websites, brand, software, and marketing) from Kosovo and works with clients worldwide.",
+        "OPTIO Digital provides digital product services (platforms, automation, e-commerce, growth, and software) and works with clients worldwide. Registered location: Prishtina, Kosovo.",
         `For privacy questions, contact us at ${CONTACT_EMAIL}.`,
       ],
     },
@@ -115,7 +115,7 @@ const privacySq: LegalDocument = {
     {
       title: "Kush jemi",
       paragraphs: [
-        "OPTIO Digital ofron shërbime agjencie dixhitale (website, markë, softuer dhe marketing) nga Kosova dhe punon me klientë në botë.",
+        "OPTIO Digital ofron shërbime produkti dixhital (platforma, automatizim, e-commerce, rritje dhe softuer) dhe punon me klientë botërisht. Vendndodhja e regjistruar: Prishtinë, Kosovë.",
         `Për pyetje rreth privatësisë: ${CONTACT_EMAIL}.`,
       ],
     },

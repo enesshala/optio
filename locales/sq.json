@@ -3,7 +3,26 @@
     "title1": "Ndërto.",
     "title2": "Konverto.",
     "title3": "Rritu.",
-    "description": "Ndihmojmë markat në Kosovë dhe jashtë saj të rriten në botën digjitale. Nga idea te ekzekutimi, ndërtojmë përvoja digjitale që konvertojnë."
+    "description": "Ndihmojmë markat dhe ekipet botërisht të ndërtojnë platforma, të automatizojnë workflow dhe të rriten digjitalisht. Nga idea te ekzekutimi, dorëzojmë sisteme që konvertojnë.",
+    "eyebrow": "Kapacitet i hapur për projekte të reja",
+    "titlePrefix": "Rritje përmes",
+    "keywords": [
+      "Platformave",
+      "Automatizimit & AI",
+      "E-commerce",
+      "Rritjes Dixhitale",
+      "Web Apps",
+      "Integrimeve"
+    ],
+    "secondaryCta": "Eksploro shërbimet",
+    "statProjects": "50+",
+    "statProjectsLabel": "Projekte të dorëzuara",
+    "statReply": "24h",
+    "statReplyLabel": "Koha e përgjigjes",
+    "statReach": "Botërore",
+    "statReachLabel": "Dorëzim remote",
+    "statRating": "5.0/5",
+    "statRatingLabel": "Vlerësim klientësh"
   },
   "SocialProof": {
     "count": "50+",
@@ -12,15 +31,37 @@
   "Showcase": {
     "title": "Projektet",
     "description": "Punë të përzgjedhura që kemi dorëzuar për marka dhe ekipe produkti.",
-    "eyebrow": "Punë e përzgjedhur"
+    "eyebrow": "Punë e përzgjedhur",
+    "titlePrefix": "Ide tonat.",
+    "titleAccent": "Projekte reale.",
+    "viewProject": "Shiko projektin"
   },
   "Feature": {
-    "title": "Çfarë bëjmë"
+    "title": "Çfarë bëjmë",
+    "eyebrow": "Shërbime",
+    "description": "Gjashtë aftësi, të grupuara siç blejnë ekipet e rritjes.",
+    "groups": {
+      "platforms": {
+        "title": "Platforma & apps",
+        "description": "Sisteme të personalizuara dhe produkte për klientë."
+      },
+      "automation": {
+        "title": "Automatizim & sisteme",
+        "description": "Workflow me AI dhe integrime të besueshme."
+      },
+      "commerce": {
+        "title": "Commerce & rritje",
+        "description": "Dyqane, funnel dhe sisteme acquisition."
+      }
+    },
+    "titlePrefix": "Çfarë",
+    "titleAccent": "dorëzojmë.",
+    "allCta": "Fol për një shërbim"
   },
   "Pricing": {
     "title": "Paketat",
     "title2": "Fusha të qarta. Rezultate reale.",
-    "description": "Punojmë me startupe dhe biznese në Kosovë dhe botërisht — me dizajn të pastër, strategji të mençur dhe rezultate konkrete.",
+    "description": "Punojmë me startupe dhe biznese botërisht — me platforma, automatizim, e-commerce dhe rritje që dorëzohet.",
     "doYouLike": "Dëshironi të flasim për projektin tuaj?",
     "follow": "Na shkruani në Instagram.",
     "eyebrow": "Angazhimet",
@@ -32,11 +73,20 @@
     "title": "Çfarë thonë klientët",
     "description1": "Bashkëpunojmë me themelues dhe ekipe që duan ekzekutim, jo fjalë boshe.",
     "description2": "Ja si duket",
-    "description3": " të punosh me OPTIO."
+    "description3": " të punosh me OPTIO.",
+    "rating": "5.0",
+    "ratingLabel": "Feedback klientësh",
+    "titlePrefix": "Vlerësime.",
+    "titleAccent": "Të gjitha 5 yje.",
+    "badge": "Vlerësime klientësh"
   },
   "FAQ": {
     "title": "Pyetjet e shpeshta",
-    "description": "Përgjigje për pyetjet e zakonshme rreth bashkëpunimit me OPTIO."
+    "description": "Përgjigje për pyetjet e zakonshme rreth bashkëpunimit me OPTIO.",
+    "titlePrefix": "Pyetje të shpeshta.",
+    "titleAccent": "Përgjigje të qarta.",
+    "sideTitle": "Nuk e shihni pyetjen?",
+    "sideCta": "Na kontaktoni"
   },
   "Contact": {
     "title": "Na kontaktoni",
@@ -70,14 +120,17 @@
         "messageMax": "Mesazhi është shumë i gjatë (max 2000 karaktere).",
         "experienceMax": "Përvoja është shumë e gjatë (max 500 karaktere)."
       }
-    }
+    },
+    "ctaTitlePrefix": "Le të ndërtojmë",
+    "ctaTitleAccent": "diçka të madhe.",
+    "ctaButton": "Fillo një projekt"
   },
   "CTA": {
-    "title": "Gati ta rritni markën tuaj?",
+    "title": "Gati të automatizosh dhe të shkallëzosh?",
     "description1": "Nga",
-    "description2": "strategjia",
+    "description2": "platformat",
     "description3": "te",
-    "description4": "lansimi, dorëzojmë përvoja të ndërtuara për të",
+    "description4": "sistemet e rritjes, dorëzojmë softuer të ndërtuar për të",
     "description5": "konvertuar",
     "description6": "."
   },
@@ -112,5 +165,40 @@
         "experienceMax": "Përvoja është shumë e gjatë (max 500 karaktere)."
       }
     }
+  },
+  "Inquiry": {
+    "title": "Fillo një kërkesë projekti",
+    "description": "Tre hapa të shpejtë — pastaj vazhdojmë ne.",
+    "stepContact": "Kontakt",
+    "stepService": "Shërbim",
+    "stepBudget": "Buxhet",
+    "nameLabel": "Emri",
+    "namePlaceholder": "Emri juaj",
+    "emailLabel": "Email",
+    "emailPlaceholder": "ju@kompania.com",
+    "next": "Vazhdo",
+    "back": "Mbrapa",
+    "finish": "Dërgo kërkesën",
+    "services": [
+      "Platforma të Personalizuara",
+      "Automatizim & AI",
+      "E-commerce",
+      "Rritje Dixhitale",
+      "Produkt & Web Apps",
+      "Integrime & API"
+    ],
+    "budgets": [
+      "Nën €5k",
+      "€5k – €15k",
+      "€15k – €40k",
+      "€40k+",
+      "Nuk jam i sigurt"
+    ],
+    "heading": "Si t’ju kontaktojmë?",
+    "subheading": "Fillimisht të dhënat e kontaktit — detajet e projektit në hapin tjetër.",
+    "phoneLabel": "Telefoni"
+  },
+  "Logos": {
+    "title": "Ndërtuar me stack moderne"
   }
 }

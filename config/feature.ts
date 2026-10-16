@@ -1,278 +1,287 @@
-import { LucideIcon, MagnetIcon, Megaphone } from "lucide-react";
+import { LucideIcon, Plug, ShoppingCart, TrendingUp, Zap } from "lucide-react";
 import { IconType } from "react-icons";
 import { FaToolbox } from "react-icons/fa";
-import { FaEarthAsia, FaMobileScreenButton, FaPenFancy } from "react-icons/fa6";
+import { FaMobileScreenButton } from "react-icons/fa6";
+
+const serviceIcons = {
+  platforms: FaToolbox,
+  automation: Zap,
+  ecommerce: ShoppingCart,
+  growth: TrendingUp,
+  apps: FaMobileScreenButton,
+  integrations: Plug,
+} as const;
 
 const optioServices = [
   {
-    title: "Website & Web App Development",
+    title: "Custom Platforms",
     content:
-      "Fast, accessible sites and product-ready web apps that look sharp and scale with you.",
-    icon: FaMobileScreenButton,
+      "CRM, HRM, and internal ops tools tailored to how your business actually runs — not generic templates.",
+    icon: serviceIcons.platforms,
   },
   {
-    title: "Custom Software Solutions",
+    title: "Automation & AI Workflows",
     content:
-      "Bespoke tools, internal systems, and integrations that match how your business actually works.",
-    icon: FaToolbox,
+      "Ops automation and AI-assisted processes that cut manual handoffs and keep teams moving faster.",
+    icon: serviceIcons.automation,
   },
   {
-    title: "Logo & Brand Identity",
+    title: "E-commerce Systems",
     content:
-      "Distinctive visual systems — logo, colors, type, and guidelines — so your brand feels cohesive everywhere.",
-    icon: FaPenFancy,
+      "Stores, catalogs, checkout, and post-purchase flows built to convert and scale with your catalog.",
+    icon: serviceIcons.ecommerce,
   },
   {
-    title: "Social Media Marketing & Strategy",
+    title: "Digital Growth",
     content:
-      "Channel strategy, content direction, and campaigns built to grow reach and conversions.",
-    icon: Megaphone,
+      "Acquisition, funnels, content and SEO, and conversion systems that turn attention into pipeline.",
+    icon: serviceIcons.growth,
   },
   {
-    title: "SEO & Discoverability",
+    title: "Product & Web Apps",
     content:
-      "Technical SEO, performance, and structure that help the right people find you.",
-    icon: MagnetIcon,
+      "Customer-facing products and scalable web applications — sharp UX, solid architecture, ready to ship.",
+    icon: serviceIcons.apps,
   },
   {
-    title: "Global Collaboration",
+    title: "Integrations & APIs",
     content:
-      "We work with startups and businesses in Kosovo and worldwide — async-friendly, clear communication, on your timeline.",
-    icon: FaEarthAsia,
+      "Connect tools, data, and systems into one reliable stack so nothing important lives in silos.",
+    icon: serviceIcons.integrations,
   },
 ];
 
 const optioServicesSq = [
   {
-    title: "Zhvillim Website & Web App",
+    title: "Platforma të Personalizuara",
     content:
-      "Faqe të shpejta, të aksesueshme dhe web app të gatshme për produkt që duken profesionale dhe rriten me ju.",
-    icon: FaMobileScreenButton,
+      "CRM, HRM dhe mjete ops të brendshme të përshtatura me mënyrën reale të punës së biznesit — jo template gjenerike.",
+    icon: serviceIcons.platforms,
   },
   {
-    title: "Zgjidhje Softuerike të Personalizuara",
+    title: "Automatizim & Workflow me AI",
     content:
-      "Mjete, sisteme të brendshme dhe integrime që përputhen me mënyrën reale të punës së biznesit tuaj.",
-    icon: FaToolbox,
+      "Automatizim ops dhe procese me ndihmë të AI që ulin punën manuale dhe mbajnë ekipet në lëvizje.",
+    icon: serviceIcons.automation,
   },
   {
-    title: "Logo & Identitet Marke",
+    title: "Sisteme E-commerce",
     content:
-      "Sisteme vizuale të dallueshme — logo, ngjyra, tipografi dhe udhëzues — që marka juaj të ndihet e njëjtë kudo.",
-    icon: FaPenFancy,
+      "Dyqane, katalogë, checkout dhe flukse pas blerjes të ndërtuara për të konvertuar dhe rritur me katalogun.",
+    icon: serviceIcons.ecommerce,
   },
   {
-    title: "Marketing & Strategji në Rrjetet Sociale",
+    title: "Rritje Dixhitale",
     content:
-      "Strategji kanalesh, drejtim përmbajtjeje dhe kampanja të ndërtuara për të rritur shtrirjen dhe konvertimet.",
-    icon: Megaphone,
+      "Acquisition, funnel, përmbajtje dhe SEO, dhe sisteme konvertimi që e kthejnë vëmendjen në pipeline.",
+    icon: serviceIcons.growth,
   },
   {
-    title: "SEO & Zbulueshmëri",
+    title: "Produkt & Web App",
     content:
-      "SEO teknike, performancë dhe strukturë që ndihmojnë njerëzit e duhur t'ju gjejnë — në Kosovë dhe më gjerë.",
-    icon: MagnetIcon,
+      "Produkte për klientë dhe web app të shkallëzueshme — UX i pastër, arkitekturë e fortë, gati për lansim.",
+    icon: serviceIcons.apps,
   },
   {
-    title: "Bashkëpunim Global",
+    title: "Integrime & API",
     content:
-      "Punojmë me startupe dhe biznese në Kosovë e botërisht — komunikim i qartë, asinkron dhe në kohën tuaj.",
-    icon: FaEarthAsia,
+      "Lidhni mjete, të dhëna dhe sisteme në një stack të besueshëm — pa silosa të panevojshme.",
+    icon: serviceIcons.integrations,
   },
 ];
 
 const optioServicesDe = [
   {
-    title: "Website- & Web-App-Entwicklung",
+    title: "Individuelle Plattformen",
     content:
-      "Schnelle, zugängliche Sites und produktreife Web-Apps, die scharf aussehen und mit Ihnen skalieren.",
-    icon: FaMobileScreenButton,
+      "CRM, HRM und interne Ops-Tools, die zu Ihrer Arbeitsweise passen — keine generischen Templates.",
+    icon: serviceIcons.platforms,
   },
   {
-    title: "Individuelle Softwarelösungen",
+    title: "Automation & AI-Workflows",
     content:
-      "Maßgeschneiderte Tools, interne Systeme und Integrationen, die zu Ihrer Arbeitsweise passen.",
-    icon: FaToolbox,
+      "Ops-Automation und KI-gestützte Prozesse, die manuelle Übergaben reduzieren und Teams beschleunigen.",
+    icon: serviceIcons.automation,
   },
   {
-    title: "Logo & Markenidentität",
+    title: "E-Commerce-Systeme",
     content:
-      "Unverwechselbare visuelle Systeme — Logo, Farben, Typografie und Guidelines — damit Ihre Marke überall stimmig wirkt.",
-    icon: FaPenFancy,
+      "Shops, Kataloge, Checkout und Post-Purchase-Flows — gebaut für Conversion und skalierbare Kataloge.",
+    icon: serviceIcons.ecommerce,
   },
   {
-    title: "Social-Media-Marketing & Strategie",
+    title: "Digitales Wachstum",
     content:
-      "Kanalstrategie, Content-Richtung und Kampagnen, die Reichweite und Conversions steigern.",
-    icon: Megaphone,
+      "Acquisition, Funnels, Content & SEO sowie Conversion-Systeme, die Aufmerksamkeit in Pipeline verwandeln.",
+    icon: serviceIcons.growth,
   },
   {
-    title: "SEO & Auffindbarkeit",
+    title: "Produkt & Web-Apps",
     content:
-      "Technisches SEO, Performance und Struktur, damit die richtigen Menschen Sie finden.",
-    icon: MagnetIcon,
+      "Kundenprodukte und skalierbare Web-Apps — klares UX, solide Architektur, bereit zum Launch.",
+    icon: serviceIcons.apps,
   },
   {
-    title: "Globale Zusammenarbeit",
+    title: "Integrationen & APIs",
     content:
-      "Wir arbeiten mit Startups und Unternehmen in Kosovo und weltweit — async-freundlich, klare Kommunikation, in Ihrem Tempo.",
-    icon: FaEarthAsia,
+      "Tools, Daten und Systeme zu einem zuverlässigen Stack verbinden — ohne unnötige Silos.",
+    icon: serviceIcons.integrations,
   },
 ];
 
 const optioServicesFr = [
   {
-    title: "Développement site & web app",
+    title: "Plateformes sur mesure",
     content:
-      "Sites rapides et accessibles, et web apps prêtes pour le produit — soignés et évolutifs.",
-    icon: FaMobileScreenButton,
+      "CRM, RH et outils ops internes adaptés à votre façon de travailler — pas de templates génériques.",
+    icon: serviceIcons.platforms,
   },
   {
-    title: "Solutions logicielles sur mesure",
+    title: "Automatisation & workflows IA",
     content:
-      "Outils, systèmes internes et intégrations adaptés à la façon dont votre entreprise travaille vraiment.",
-    icon: FaToolbox,
+      "Automatisation ops et processus assistés par l'IA pour moins de passes manuelles et plus de vitesse.",
+    icon: serviceIcons.automation,
   },
   {
-    title: "Logo & identité de marque",
+    title: "Systèmes e-commerce",
     content:
-      "Systèmes visuels distinctifs — logo, couleurs, typo et guidelines — pour une marque cohérente partout.",
-    icon: FaPenFancy,
+      "Boutiques, catalogues, checkout et parcours post-achat conçus pour convertir et grandir avec le catalogue.",
+    icon: serviceIcons.ecommerce,
   },
   {
-    title: "Marketing & stratégie réseaux sociaux",
+    title: "Croissance digitale",
     content:
-      "Stratégie de canaux, direction de contenu et campagnes conçues pour la portée et les conversions.",
-    icon: Megaphone,
+      "Acquisition, funnels, contenu & SEO, et systèmes de conversion qui transforment l'attention en pipeline.",
+    icon: serviceIcons.growth,
   },
   {
-    title: "SEO & découvrabilité",
+    title: "Produit & web apps",
     content:
-      "SEO technique, performance et structure pour que les bonnes personnes vous trouvent.",
-    icon: MagnetIcon,
+      "Produits client et web apps évolutives — UX nette, architecture solide, prêtes à livrer.",
+    icon: serviceIcons.apps,
   },
   {
-    title: "Collaboration mondiale",
+    title: "Intégrations & APIs",
     content:
-      "Nous travaillons avec des startups et entreprises au Kosovo et dans le monde — async, communication claire, à votre rythme.",
-    icon: FaEarthAsia,
+      "Connectez outils, données et systèmes dans une stack fiable — sans silos inutiles.",
+    icon: serviceIcons.integrations,
   },
 ];
 
 const optioServicesSv = [
   {
-    title: "Webbplats- & webbapputveckling",
+    title: "Skräddarsydda plattformar",
     content:
-      "Snabba, tillgängliga sajter och produktklara webbappar som ser skarpa ut och växer med er.",
-    icon: FaMobileScreenButton,
+      "CRM, HRM och interna ops-verktyg anpassade till hur ni faktiskt jobbar — inte generiska mallar.",
+    icon: serviceIcons.platforms,
   },
   {
-    title: "Skräddarsydd mjukvara",
+    title: "Automation & AI-flöden",
     content:
-      "Egna verktyg, interna system och integrationer som matchar hur ert företag faktiskt arbetar.",
-    icon: FaToolbox,
+      "Ops-automation och AI-stödda processer som minskar manuella överlämningar och håller farten uppe.",
+    icon: serviceIcons.automation,
   },
   {
-    title: "Logo & varumärkesidentitet",
+    title: "E-handelssystem",
     content:
-      "Tydliga visuella system — logo, färger, typografi och guidelines — så varumärket känns enhetligt överallt.",
-    icon: FaPenFancy,
+      "Butiker, kataloger, checkout och postköpsflöden byggda för konvertering och skalning.",
+    icon: serviceIcons.ecommerce,
   },
   {
-    title: "Sociala medier & strategi",
+    title: "Digital tillväxt",
     content:
-      "Kanalstrategi, innehållsriktning och kampanjer byggda för räckvidd och konvertering.",
-    icon: Megaphone,
+      "Acquisition, trattar, content & SEO samt konverteringssystem som gör uppmärksamhet till pipeline.",
+    icon: serviceIcons.growth,
   },
   {
-    title: "SEO & synlighet",
+    title: "Produkt & webbappar",
     content:
-      "Teknisk SEO, prestanda och struktur som hjälper rätt personer att hitta er.",
-    icon: MagnetIcon,
+      "Kundnära produkter och skalbara webbappar — skarp UX, solid arkitektur, redo att shippa.",
+    icon: serviceIcons.apps,
   },
   {
-    title: "Globalt samarbete",
+    title: "Integrationer & API:er",
     content:
-      "Vi jobbar med startups och företag i Kosovo och världen över — async-vänligt, tydlig kommunikation, i er takt.",
-    icon: FaEarthAsia,
+      "Koppla verktyg, data och system till en pålitlig stack — utan onödiga silos.",
+    icon: serviceIcons.integrations,
   },
 ];
 
 const optioServicesAr = [
   {
-    title: "تطوير المواقع وتطبيقات الويب",
+    title: "منصات مخصصة",
     content:
-      "مواقع سريعة وسهلة الوصول وتطبيقات ويب جاهزة للمنتج تبدو احترافية وتنمو معك.",
-    icon: FaMobileScreenButton,
+      "أنظمة CRM وHRM وأدوات تشغيل داخلية مصممة لطريقة عملكم الحقيقية — لا قوالب عامة.",
+    icon: serviceIcons.platforms,
   },
   {
-    title: "حلول برمجية مخصصة",
+    title: "أتمتة وسير عمل بالذكاء الاصطناعي",
     content:
-      "أدوات وأنظمة داخلية وتكاملات تتوافق مع طريقة عمل عملك الحقيقية.",
-    icon: FaToolbox,
+      "أتمتة العمليات ومسارات مدعومة بالذكاء الاصطناعي تقلل التسليم اليدوي وتسرّع الفرق.",
+    icon: serviceIcons.automation,
   },
   {
-    title: "الشعار وهوية العلامة",
+    title: "أنظمة التجارة الإلكترونية",
     content:
-      "أنظمة بصرية مميزة — شعار وألوان وخطوط وإرشادات — لتبدو علامتك متماسكة في كل مكان.",
-    icon: FaPenFancy,
+      "متاجر وكتالوجات ودفع ومسارات ما بعد الشراء مبنية للتحويل والنمو مع الكتالوج.",
+    icon: serviceIcons.ecommerce,
   },
   {
-    title: "التسويق والاستراتيجية على وسائل التواصل",
+    title: "النمو الرقمي",
     content:
-      "استراتيجية قنوات وتوجيه محتوى وحملات لزيادة الوصول والتحويلات.",
-    icon: Megaphone,
+      "اكتساب وقمع محتوى وتحسين محركات البحث وأنظمة تحويل تحوّل الانتباه إلى خط أنابيب.",
+    icon: serviceIcons.growth,
   },
   {
-    title: "تحسين محركات البحث والاكتشاف",
+    title: "المنتج وتطبيقات الويب",
     content:
-      "SEO تقني وأداء وهيكل يساعد الأشخاص المناسبين على إيجادك.",
-    icon: MagnetIcon,
+      "منتجات للعملاء وتطبيقات ويب قابلة للتوسع — تجربة واضحة وهندسة قوية وجاهزة للإطلاق.",
+    icon: serviceIcons.apps,
   },
   {
-    title: "تعاون عالمي",
+    title: "التكاملات وواجهات البرمجة",
     content:
-      "نعمل مع الشركات الناشئة والأعمال في كوسوفو وحول العالم — تواصل واضح وغير متزامن ووفق جدولكم.",
-    icon: FaEarthAsia,
+      "اربط الأدوات والبيانات والأنظمة في مكدس موثوق — بلا صوامع غير ضرورية.",
+    icon: serviceIcons.integrations,
   },
 ];
 
 const optioServicesZh = [
   {
-    title: "网站与 Web 应用开发",
+    title: "定制平台",
     content:
-      "快速、易访问的网站与可上线的 Web 应用——外观精致，可随业务扩展。",
-    icon: FaMobileScreenButton,
+      "贴合真实业务运转的 CRM、HRM 与内部运营工具——而非通用模板。",
+    icon: serviceIcons.platforms,
   },
   {
-    title: "定制软件方案",
+    title: "自动化与 AI 工作流",
     content:
-      "贴合你们真实工作方式的工具、内部系统与集成。",
-    icon: FaToolbox,
+      "运营自动化与 AI 辅助流程，减少人工交接，让团队更快推进。",
+    icon: serviceIcons.automation,
   },
   {
-    title: "Logo 与品牌识别",
+    title: "电商系统",
     content:
-      "鲜明的视觉体系——标志、色彩、字体与规范——让品牌在各处保持一致。",
-    icon: FaPenFancy,
+      "店铺、目录、结账与购后流程，围绕转化与目录扩展而建。",
+    icon: serviceIcons.ecommerce,
   },
   {
-    title: "社交媒体营销与策略",
+    title: "数字增长",
     content:
-      "渠道策略、内容方向与活动，旨在提升触达与转化。",
-    icon: Megaphone,
+      "获客、漏斗、内容与 SEO，以及把注意力变成管道的转化系统。",
+    icon: serviceIcons.growth,
   },
   {
-    title: "SEO 与可发现性",
+    title: "产品与 Web 应用",
     content:
-      "技术 SEO、性能与结构，帮助合适的人找到你。",
-    icon: MagnetIcon,
+      "面向客户的产品与可扩展 Web 应用——清晰体验、扎实架构、可交付上线。",
+    icon: serviceIcons.apps,
   },
   {
-    title: "全球协作",
+    title: "集成与 API",
     content:
-      "我们与科索沃及全球的初创与企业合作——异步友好、沟通清晰、按你的节奏推进。",
-    icon: FaEarthAsia,
+      "把工具、数据与系统连成可靠技术栈——避免无谓孤岛。",
+    icon: serviceIcons.integrations,
   },
 ];
 

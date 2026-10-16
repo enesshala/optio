@@ -3,7 +3,26 @@
     "title1": "构建。",
     "title2": "转化。",
     "title3": "增长。",
-    "description": "我们帮助全球品牌在数字世界中成长。从创意到落地，我们打造能够转化的数字体验。"
+    "description": "我们帮助全球品牌与团队构建平台、自动化工作流并实现数字增长。从创意到落地，我们交付能够转化的系统。",
+    "eyebrow": "可承接新项目",
+    "titlePrefix": "增长来自",
+    "keywords": [
+      "平台",
+      "自动化与 AI",
+      "电商",
+      "数字增长",
+      "Web 应用",
+      "集成"
+    ],
+    "secondaryCta": "了解服务",
+    "statProjects": "50+",
+    "statProjectsLabel": "已交付项目",
+    "statReply": "24小时",
+    "statReplyLabel": "响应时间",
+    "statReach": "全球",
+    "statReachLabel": "远程交付",
+    "statRating": "5.0/5",
+    "statRatingLabel": "客户评分"
   },
   "SocialProof": {
     "count": "50+",
@@ -12,15 +31,37 @@
   "Showcase": {
     "title": "项目",
     "description": "我们为品牌与产品团队交付的精选作品。",
-    "eyebrow": "精选作品"
+    "eyebrow": "精选作品",
+    "titlePrefix": "真实想法。",
+    "titleAccent": "真实项目。",
+    "viewProject": "查看项目"
   },
   "Feature": {
-    "title": "我们做什么"
+    "title": "我们做什么",
+    "eyebrow": "服务",
+    "description": "六项能力，按增长团队采购方式分组。",
+    "groups": {
+      "platforms": {
+        "title": "平台与应用",
+        "description": "定制系统与面向客户的产品。"
+      },
+      "automation": {
+        "title": "自动化与系统",
+        "description": "AI 工作流与可靠集成。"
+      },
+      "commerce": {
+        "title": "电商与增长",
+        "description": "店铺、漏斗与获客系统。"
+      }
+    },
+    "titlePrefix": "我们",
+    "titleAccent": "交付什么。",
+    "allCta": "聊聊某项服务"
   },
   "Pricing": {
     "title": "套餐",
     "title2": "清晰范围。真实成果。",
-    "description": "我们与全球初创公司和企业合作——专注干净的设计、聪明的策略与切实的结果。",
+    "description": "我们与全球初创公司和企业合作——专注平台、自动化、电商与可交付的增长。",
     "doYouLike": "想聊聊你的项目吗？",
     "follow": "在 Instagram 上联系我们。",
     "eyebrow": "合作方式",
@@ -32,11 +73,20 @@
     "title": "客户怎么说",
     "description1": "我们与需要落地执行、而非空话的创始人和团队合作。",
     "description2": "这就是",
-    "description3": " 与 OPTIO 合作的感觉。"
+    "description3": " 与 OPTIO 合作的感觉。",
+    "rating": "5.0",
+    "ratingLabel": "客户反馈",
+    "titlePrefix": "客户评价。",
+    "titleAccent": "全部五星。",
+    "badge": "客户评价"
   },
   "FAQ": {
     "title": "常见问题",
-    "description": "关于与 OPTIO 合作的常见问题解答。"
+    "description": "关于与 OPTIO 合作的常见问题解答。",
+    "titlePrefix": "常见问题。",
+    "titleAccent": "清晰回答。",
+    "sideTitle": "没看到你的问题？",
+    "sideCta": "联系我们"
   },
   "Contact": {
     "title": "联系我们",
@@ -68,16 +118,19 @@
         "messageMax": "留言过长（最多 2000 个字符）。",
         "experienceMax": "背景过长（最多 500 个字符）。"
       }
-    }
+    },
+    "ctaTitlePrefix": "一起打造",
+    "ctaTitleAccent": "更大的事。",
+    "ctaButton": "开始项目"
   },
   "CTA": {
-    "title": "准备好让品牌增长了吗？",
+    "title": "准备好自动化并规模化了吗？",
     "description1": "从",
-    "description2": "策略",
+    "description2": "平台",
     "description3": "到",
-    "description4": "上线，我们交付为",
+    "description4": "增长系统，我们交付为",
     "description5": "转化",
-    "description6": " 而构建的体验。"
+    "description6": " 而构建的软件。"
   },
   "CTAButton": {
     "title": "开始你的项目"
@@ -110,5 +163,40 @@
         "experienceMax": "背景过长（最多 500 个字符）。"
       }
     }
+  },
+  "Inquiry": {
+    "title": "开始项目咨询",
+    "description": "三步快速了解需求——之后我们跟进。",
+    "stepContact": "联系",
+    "stepService": "服务",
+    "stepBudget": "预算",
+    "nameLabel": "姓名",
+    "namePlaceholder": "您的姓名",
+    "emailLabel": "邮箱",
+    "emailPlaceholder": "you@company.com",
+    "next": "继续",
+    "back": "返回",
+    "finish": "发送咨询",
+    "services": [
+      "定制平台",
+      "自动化与 AI",
+      "电商",
+      "数字增长",
+      "产品与 Web 应用",
+      "集成与 API"
+    ],
+    "budgets": [
+      "低于 €5k",
+      "€5k – €15k",
+      "€15k – €40k",
+      "€40k+",
+      "暂不确定"
+    ],
+    "heading": "如何联系您？",
+    "subheading": "先留下联系方式——下一步再谈项目细节。",
+    "phoneLabel": "电话"
+  },
+  "Logos": {
+    "title": "现代技术栈构建"
   }
 }

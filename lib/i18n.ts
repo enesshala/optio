@@ -27,7 +27,7 @@ export const locales = [
 ];
 
 /**
- * Order in language picker and footer: English first, then Albanian (Kosovo), then others.
+ * Order in language picker and footer: English first, then Albanian, then others.
  */
 export const localesDisplayOrder = [
   "en",
