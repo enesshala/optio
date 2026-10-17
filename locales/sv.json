@@ -210,7 +210,11 @@
     },
     "phonePlaceholder": "Ditt telefonnummer"
   },
-  "Logos": {
-    "title": "Byggt med moderna stackar"
+  "TechStack": {
+    "eyebrow": "Teknik",
+    "titlePrefix": "Byggt med rätt",
+    "titleAccent": "verktyg",
+    "description": "Det här är verktygen vi använder mest, inte en fast lista. Vi jobbar i er stack, eller väljer den som passar projektet.",
+    "aiLabel": "AI"
   }
 }

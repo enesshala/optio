@@ -212,7 +212,11 @@
     },
     "phonePlaceholder": "Numri juaj i telefonit"
   },
-  "Logos": {
-    "title": "Ndërtuar me stack moderne"
+  "TechStack": {
+    "eyebrow": "Teknologjia",
+    "titlePrefix": "Ndërtuar me",
+    "titleAccent": "mjetet e duhura",
+    "description": "Këto janë mjetet që përdorim më shumë, jo një listë fikse. Punojmë në stack-un tuaj, ose zgjedhim atë që i përshtatet projektit.",
+    "aiLabel": "AI"
   }
 }

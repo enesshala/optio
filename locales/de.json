@@ -212,7 +212,11 @@
     },
     "phonePlaceholder": "Ihre Telefonnummer"
   },
-  "Logos": {
-    "title": "Gebaut mit modernen Stacks"
+  "TechStack": {
+    "eyebrow": "Technologie",
+    "titlePrefix": "Gebaut mit den",
+    "titleAccent": "richtigen Tools",
+    "description": "Das sind die Tools, die wir am häufigsten nutzen – keine feste Liste. Wir arbeiten in Ihrem Stack oder wählen den, der zum Projekt passt.",
+    "aiLabel": "KI"
   }
 }

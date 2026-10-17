@@ -210,7 +210,11 @@
     },
     "phonePlaceholder": "您的电话号码"
   },
-  "Logos": {
-    "title": "现代技术栈构建"
+  "TechStack": {
+    "eyebrow": "技术",
+    "titlePrefix": "用",
+    "titleAccent": "合适的工具构建",
+    "description": "这些是我们最常用的工具，而非固定清单。我们可以在您的技术栈中工作，或选择最适合项目的方案。",
+    "aiLabel": "AI"
   }
 }

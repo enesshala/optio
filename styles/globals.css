@@ -173,22 +173,3 @@ h6 {
     @apply mx-auto w-full max-w-7xl;
   }
 }
-
-@keyframes optio-marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.optio-marquee-track {
-  animation: optio-marquee 40s linear infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .optio-marquee-track {
-    animation: none;
-  }
-}

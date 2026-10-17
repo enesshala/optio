@@ -210,7 +210,11 @@
     },
     "phonePlaceholder": "Votre numéro de téléphone"
   },
-  "Logos": {
-    "title": "Construit avec des stacks modernes"
+  "TechStack": {
+    "eyebrow": "Technologie",
+    "titlePrefix": "Construit avec les",
+    "titleAccent": "bons outils",
+    "description": "Ce sont les outils que nous utilisons le plus, pas une liste figée. Nous travaillons dans votre stack, ou choisissons celle qui convient au projet.",
+    "aiLabel": "IA"
   }
 }

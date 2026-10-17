@@ -70,8 +70,12 @@
       "budgetRequired": "Please choose a budget range."
     }
   },
-  "Logos": {
-    "title": "Built with modern stacks"
+  "TechStack": {
+    "eyebrow": "Technology",
+    "titlePrefix": "Built with the",
+    "titleAccent": "right tools",
+    "description": "These are the tools we use most, not a fixed list. We work in your stack, or pick the one that fits the project.",
+    "aiLabel": "AI"
   },
   "SocialProof": {
     "count": "50+",
