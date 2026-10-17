@@ -47,17 +47,30 @@ export async function POST(request: Request) {
       );
     }
 
-    const payload: ContactEmailPayload = {
-      type: data.type,
-      name: data.name,
-      email: data.email,
-      message: data.message,
-      phone: data.phone || undefined,
-      package: data.package || undefined,
-      source: data.source || undefined,
-      experience:
-        data.type === "bootcamp" ? data.experience || undefined : undefined,
-    };
+    const payload: ContactEmailPayload =
+      data.type === "inquiry"
+        ? {
+            type: "inquiry",
+            name: data.name,
+            email: data.email,
+            phone: data.phone,
+            service: data.service,
+            budget: data.budget,
+            source: data.source || undefined,
+          }
+        : {
+            type: data.type,
+            name: data.name,
+            email: data.email,
+            message: data.message,
+            phone: data.phone || undefined,
+            package: data.package || undefined,
+            source: data.source || undefined,
+            experience:
+              data.type === "bootcamp"
+                ? data.experience || undefined
+                : undefined,
+          };
 
     const { apiKey, fromEmail, toEmail } = getResendConfig();
     const resend = new Resend(apiKey);

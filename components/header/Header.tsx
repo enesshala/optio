@@ -20,6 +20,7 @@ const NAV = [
     : []),
   { label: "Reviews", href: "Reviews" },
   { label: "FAQ", href: "FAQ" },
+  { label: "Contact", href: "Contact" },
 ];
 
 const SERVICE_GROUPS = [
@@ -176,13 +177,16 @@ const Header = () => {
           ))}
         </div>
 
-        <div className="col-start-3 flex items-center justify-self-end gap-1">
-          <Link
-            href={homeHref(lang, "Contact")}
-            className="hidden cursor-pointer rounded-md px-3.5 py-4 text-[16px] font-semibold tracking-[-0.01em] text-[#171717] opacity-50 transition-opacity hover:opacity-100 sm:block dark:text-zinc-100"
-          >
-            Contact
-          </Link>
+        <div className="col-start-3 flex items-center justify-self-end gap-3">
+          <div className="hidden items-center gap-0.5 rounded-full bg-white/70 p-1 ring-1 ring-zinc-950/[0.07] backdrop-blur lg:flex dark:bg-zinc-900/70 dark:ring-white/10">
+            <HeaderLinks />
+            <ThemedButton />
+            <span
+              aria-hidden
+              className="mx-0.5 h-4 w-px bg-zinc-950/10 dark:bg-white/10"
+            />
+            <LangSwitcher />
+          </div>
           <Link
             href={homeHref(lang, "anfrage")}
             className="group relative isolate hidden h-10 shrink-0 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-full bg-[linear-gradient(180deg,#3f3f46_0%,#18181b_48%,#09090b_100%)] px-4 text-[14px] font-medium text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.2),0_0_0_1px_#09090b,0_4px_12px_-2px_rgb(9_9_11/0.28)] transition-[scale,box-shadow] duration-200 hover:shadow-[inset_0_1px_0_rgb(255_255_255/0.26),0_0_0_1px_#09090b,0_12px_28px_-8px_rgb(16_185_129/0.55)] active:scale-[0.97] lg:inline-flex"
@@ -194,17 +198,12 @@ const Header = () => {
             Start a project
             <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
           </Link>
-          <div className="ml-1 hidden items-center gap-1 lg:flex">
-            <HeaderLinks />
-            <ThemedButton />
-            <LangSwitcher />
-          </div>
           <button
             type="button"
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMenuOpen}
             className={cn(
-              "ml-2 grid size-10 cursor-pointer place-items-center rounded-full bg-white shadow-[0_1px_2px_rgb(9_9_11/0.06)] ring-1 ring-zinc-950/10 transition-[scale,background-color] lg:hidden dark:bg-zinc-900",
+              "grid size-10 cursor-pointer place-items-center rounded-full bg-white shadow-[0_1px_2px_rgb(9_9_11/0.06)] ring-1 ring-zinc-950/10 transition-[scale,background-color] lg:hidden dark:bg-zinc-900",
               isMenuOpen && "bg-zinc-950 text-white dark:bg-white dark:text-zinc-950",
             )}
             onClick={() => setIsMenuOpen((v) => !v)}
@@ -287,9 +286,13 @@ const Header = () => {
                 />
               </li>
             </ul>
-            <div className="mt-6 flex flex-wrap items-center gap-3 border-t border-zinc-100 px-3 pt-4 dark:border-white/10">
+            <div className="mt-6 flex items-center gap-0.5 border-t border-zinc-100 px-2 pt-4 dark:border-white/10">
               <HeaderLinks />
               <ThemedButton />
+              <span
+                aria-hidden
+                className="mx-1 h-4 w-px bg-zinc-950/10 dark:bg-white/10"
+              />
               <LangSwitcher />
             </div>
             <Link

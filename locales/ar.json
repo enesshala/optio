@@ -99,7 +99,7 @@
       "emailLabel": "البريد الإلكتروني",
       "emailPlaceholder": "you@company.com",
       "phoneLabel": "الهاتف",
-      "phonePlaceholder": "+966 …",
+      "phonePlaceholder": "رقم هاتفك",
       "experienceLabel": "الخلفية",
       "experiencePlaceholder": "اختياري",
       "messageLabel": "الرسالة",
@@ -143,7 +143,7 @@
       "emailLabel": "البريد الإلكتروني",
       "emailPlaceholder": "you@email.com",
       "phoneLabel": "الهاتف",
-      "phonePlaceholder": "+966 …",
+      "phonePlaceholder": "رقم هاتفك",
       "experienceLabel": "الخلفية (اختياري)",
       "experiencePlaceholder": "طالب، تغيير مسار مهني، مطور مبتدئ…",
       "messageLabel": "لماذا تريد الانضمام؟",
@@ -194,7 +194,21 @@
     ],
     "heading": "كيف نتواصل معك؟",
     "subheading": "بيانات التواصل أولاً — تفاصيل المشروع في الخطوة التالية.",
-    "phoneLabel": "الهاتف"
+    "phoneLabel": "الهاتف",
+    "sending": "جارٍ الإرسال…",
+    "error": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+    "successTitle": "تم إرسال رسالتك — نحن نعمل عليها.",
+    "successBody": "شكراً، {name}. وصل استفسارك للتو إلى بريدنا. سيتواصل معك أحد أعضاء فريق OPTIO خلال 24 ساعة.",
+    "successAgain": "إرسال استفسار آخر",
+    "errors": {
+      "nameMin": "يرجى إدخال حرفين على الأقل.",
+      "emailInvalid": "يرجى إدخال بريد إلكتروني صالح.",
+      "phoneRequired": "يرجى إدخال رقم هاتفك.",
+      "phoneInvalid": "يرجى إدخال رقم هاتف صالح.",
+      "serviceRequired": "يرجى اختيار خدمة.",
+      "budgetRequired": "يرجى اختيار نطاق الميزانية."
+    },
+    "phonePlaceholder": "رقم هاتفك"
   },
   "Logos": {
     "title": "مبني بتقنيات حديثة"

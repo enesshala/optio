@@ -101,7 +101,7 @@
       "emailLabel": "Email",
       "emailPlaceholder": "ju@kompania.com",
       "phoneLabel": "Telefoni",
-      "phonePlaceholder": "+383 …",
+      "phonePlaceholder": "Numri juaj i telefonit",
       "experienceLabel": "Përvoja",
       "experiencePlaceholder": "Opsionale",
       "messageLabel": "Mesazhi",
@@ -145,7 +145,7 @@
       "emailLabel": "Email",
       "emailPlaceholder": "ju@email.com",
       "phoneLabel": "Telefoni",
-      "phonePlaceholder": "+383 …",
+      "phonePlaceholder": "Numri juaj i telefonit",
       "experienceLabel": "Përvoja (opsionale)",
       "experiencePlaceholder": "Student, ndryshim karriere, junior dev…",
       "messageLabel": "Pse dëshiron të aplikosh?",
@@ -196,7 +196,21 @@
     ],
     "heading": "Si t’ju kontaktojmë?",
     "subheading": "Fillimisht të dhënat e kontaktit — detajet e projektit në hapin tjetër.",
-    "phoneLabel": "Telefoni"
+    "phoneLabel": "Telefoni",
+    "sending": "Duke dërguar…",
+    "error": "Diçka shkoi keq. Ju lutem provoni përsëri.",
+    "successTitle": "Mesazhi u dërgua — po merremi me të.",
+    "successBody": "Faleminderit, {name}. Kërkesa juaj sapo arriti te ne. Dikush nga ekipi OPTIO do t’ju kontaktojë brenda 24 orëve.",
+    "successAgain": "Dërgo një kërkesë tjetër",
+    "errors": {
+      "nameMin": "Ju lutem shkruani të paktën 2 karaktere.",
+      "emailInvalid": "Ju lutem shkruani një email të vlefshëm.",
+      "phoneRequired": "Ju lutem shkruani numrin e telefonit.",
+      "phoneInvalid": "Ju lutem shkruani një numër telefoni të vlefshëm.",
+      "serviceRequired": "Ju lutem zgjidhni një shërbim.",
+      "budgetRequired": "Ju lutem zgjidhni një buxhet."
+    },
+    "phonePlaceholder": "Numri juaj i telefonit"
   },
   "Logos": {
     "title": "Ndërtuar me stack moderne"

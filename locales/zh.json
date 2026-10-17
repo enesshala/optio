@@ -99,7 +99,7 @@
       "emailLabel": "邮箱",
       "emailPlaceholder": "you@company.com",
       "phoneLabel": "电话",
-      "phonePlaceholder": "+86 …",
+      "phonePlaceholder": "您的电话号码",
       "experienceLabel": "背景",
       "experiencePlaceholder": "可选",
       "messageLabel": "留言",
@@ -143,7 +143,7 @@
       "emailLabel": "邮箱",
       "emailPlaceholder": "you@email.com",
       "phoneLabel": "电话",
-      "phonePlaceholder": "+86 …",
+      "phonePlaceholder": "您的电话号码",
       "experienceLabel": "背景（可选）",
       "experiencePlaceholder": "学生、转行者、初级开发者…",
       "messageLabel": "你为什么想加入？",
@@ -194,7 +194,21 @@
     ],
     "heading": "如何联系您？",
     "subheading": "先留下联系方式——下一步再谈项目细节。",
-    "phoneLabel": "电话"
+    "phoneLabel": "电话",
+    "sending": "发送中…",
+    "error": "出了点问题，请重试。",
+    "successTitle": "消息已发送——我们正在处理。",
+    "successBody": "谢谢，{name}。您的咨询已送达我们的收件箱。OPTIO 团队成员将在 24 小时内与您联系。",
+    "successAgain": "再发送一条咨询",
+    "errors": {
+      "nameMin": "请至少输入 2 个字符。",
+      "emailInvalid": "请输入有效的邮箱地址。",
+      "phoneRequired": "请输入您的电话号码。",
+      "phoneInvalid": "请输入有效的电话号码。",
+      "serviceRequired": "请选择一项服务。",
+      "budgetRequired": "请选择预算范围。"
+    },
+    "phonePlaceholder": "您的电话号码"
   },
   "Logos": {
     "title": "现代技术栈构建"

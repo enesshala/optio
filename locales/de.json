@@ -99,7 +99,7 @@
       "emailLabel": "E-Mail",
       "emailPlaceholder": "sie@firma.com",
       "phoneLabel": "Telefon",
-      "phonePlaceholder": "+49 …",
+      "phonePlaceholder": "Ihre Telefonnummer",
       "experienceLabel": "Hintergrund",
       "experiencePlaceholder": "Optional",
       "messageLabel": "Nachricht",
@@ -145,7 +145,7 @@
       "emailLabel": "E-Mail",
       "emailPlaceholder": "du@email.com",
       "phoneLabel": "Telefon",
-      "phonePlaceholder": "+49 …",
+      "phonePlaceholder": "Ihre Telefonnummer",
       "experienceLabel": "Hintergrund (optional)",
       "experiencePlaceholder": "Student, Quereinsteiger, Junior-Dev…",
       "messageLabel": "Warum willst du dabei sein?",
@@ -196,7 +196,21 @@
     ],
     "heading": "Wie erreichen wir Sie?",
     "subheading": "Ihre Kontaktdaten zuerst — die Projektdetails folgen im nächsten Schritt.",
-    "phoneLabel": "Telefon"
+    "phoneLabel": "Telefon",
+    "sending": "Wird gesendet…",
+    "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+    "successTitle": "Nachricht gesendet — wir sind dran.",
+    "successBody": "Danke, {name}. Ihre Anfrage ist gerade bei uns eingegangen. Jemand aus dem OPTIO-Team meldet sich innerhalb von 24 Stunden.",
+    "successAgain": "Weitere Anfrage senden",
+    "errors": {
+      "nameMin": "Bitte mindestens 2 Zeichen eingeben.",
+      "emailInvalid": "Bitte eine gültige E-Mail-Adresse eingeben.",
+      "phoneRequired": "Bitte Ihre Telefonnummer eingeben.",
+      "phoneInvalid": "Bitte eine gültige Telefonnummer eingeben.",
+      "serviceRequired": "Bitte eine Leistung auswählen.",
+      "budgetRequired": "Bitte einen Budgetrahmen auswählen."
+    },
+    "phonePlaceholder": "Ihre Telefonnummer"
   },
   "Logos": {
     "title": "Gebaut mit modernen Stacks"

@@ -99,7 +99,7 @@
       "emailLabel": "E-post",
       "emailPlaceholder": "du@foretag.com",
       "phoneLabel": "Telefon",
-      "phonePlaceholder": "+46 …",
+      "phonePlaceholder": "Ditt telefonnummer",
       "experienceLabel": "Bakgrund",
       "experiencePlaceholder": "Valfritt",
       "messageLabel": "Meddelande",
@@ -143,7 +143,7 @@
       "emailLabel": "E-post",
       "emailPlaceholder": "du@email.com",
       "phoneLabel": "Telefon",
-      "phonePlaceholder": "+46 …",
+      "phonePlaceholder": "Ditt telefonnummer",
       "experienceLabel": "Bakgrund (valfritt)",
       "experiencePlaceholder": "Student, karriärbytare, juniorutvecklare…",
       "messageLabel": "Varför vill du vara med?",
@@ -194,7 +194,21 @@
     ],
     "heading": "Hur når vi dig?",
     "subheading": "Dina kontaktuppgifter först — projektdetaljer i nästa steg.",
-    "phoneLabel": "Telefon"
+    "phoneLabel": "Telefon",
+    "sending": "Skickar…",
+    "error": "Något gick fel. Försök igen.",
+    "successTitle": "Meddelandet skickat — vi är på det.",
+    "successBody": "Tack, {name}. Din förfrågan har precis landat i vår inkorg. Någon från OPTIO-teamet hör av sig inom 24 timmar.",
+    "successAgain": "Skicka en ny förfrågan",
+    "errors": {
+      "nameMin": "Ange minst 2 tecken.",
+      "emailInvalid": "Ange en giltig e-postadress.",
+      "phoneRequired": "Ange ditt telefonnummer.",
+      "phoneInvalid": "Ange ett giltigt telefonnummer.",
+      "serviceRequired": "Välj en tjänst.",
+      "budgetRequired": "Välj en budgetnivå."
+    },
+    "phonePlaceholder": "Ditt telefonnummer"
   },
   "Logos": {
     "title": "Byggt med moderna stackar"

@@ -1,13 +1,21 @@
 "use client";
 
+import { InquiryStepsSuccess } from "@/components/home/InquiryStepsSuccess";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { PhoneInput } from "@/components/ui/phone-input";
 import { cn } from "@/lib/utils";
+import {
+  createInquirySchema,
+  defaultValidationMessages,
+  type InquiryFormValues,
+} from "@/lib/validations/contact";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, Check } from "lucide-react";
-import { useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
+import { AlertCircle, ArrowRight, Check, Loader2 } from "lucide-react";
+import { useMemo, useState, type FormEvent } from "react";
+import { Controller, useForm } from "react-hook-form";
 
 const DEFAULT_SERVICES = [
   "Custom Platforms",
@@ -26,6 +34,15 @@ const DEFAULT_BUDGETS = [
   "Not sure yet",
 ];
 
+type InquiryErrors = {
+  nameMin?: string;
+  emailInvalid?: string;
+  phoneRequired?: string;
+  phoneInvalid?: string;
+  serviceRequired?: string;
+  budgetRequired?: string;
+};
+
 type InquiryLocale = {
   title?: string;
   heading?: string;
@@ -42,9 +59,49 @@ type InquiryLocale = {
   next?: string;
   back?: string;
   finish?: string;
+  sending?: string;
+  error?: string;
+  successTitle?: string;
+  successBody?: string;
+  successAgain?: string;
   services?: string[];
   budgets?: string[];
+  errors?: InquiryErrors;
 };
+
+const STEP_FIELDS: (keyof InquiryFormValues)[][] = [
+  ["name", "email", "phone"],
+  ["service"],
+  ["budget"],
+];
+
+const emptyValues: InquiryFormValues = {
+  type: "inquiry",
+  name: "",
+  email: "",
+  phone: "",
+  service: "",
+  budget: "",
+  website: "",
+  source: "",
+};
+
+const inputClass =
+  "h-11 rounded-xl border-zinc-300 bg-white text-zinc-900 placeholder:text-zinc-400 focus-visible:ring-emerald-500/20 dark:border-white/10 dark:bg-zinc-950/80 dark:text-zinc-100 dark:placeholder:text-zinc-500";
+
+const optionClass = (selected: boolean, invalid: boolean) =>
+  cn(
+    "cursor-pointer rounded-xl border px-4 py-3 text-left text-sm font-medium transition-colors",
+    selected
+      ? "border-emerald-500 bg-emerald-50 text-emerald-900 dark:border-emerald-400 dark:bg-emerald-500/10 dark:text-emerald-200"
+      : "border-zinc-200 bg-white text-zinc-700 hover:border-zinc-300 dark:border-white/10 dark:bg-zinc-950 dark:text-zinc-200 dark:hover:border-white/20",
+    invalid && !selected && "border-red-300 dark:border-red-500/40",
+  );
+
+function FieldError({ message }: { message?: string }) {
+  if (!message) return null;
+  return <p className="text-sm text-red-600 dark:text-red-400">{message}</p>;
+}
 
 const InquirySteps = ({
   locale,
@@ -53,51 +110,108 @@ const InquirySteps = ({
   locale?: InquiryLocale;
   embedded?: boolean;
 }) => {
-  const router = useRouter();
   const reduceMotion = useReducedMotion();
   const [step, setStep] = useState(0);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [service, setService] = useState("");
-  const [budget, setBudget] = useState("");
+  const [sent, setSent] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [sentSummary, setSentSummary] = useState<{
+    name: string;
+    chips: string[];
+  } | null>(null);
 
   const services = locale?.services?.length ? locale.services : DEFAULT_SERVICES;
   const budgets = locale?.budgets?.length ? locale.budgets : DEFAULT_BUDGETS;
 
-  const steps = useMemo(
-    () => [
-      locale?.stepContact ?? "Contact",
-      locale?.stepService ?? "Service",
-      locale?.stepBudget ?? "Budget",
-    ],
-    [locale?.stepBudget, locale?.stepContact, locale?.stepService],
+  const schema = useMemo(
+    () =>
+      createInquirySchema({
+        ...defaultValidationMessages,
+        ...locale?.errors,
+      }),
+    [locale?.errors],
   );
 
-  const canNext =
-    step === 0
-      ? name.trim().length >= 2 && email.includes("@")
-      : step === 1
-        ? Boolean(service)
-        : Boolean(budget);
+  const {
+    register,
+    control,
+    handleSubmit,
+    setValue,
+    trigger,
+    watch,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<InquiryFormValues>({
+    resolver: zodResolver(schema),
+    mode: "onTouched",
+    defaultValues: emptyValues,
+  });
 
-  const goContact = () => {
-    const summary = [
-      name.trim() && `Name: ${name.trim()}`,
-      email.trim() && `Email: ${email.trim()}`,
-      phone.trim() && `Phone: ${phone.trim()}`,
-      service && `Service: ${service}`,
-      budget && `Budget: ${budget}`,
-    ]
-      .filter(Boolean)
-      .join(" · ");
+  const service = watch("service");
+  const budget = watch("budget");
 
-    const params = new URLSearchParams();
-    if (service) params.set("package", service);
-    if (summary) params.set("inquiry", summary);
-    const qs = params.toString();
-    router.push(`${qs ? `?${qs}` : ""}#Contact`, { scroll: true });
-  };
+  const steps = [
+    locale?.stepContact ?? "Contact",
+    locale?.stepService ?? "Service",
+    locale?.stepBudget ?? "Budget",
+  ];
+  const progress = sent ? steps.length : step;
+
+  async function goNext() {
+    const valid = await trigger(STEP_FIELDS[step]);
+    if (valid) setStep((s) => Math.min(s + 1, steps.length - 1));
+  }
+
+  async function onSubmit(values: InquiryFormValues) {
+    setSubmitError(null);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...values,
+          type: "inquiry",
+          source: window.location.pathname,
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        throw new Error(data.error || locale?.error || "Something went wrong.");
+      }
+      setSentSummary({
+        name: values.name.trim().split(/\s+/)[0] ?? values.name,
+        chips: [values.service, values.budget],
+      });
+      setSent(true);
+    } catch (err) {
+      setSubmitError(
+        err instanceof Error
+          ? err.message
+          : (locale?.error ?? "Something went wrong."),
+      );
+    }
+  }
+
+  function onFormSubmit(event: FormEvent<HTMLFormElement>) {
+    if (step < steps.length - 1) {
+      event.preventDefault();
+      void goNext();
+      return;
+    }
+    void handleSubmit(onSubmit)(event);
+  }
+
+  function startOver() {
+    reset(emptyValues);
+    setSent(false);
+    setSentSummary(null);
+    setSubmitError(null);
+    setStep(0);
+  }
+
+  const successBody = (
+    locale?.successBody ??
+    "Thanks, {name}. Your inquiry just landed in our inbox. Someone from the OPTIO team will reach out within 24 hours."
+  ).replace("{name}", sentSummary?.name ?? "");
 
   return (
     <div className={cn(!embedded && "mx-auto max-w-[480px] px-5 sm:px-8")}>
@@ -125,25 +239,25 @@ const InquirySteps = ({
                     "flex items-center",
                     i < steps.length - 1 ? "flex-1" : "flex-none",
                   )}
-                  aria-current={i === step ? "step" : undefined}
+                  aria-current={!sent && i === step ? "step" : undefined}
                 >
                   <span className="flex items-center gap-2">
                     <span
                       className={cn(
                         "grid size-7 place-items-center rounded-full text-[12px] font-semibold tabular-nums transition-[background-color,color,box-shadow]",
-                        i < step
+                        i < progress
                           ? "bg-emerald-500 text-white"
-                          : i === step
+                          : i === progress
                             ? "bg-emerald-500 text-white shadow-[0_0_0_4px_rgb(16_185_129/0.15)]"
                             : "bg-white text-zinc-500 shadow-[0_0_0_1px_rgb(9_9_11/0.1)] dark:bg-zinc-900 dark:text-zinc-400",
                       )}
                     >
-                      {i < step ? <Check className="size-3.5" /> : i + 1}
+                      {i < progress ? <Check className="size-3.5" /> : i + 1}
                     </span>
                     <span
                       className={cn(
                         "text-[13px] font-medium transition-colors",
-                        i === step
+                        i === progress
                           ? "text-zinc-900 dark:text-zinc-100"
                           : "text-zinc-500",
                         i > 0 && "hidden xl:inline",
@@ -160,7 +274,7 @@ const InquirySteps = ({
                       <span
                         className={cn(
                           "absolute inset-0 origin-left bg-emerald-500 transition-transform duration-500",
-                          i < step ? "scale-x-100" : "scale-x-0",
+                          i < progress ? "scale-x-100" : "scale-x-0",
                         )}
                       />
                     </span>
@@ -169,146 +283,243 @@ const InquirySteps = ({
               ))}
             </ol>
 
-            <div className="mt-6">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={step}
-                  initial={reduceMotion ? false : { opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={reduceMotion ? undefined : { opacity: 0, y: -8 }}
-                  transition={{ duration: 0.25 }}
+            {sent ? (
+              <div className="mt-6">
+                <InquiryStepsSuccess
+                  title={locale?.successTitle ?? "Message sent — we're on it."}
+                  body={successBody}
+                  againLabel={locale?.successAgain ?? "Send another inquiry"}
+                  chips={sentSummary?.chips ?? []}
+                  onReset={startOver}
+                />
+              </div>
+            ) : (
+              <form onSubmit={onFormSubmit} noValidate>
+                <div
+                  className="absolute -left-[9999px] h-0 w-0 overflow-hidden"
+                  aria-hidden
                 >
-                  {step === 0 ? (
-                    <div className="space-y-4">
-                      <div>
-                        <p className="text-[17px] font-semibold tracking-[-0.02em] text-zinc-950 dark:text-zinc-50">
-                          {locale?.heading ?? "How can we reach you?"}
-                        </p>
-                        <p className="mt-1.5 text-[14px] leading-relaxed text-zinc-600 dark:text-zinc-400">
-                          {locale?.subheading ??
-                            "Your contact details first — project details come next."}
-                        </p>
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="inquiry-name">
-                          {locale?.nameLabel ?? "Name"}
-                        </Label>
-                        <Input
-                          id="inquiry-name"
-                          value={name}
-                          onChange={(e) => setName(e.target.value)}
-                          placeholder={locale?.namePlaceholder ?? "Your name"}
-                          className="h-11 rounded-xl"
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="inquiry-email">
-                          {locale?.emailLabel ?? "Email"}
-                        </Label>
-                        <Input
-                          id="inquiry-email"
-                          type="email"
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          placeholder={
-                            locale?.emailPlaceholder ?? "you@company.com"
-                          }
-                          className="h-11 rounded-xl"
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="inquiry-phone">
-                          {locale?.phoneLabel ?? "Phone"}
-                        </Label>
-                        <Input
-                          id="inquiry-phone"
-                          type="tel"
-                          value={phone}
-                          onChange={(e) => setPhone(e.target.value)}
-                          placeholder={
-                            locale?.phonePlaceholder ?? "+383 …"
-                          }
-                          className="h-11 rounded-xl"
-                        />
-                      </div>
-                    </div>
-                  ) : null}
+                  <label htmlFor="inquiry-website">Website</label>
+                  <input
+                    id="inquiry-website"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    {...register("website")}
+                  />
+                </div>
 
-                  {step === 1 ? (
-                    <div className="grid gap-2">
-                      {services.map((item) => (
-                        <button
-                          key={item}
-                          type="button"
-                          onClick={() => setService(item)}
-                          className={cn(
-                            "cursor-pointer rounded-xl border px-4 py-3 text-left text-sm font-medium transition-colors",
-                            service === item
-                              ? "border-emerald-500 bg-emerald-50 text-emerald-900 dark:border-emerald-400 dark:bg-emerald-500/10 dark:text-emerald-200"
-                              : "border-zinc-200 bg-white text-zinc-700 hover:border-zinc-300 dark:border-white/10 dark:bg-zinc-950 dark:text-zinc-200",
-                          )}
-                        >
-                          {item}
-                        </button>
-                      ))}
-                    </div>
-                  ) : null}
+                <div className="mt-6">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={step}
+                      initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={reduceMotion ? undefined : { opacity: 0, y: -8 }}
+                      transition={{ duration: 0.25 }}
+                    >
+                      {step === 0 ? (
+                        <div className="space-y-4">
+                          <div>
+                            <p className="text-[17px] font-semibold tracking-[-0.02em] text-zinc-950 dark:text-zinc-50">
+                              {locale?.heading ?? "How can we reach you?"}
+                            </p>
+                            <p className="mt-1.5 text-[14px] leading-relaxed text-zinc-600 dark:text-zinc-400">
+                              {locale?.subheading ??
+                                "Your contact details first — project details come next."}
+                            </p>
+                          </div>
+                          <div className="flex flex-col gap-1.5">
+                            <Label htmlFor="inquiry-name">
+                              {locale?.nameLabel ?? "Name"}
+                            </Label>
+                            <Input
+                              id="inquiry-name"
+                              autoComplete="name"
+                              placeholder={
+                                locale?.namePlaceholder ?? "Your name"
+                              }
+                              aria-invalid={Boolean(errors.name)}
+                              className={cn(
+                                inputClass,
+                                errors.name &&
+                                  "border-red-500 focus-visible:ring-red-500/20",
+                              )}
+                              {...register("name")}
+                            />
+                            <FieldError message={errors.name?.message} />
+                          </div>
+                          <div className="flex flex-col gap-1.5">
+                            <Label htmlFor="inquiry-email">
+                              {locale?.emailLabel ?? "Email"}
+                            </Label>
+                            <Input
+                              id="inquiry-email"
+                              type="email"
+                              autoComplete="email"
+                              placeholder={
+                                locale?.emailPlaceholder ?? "you@company.com"
+                              }
+                              aria-invalid={Boolean(errors.email)}
+                              className={cn(
+                                inputClass,
+                                errors.email &&
+                                  "border-red-500 focus-visible:ring-red-500/20",
+                              )}
+                              {...register("email")}
+                            />
+                            <FieldError message={errors.email?.message} />
+                          </div>
+                          <div className="flex flex-col gap-1.5">
+                            <Label htmlFor="inquiry-phone">
+                              {locale?.phoneLabel ?? "Phone"}
+                            </Label>
+                            <Controller
+                              name="phone"
+                              control={control}
+                              render={({ field }) => (
+                                <PhoneInput
+                                  id="inquiry-phone"
+                                  placeholder={
+                                    locale?.phonePlaceholder ??
+                                    "Your phone number"
+                                  }
+                                  value={field.value}
+                                  onChange={field.onChange}
+                                  onBlur={field.onBlur}
+                                  aria-invalid={Boolean(errors.phone)}
+                                  className={cn(
+                                    errors.phone && "[&_input]:border-red-500",
+                                  )}
+                                />
+                              )}
+                            />
+                            <FieldError message={errors.phone?.message} />
+                          </div>
+                        </div>
+                      ) : null}
 
-                  {step === 2 ? (
-                    <div className="grid gap-2">
-                      {budgets.map((item) => (
-                        <button
-                          key={item}
-                          type="button"
-                          onClick={() => setBudget(item)}
-                          className={cn(
-                            "cursor-pointer rounded-xl border px-4 py-3 text-left text-sm font-medium transition-colors",
-                            budget === item
-                              ? "border-emerald-500 bg-emerald-50 text-emerald-900 dark:border-emerald-400 dark:bg-emerald-500/10 dark:text-emerald-200"
-                              : "border-zinc-200 bg-white text-zinc-700 hover:border-zinc-300 dark:border-white/10 dark:bg-zinc-950 dark:text-zinc-200",
-                          )}
-                        >
-                          {item}
-                        </button>
-                      ))}
-                    </div>
-                  ) : null}
-                </motion.div>
-              </AnimatePresence>
-            </div>
+                      {step === 1 ? (
+                        <div className="flex flex-col gap-2">
+                          <div
+                            role="radiogroup"
+                            aria-label={locale?.stepService ?? "Service"}
+                            className="grid gap-2"
+                          >
+                            {services.map((item) => (
+                              <button
+                                key={item}
+                                type="button"
+                                role="radio"
+                                aria-checked={service === item}
+                                onClick={() =>
+                                  setValue("service", item, {
+                                    shouldValidate: true,
+                                  })
+                                }
+                                className={optionClass(
+                                  service === item,
+                                  Boolean(errors.service),
+                                )}
+                              >
+                                {item}
+                              </button>
+                            ))}
+                          </div>
+                          <FieldError message={errors.service?.message} />
+                        </div>
+                      ) : null}
 
-            <div className="mt-6 flex items-center justify-between gap-3">
-              <Button
-                type="button"
-                variant="ghost"
-                disabled={step === 0}
-                onClick={() => setStep((s) => Math.max(0, s - 1))}
-                className="cursor-pointer"
-              >
-                {locale?.back ?? "Back"}
-              </Button>
-              {step < 2 ? (
-                <Button
-                  type="button"
-                  disabled={!canNext}
-                  onClick={() => setStep((s) => s + 1)}
-                  className="h-11 cursor-pointer gap-2 rounded-full bg-zinc-950 px-5 text-white hover:bg-zinc-800 dark:bg-white dark:text-zinc-950"
-                >
-                  {locale?.next ?? "Continue"}
-                  <ArrowRight className="size-4" />
-                </Button>
-              ) : (
-                <Button
-                  type="button"
-                  disabled={!canNext}
-                  onClick={goContact}
-                  className="h-11 cursor-pointer gap-2 rounded-full bg-zinc-950 px-5 text-white hover:bg-zinc-800 dark:bg-white dark:text-zinc-950"
-                >
-                  {locale?.finish ?? "Send inquiry"}
-                  <ArrowRight className="size-4" />
-                </Button>
-              )}
-            </div>
+                      {step === 2 ? (
+                        <div className="flex flex-col gap-2">
+                          <div
+                            role="radiogroup"
+                            aria-label={locale?.stepBudget ?? "Budget"}
+                            className="grid gap-2"
+                          >
+                            {budgets.map((item) => (
+                              <button
+                                key={item}
+                                type="button"
+                                role="radio"
+                                aria-checked={budget === item}
+                                onClick={() =>
+                                  setValue("budget", item, {
+                                    shouldValidate: true,
+                                  })
+                                }
+                                className={optionClass(
+                                  budget === item,
+                                  Boolean(errors.budget),
+                                )}
+                              >
+                                {item}
+                              </button>
+                            ))}
+                          </div>
+                          <FieldError message={errors.budget?.message} />
+                        </div>
+                      ) : null}
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+
+                <AnimatePresence>
+                  {submitError ? (
+                    <motion.div
+                      role="alert"
+                      initial={reduceMotion ? false : { opacity: 0, y: -4 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={reduceMotion ? undefined : { opacity: 0 }}
+                      className="mt-5 flex items-start gap-2.5 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-500/30 dark:bg-red-500/10 dark:text-red-300"
+                    >
+                      <AlertCircle className="mt-0.5 size-4 shrink-0" />
+                      <span>{submitError}</span>
+                    </motion.div>
+                  ) : null}
+                </AnimatePresence>
+
+                <div className="mt-6 flex items-center justify-between gap-3">
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    disabled={step === 0 || isSubmitting}
+                    onClick={() => setStep((s) => Math.max(0, s - 1))}
+                    className="cursor-pointer"
+                  >
+                    {locale?.back ?? "Back"}
+                  </Button>
+                  {step < steps.length - 1 ? (
+                    <Button
+                      type="button"
+                      onClick={() => void goNext()}
+                      className="h-11 cursor-pointer gap-2 rounded-full bg-zinc-950 px-5 text-white hover:bg-zinc-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200"
+                    >
+                      {locale?.next ?? "Continue"}
+                      <ArrowRight className="size-4" />
+                    </Button>
+                  ) : (
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="h-11 cursor-pointer gap-2 rounded-full bg-zinc-950 px-5 text-white hover:bg-zinc-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="size-4 animate-spin" />
+                          {locale?.sending ?? "Sending…"}
+                        </>
+                      ) : (
+                        <>
+                          {locale?.finish ?? "Send inquiry"}
+                          <ArrowRight className="size-4" />
+                        </>
+                      )}
+                    </Button>
+                  )}
+                </div>
+              </form>
+            )}
           </div>
         </div>
       </div>

@@ -6,7 +6,7 @@ const HeaderLinks = () => {
   const links = siteConfig.headerLinks;
 
   return (
-    <div className="flex flex-row items-center gap-6">
+    <>
       {links.map((link) => (
         <Link
           key={link.name}
@@ -14,13 +14,13 @@ const HeaderLinks = () => {
           href={link.href}
           target="_blank"
           rel="noopener noreferrer nofollow"
-          className={` flex max-w-[24px] flex-col items-center justify-center`}
+          className="grid size-8 place-items-center rounded-full text-zinc-600 transition-colors hover:bg-zinc-950/5 hover:text-zinc-950 dark:text-zinc-400 dark:hover:bg-white/10 dark:hover:text-white"
         >
           {link.icon &&
-            React.createElement(link.icon, { className: "text-lg" })}
+            React.createElement(link.icon, { className: "size-[15px]" })}
         </Link>
       ))}
-    </div>
+    </>
   );
 };
 export default HeaderLinks;

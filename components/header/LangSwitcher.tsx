@@ -44,8 +44,11 @@ export const LangSwitcher = () => {
 
   return (
     <Select value={langName as string} onValueChange={handleSwitchLanguage}>
-      <SelectTrigger className="w-fit" aria-label="Select language">
-        <SelectValue placeholder="Language" />
+      <SelectTrigger
+        aria-label="Select language"
+        className="h-8 w-fit cursor-pointer gap-1 rounded-full border-0 bg-transparent px-2.5 text-[13px] font-semibold uppercase tracking-wide text-zinc-600 shadow-none ring-offset-0 transition-colors hover:bg-zinc-950/5 hover:text-zinc-950 focus:ring-2 focus:ring-emerald-500/40 focus:ring-offset-0 dark:text-zinc-400 dark:hover:bg-white/10 dark:hover:text-white [&>svg]:size-3.5"
+      >
+        <SelectValue placeholder="EN">{langName}</SelectValue>
       </SelectTrigger>
       <SelectContent>
         {localesDisplayOrder.map((key) => {

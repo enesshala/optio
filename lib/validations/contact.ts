@@ -9,6 +9,8 @@ export const defaultValidationMessages = {
   messageMin: "Message must be at least 10 characters.",
   messageMax: "Message is too long (max 2000 characters).",
   experienceMax: "Background is too long (max 500 characters).",
+  serviceRequired: "Please choose a service.",
+  budgetRequired: "Please choose a budget range.",
   invalidSubmission: "Invalid submission.",
   invalidType: "Invalid form type.",
 };
@@ -72,10 +74,27 @@ export function createBootcampContactSchema(
   });
 }
 
+export function createInquirySchema(messages = defaultValidationMessages) {
+  return z.object({
+    type: z.literal("inquiry"),
+    name: z.string().trim().min(2, messages.nameMin),
+    email: z.string().trim().email(messages.emailInvalid),
+    phone: requiredPhoneSchema(messages),
+    service: z.string().trim().min(1, messages.serviceRequired),
+    budget: z.string().trim().min(1, messages.budgetRequired),
+    website: z
+      .string()
+      .optional()
+      .refine((val) => !val?.trim(), messages.invalidSubmission),
+    source: z.string().optional(),
+  });
+}
+
 export function createContactApiSchema(messages = defaultValidationMessages) {
   return z.discriminatedUnion("type", [
     createHomeContactSchema(messages),
     createBootcampContactSchema(messages),
+    createInquirySchema(messages),
   ]);
 }
 
@@ -85,6 +104,7 @@ export type HomeContactFormValues = z.infer<
 export type BootcampContactFormValues = z.infer<
   ReturnType<typeof createBootcampContactSchema>
 >;
+export type InquiryFormValues = z.infer<ReturnType<typeof createInquirySchema>>;
 
 export const homeContactApiSchema = createHomeContactSchema();
 export const bootcampContactApiSchema = createBootcampContactSchema();

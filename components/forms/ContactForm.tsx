@@ -64,6 +64,8 @@ function validationMessages(locale: ContactFormLocale): ContactValidationMessage
     messageMin: locale.errors?.messageMin ?? "Message must be at least 10 characters.",
     messageMax: locale.errors?.messageMax ?? "Message is too long.",
     experienceMax: locale.errors?.experienceMax ?? "Background is too long.",
+    serviceRequired: "Please choose a service.",
+    budgetRequired: "Please choose a budget range.",
     invalidSubmission: "Invalid submission.",
     invalidType: "Invalid form type.",
   };
@@ -89,7 +91,6 @@ function ContactFormInner({
   const router = useRouter();
   const pathname = usePathname();
   const packageParam = searchParams.get("package");
-  const inquiryParam = searchParams.get("inquiry");
 
   const [sent, setSent] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState<string | null>(null);
@@ -137,29 +138,16 @@ function ContactFormInner({
   } = form;
 
   useEffect(() => {
-    if (variant !== "home") return;
+    if (variant !== "home" || !packageParam) return;
+    setSelectedPackage(packageParam);
+    setValue("package", packageParam);
     const currentMessage = form.getValues("message");
-    if (packageParam) {
-      setSelectedPackage(packageParam);
-      setValue("package", packageParam);
-    }
     if (!currentMessage?.trim()) {
-      if (inquiryParam) {
-        setValue("message", inquiryParam, { shouldValidate: true });
-      } else if (packageParam) {
-        setValue("message", packageMessage(locale, packageParam), {
-          shouldValidate: true,
-        });
-      }
+      setValue("message", packageMessage(locale, packageParam), {
+        shouldValidate: true,
+      });
     }
-  }, [
-    packageParam,
-    inquiryParam,
-    variant,
-    locale.packagePrefill,
-    setValue,
-    form,
-  ]);
+  }, [packageParam, variant, locale.packagePrefill, setValue, form]);
 
   function clearPackage() {
     setSelectedPackage(null);
@@ -293,9 +281,6 @@ function ContactFormInner({
               render={({ field }) => (
                 <PhoneInput
                   id={`phone-${variant}`}
-                  defaultCountry="XK"
-                  international
-                  countryCallingCodeEditable={false}
                   placeholder={locale.phonePlaceholder}
                   value={field.value}
                   onChange={field.onChange}
